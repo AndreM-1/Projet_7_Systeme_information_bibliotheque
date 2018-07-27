@@ -1,0 +1,100 @@
+body{
+	margin-top:5px;
+	background-color:#EEEEEE;
+}	
+
+.container{
+	background-color:#FFF;
+}
+
+.barreNavigation{
+	border-bottom :1px solid grey;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom:5px;
+}
+
+.barreNavigation .ville{
+	font-size: 1.5em;
+}
+
+.barreNavigation a:hover{
+	text-decoration:none;
+		
+}
+
+.barreNavigation li a:hover {
+	background-color:transparent;
+}
+
+.barreNavigation .boutonConnexion:hover{
+	background-color:#286090;
+}
+
+.icon-bar{
+	 background-color:black;
+}
+
+#banniereImage{
+	background: url('../jsp/assets/images/fondEcranBibliotheque1.jpg') no-repeat;
+	border-radius :5px;
+	height:500px;
+	opacity:0.8;
+	position: relative;
+	box-shadow: 0px 4px 4px #1c1a19;
+}
+
+#zoneRecherche{
+	position: absolute;
+	bottom:42%;
+	left : 37%;
+	right: 37%;
+}
+
+#zoneRecherche #rechercheAvancee a{
+	color:inherit;
+}
+
+section{
+	border-bottom :1px solid grey;
+	margin-bottom: 5px;
+}
+
+
+#sectionQsn{
+	display:flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+#sousSectionQsn{
+	display:flex;
+	align-items: flex-end;
+}
+
+#sousSectionQsn p{
+	font-size: 1.5em;
+}
+
+.localHoraires{
+	display:flex;
+	margin-bottom :10px;
+}
+
+.localHoraires .imgBibliotheque{
+	margin-right:15px;
+}
+
+
+#divConnexion{
+	border:1px solid grey;
+	margin-top:25px;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	box-shadow: 0px 4px 4px #1c1a19;
+}
+
+footer{
+	margin-bottom:5px;
+}
