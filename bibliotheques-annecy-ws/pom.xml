@@ -31,6 +31,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.version>5.0.5.RELEASE</spring.version>
         <struts2.version>2.5.16</struts2.version>
+        <cxf.version>3.2.5</cxf.version>
 	</properties>
 	
 	<!-- =============================================================== -->
@@ -247,19 +248,19 @@
 			
 			<!-- Dépendances vers apache-cxf -->
 			<dependency>
-			    <groupId>org.apache.cxf</groupId>
-			    <artifactId>cxf-core</artifactId>
-			    <version>3.2.5</version>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-databinding-jaxb</artifactId>
+				<version>${cxf.version}</version>
 			</dependency>	
 		   	<dependency>
 		        <groupId>org.apache.cxf</groupId>
 		        <artifactId>cxf-rt-frontend-jaxws</artifactId>
-		        <version>3.2.5</version>
+		        <version>${cxf.version}</version>
 		    </dependency> 
 	       	<dependency>
 		        <groupId>org.apache.cxf</groupId>
 		        <artifactId>cxf-rt-transports-http</artifactId>
-		        <version>3.2.5</version>
+		        <version>${cxf.version}</version>
    			</dependency> 
    			
    			<!-- Dépendance vers la librairie JAX-WS-->
@@ -310,7 +311,14 @@
                     <version>3.1.0</version>
                 </plugin>
                 
-                 <!-- Site -->
+                <!-- Apache-cxf plugin-->
+                <plugin>
+			        <groupId>org.apache.cxf</groupId>
+			        <artifactId>cxf-codegen-plugin</artifactId>
+			        <version>${cxf.version}</version>
+		        </plugin>             
+                   
+                <!-- Site -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>

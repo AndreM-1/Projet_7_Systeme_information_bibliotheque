@@ -6,5 +6,5 @@ import com.bibliotheques.appliweb.model.bean.edition.Edition;
 
 public interface EditionDao {
 
-	List<Edition> getListEdition();
+	List<Edition> getListEdition(int nbEdition);
 }

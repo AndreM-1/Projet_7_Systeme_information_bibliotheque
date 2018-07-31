@@ -119,8 +119,8 @@
         
 		<!-- Dépendances vers apache-cxf -->
 		<dependency>
-		    <groupId>org.apache.cxf</groupId>
-		    <artifactId>cxf-core</artifactId>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-databinding-jaxb</artifactId>
 		</dependency>
 	   	<dependency>
 	        <groupId>org.apache.cxf</groupId>
@@ -143,5 +143,33 @@
     <!-- =============================================================== -->
 	<build>
 		<finalName>bibliotheques-annecy-ws-webapp</finalName>
+		
+		<plugins>
+			<plugin>
+	            <groupId>org.apache.cxf</groupId>
+	            <artifactId>cxf-codegen-plugin</artifactId>
+	            <executions>
+	                <execution>
+	                    <id>generate-sources</id>
+	                    <phase>generate-sources</phase>
+	                    <configuration>
+	                        <wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
+	                        <wsdlOptions>
+	                            <wsdlOption>
+	                                <wsdl>${basedir}/src/main/resources/wsdl/EditionService.wsdl</wsdl>
+                                    <extraargs>
+						                <extraarg>-impl</extraarg>
+						                <extraarg>-server</extraarg>
+            						</extraargs>
+	                            </wsdlOption>
+	                        </wsdlOptions>
+	                    </configuration>
+	                    <goals>
+	                        <goal>wsdl2java</goal>
+	                    </goals>
+	                </execution>
+	            </executions>			
+			</plugin>
+		</plugins>
 	</build>
 </project>

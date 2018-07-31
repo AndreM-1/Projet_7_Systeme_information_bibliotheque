@@ -21,12 +21,7 @@
 	<!-- ATTENTION : A partir de CXF 2.4, il ne faut importer que la resource cxf.xml, sinon une erreur sera générée -->
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	
-	<!-- Remarque : Les xmlns:e et xmlns:s sont ajoutés pour mémoire au cas où l'on souhaite personnaliser le nommage du endpoint et du service 
-	par l'intermédiare des attributs endpoint et service dans la balise <jaxws:endpoint>. -->
-	<jaxws:endpoint id="edition"
-		implementor="com.bibliotheques.ws.webapp.services.impl.edition.EditionServiceImpl"
-		address="/edition"
-		xmlns:e="http://service.jaxws.cxf.apache.org/endpoint"
-        xmlns:s="http://service.jaxws.cxf.apache.org/service">
-	</jaxws:endpoint>
+    <!-- Inclusion d'autres fichiers de contexte Spring -->
+    <import resource="classpath:/com/bibliotheques/ws/webapp/webappContext.xml" />
+    <import resource="classpath:/com/bibliotheques/ws/business/businessContext.xml" />
 </beans>

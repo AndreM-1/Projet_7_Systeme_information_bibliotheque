@@ -1,22 +1,24 @@
 package com.bibliotheques.appliweb.consumer.impl.dao;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.sql.DataSource;
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+
+import com.bibliotheques.appliweb.consumer.services.generated.editionservice.EditionService;
 
 /**
- * Classe permettant de définir un object de type {@link DataSource}
- * qui sera utilisé par les implémentations de la couche Dao pour se
- * connecter à la base de données. 
+ * Classe permettant de définir un objet de type {@link EditionService}
+ * qui sera utilisé par les implémentations de la couche Dao pour appeler
+ * les méthodes des web services.
  * @author André Monnier
  */
 public abstract class AbstractDaoImpl {
 
-	@Inject
-	@Named("dataSourceBibliotheque")
-	private DataSource dataSource; 
+	private EditionService editionService;
 
-	protected DataSource getDataSource() {
-		return dataSource;
+	public EditionService getEditionService() {
+		JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
+        factory.setAddress("http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition");
+        factory.setServiceClass(EditionService.class);
+        editionService=(EditionService)factory.create();
+		return editionService;
 	}
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="
+       	http://cxf.apache.org/transports/http/configuration 
+       	http://cxf.apache.org/schemas/configuration/http-conf.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+     	http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- Déclaration des web services -->
+	<jaxws:server
+		serviceClass="com.bibliotheques.ws.webapp.services.editionservice.generated.EditionService"
+		address="/edition" serviceBean="#edition"
+		wsdlLocation="wsdl/EditionService.wsdl">
+	</jaxws:server>
+	
+	<bean id="edition" class="com.bibliotheques.ws.webapp.services.editionservice.impl.EditionServiceImpl" />
+	
+	<!-- Ressources JNDI -->
+	<bean id="dataSourceBibliotheque" class="org.springframework.jndi.JndiObjectFactoryBean">
+    	<property name="jndiName" value="java:comp/env/jdbc/DB_BIBLIOTHEQUE"/>
+	</bean>
+
+</beans>

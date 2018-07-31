@@ -31,9 +31,18 @@ public class GestionEditionAction extends ActionSupport {
 	//Définition du LOGGER
 	private static final Logger LOGGER=(Logger) LogManager.getLogger(GestionEditionAction.class);
 	
+	// ===================== Getters/Setters =====================
+	public List<Edition> getListEdition() {
+		return listEdition;
+	}
+
+	public void setListEdition(List<Edition> listEdition) {
+		this.listEdition = listEdition;
+	}
+	
 	public String doList() {
 		LOGGER.info("GestionEditionAction - Méthode doList()");
-		listEdition=managerFactory.getEditionManager().getListEdition();
+		listEdition=managerFactory.getEditionManager().getListEdition(6);
 		return ActionSupport.SUCCESS;
 		
 	}

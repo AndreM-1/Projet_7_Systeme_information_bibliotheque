@@ -109,13 +109,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-		</dependency>
-		
-        <!-- Drivers JDBC PostgreSQL -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-        </dependency>        
+		</dependency>       
 	</dependencies>
 
     <!-- =============================================================== -->

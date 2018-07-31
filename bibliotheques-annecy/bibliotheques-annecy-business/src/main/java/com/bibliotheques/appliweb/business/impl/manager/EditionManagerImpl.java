@@ -20,9 +20,9 @@ public class EditionManagerImpl extends AbstractManager implements EditionManage
 	private static final Logger LOGGER=(Logger) LogManager.getLogger(EditionManagerImpl.class);
 	
 	@Override
-	public List<Edition> getListEdition() {
+	public List<Edition> getListEdition(int nbEdition) {
 		LOGGER.info("Couche Business - Méthode getListEdition()");
-		listEdition=getDaoFactory().getEditionDao().getListEdition();
+		listEdition=getDaoFactory().getEditionDao().getListEdition(nbEdition);
 		return this.listEdition;
 	}
 }

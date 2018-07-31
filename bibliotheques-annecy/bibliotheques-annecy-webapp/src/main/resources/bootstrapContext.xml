@@ -11,8 +11,4 @@
     <!-- On va scanner les annotations dans tous les packages de base com.bibliotheques.appliweb -->
     <context:annotation-config/>
     <context:component-scan base-package="com.bibliotheques.appliweb"/>
-
-    <!-- Inclusion d'autres fichiers de contexte Spring -->
-    <import resource="classpath:/com/bibliotheques/appliweb/webapp/webappContext.xml" />
-    <import resource="classpath:/com/bibliotheques/appliweb/business/businessContext.xml" />
 </beans>

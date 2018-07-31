@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/EditionService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EditionService" targetNamespace="http://www.example.org/EditionService/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/EditionService/" xmlns:Q1="http://www.example.org/beans">
+            <xsd:import schemaLocation="../beans.xsd" namespace="http://www.example.org/beans"></xsd:import>
+            <xsd:element name="getListEdition">
+        <xsd:complexType>
+          <xsd:sequence>
+
+          	<xsd:element name="nbEdition" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListEditionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+
+          	<xsd:element name="edition" type="Q1:Edition" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getListEditionRequest">
+    <wsdl:part element="tns:getListEdition" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getListEditionResponse">
+    <wsdl:part element="tns:getListEditionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="EditionService">
+    <wsdl:operation name="getListEdition">
+      <wsdl:input message="tns:getListEditionRequest"/>
+      <wsdl:output message="tns:getListEditionResponse"/>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="getListEdition">
+  		<soap:operation
+  			soapAction="" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EditionService">
+    <wsdl:port binding="tns:EditionServiceSOAP" name="EditionServiceSOAP">
+      <soap:address location="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

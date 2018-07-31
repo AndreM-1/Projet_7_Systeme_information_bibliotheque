@@ -51,6 +51,14 @@
 					Relativité générale et la mécanique quantique. On sait que Stephen Hawking lutte depuis vingt ans contre une maladie neurologique très grave. On n''en trouvera que plus fascinant cet 
 					extraordinaire effort d'un esprit scientifique pour parvenir à une compréhension ultime des secrets de l'Univers.
 				</p>
+				
+				<h2> Liste des 6 dernières éditions</h2>
+				
+				<s:iterator value="listEdition">
+					<p><s:property value="id"/> - <s:property value="isbn"/> - <s:property value="dateParution"/> - <s:property value="nbPages"/> - <s:property value="format"/><p>
+				</s:iterator>
+				
+			
 			</section>
 		
 			<!-- Footer -->
