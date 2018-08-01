@@ -12,12 +12,28 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.bibliotheques.ws.consumer.contract.dao.EditeurDao;
+import com.bibliotheques.ws.consumer.contract.dao.GenreDao;
+import com.bibliotheques.ws.consumer.contract.dao.OuvrageDao;
+import com.bibliotheques.ws.consumer.contract.dao.PhotoDao;
 import com.bibliotheques.ws.model.bean.edition.Edition;
 
 public class EditionRM implements RowMapper<Edition>{
+	
+	private OuvrageDao ouvrageDao;
+	private PhotoDao photoDao;
+	private EditeurDao editeurDao;
+	private GenreDao genreDao;
 
 	//Définition du LOGGER
 	private static final Logger LOGGER=(Logger) LogManager.getLogger(EditionRM.class);
+	
+	public EditionRM(OuvrageDao ouvrageDao,PhotoDao photoDao,EditeurDao editeurDao,GenreDao genreDao) {
+		this.ouvrageDao=ouvrageDao;
+		this.photoDao=photoDao;
+		this.editeurDao=editeurDao;
+		this.genreDao=genreDao;
+	}
 
 	@Override
 	public Edition mapRow(ResultSet pRS, int pRowNum) throws SQLException {
@@ -38,6 +54,10 @@ public class EditionRM implements RowMapper<Edition>{
 		
 		vEdition.setNbPages(pRS.getInt("nb_pages"));
 		vEdition.setFormat(pRS.getString("format"));
+		vEdition.setOuvrage(ouvrageDao.getOuvrage(pRS.getInt("ouvrage_id")));
+		vEdition.setPhoto(photoDao.getPhoto(pRS.getInt("photo_id")));
+		vEdition.setEditeur(editeurDao.getEditeur(pRS.getInt("editeur_id")));
+		vEdition.setGenre(genreDao.getGenre(pRS.getInt("genre_id")));
 		return vEdition;
 	}
 }

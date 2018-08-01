@@ -4,10 +4,81 @@
     <complexType name="Edition">
     	<sequence>
     		<element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
-    		<element name="ISBN" type="string" minOccurs="1" maxOccurs="1"></element>
-    		<element name="dateParution" type="date" minOccurs="1" maxOccurs="1"></element>
-    		<element name="nbPages" type="int" minOccurs="1" maxOccurs="1"></element>
-    		<element name="format" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="isbn" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="dateParution" type="date" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="nbPages" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="format" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ouvrage" type="tns:Ouvrage" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="photo" type="tns:Photo" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="editeur" type="tns:Editeur" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="genre" minOccurs="1" maxOccurs="1" type="tns:Genre">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Editeur">
+    	<sequence>
+            <element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+            <element name="nomEditeur" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Photo">
+    	<sequence>
+            <element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+            <element name="nomPhoto" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Ouvrage">
+    	<sequence>
+            <element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+            <element name="titre" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="resume" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="auteur" type="tns:Auteur" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Auteur">
+    	<sequence>
+            <element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+            <element name="nom" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="prenom" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Genre">
+    	<sequence>
+    		<element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="genre" type="string" minOccurs="1" maxOccurs="1"></element>
     	</sequence>
     </complexType>
 </schema>

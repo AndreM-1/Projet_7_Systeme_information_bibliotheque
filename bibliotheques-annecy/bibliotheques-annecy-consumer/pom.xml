@@ -74,10 +74,10 @@
   			</dependency> 		
 	</dependencies>
 	<build>
-		
 		<plugins>
+		
 			 <!-- Apache-cxf plugin-->
-            <plugin>
+	           <plugin>
 	        	<groupId>org.apache.cxf</groupId>
 		        <artifactId>cxf-codegen-plugin</artifactId>
 		        <executions>
@@ -102,6 +102,5 @@
 		        </executions>
 	        </plugin>
 		</plugins>
-		
 	</build>
 </project>

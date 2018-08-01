@@ -1,81 +1,109 @@
+
 package com.bibliotheques.appliweb.model.bean.edition;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
 /**
- * Classe du modèle lié au bean Auteur.
- * @author André Monnier
+ * <p>Classe Java pour Auteur complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Auteur"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="prenom" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-public class Auteur implements java.io.Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Auteur", propOrder = {
+    "id",
+    "nom",
+    "prenom"
+})
+public class Auteur {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7246608447180288284L;
+    protected int id;
+    @XmlElement(required = true)
+    protected String nom;
+    @XmlElement(required = true)
+    protected String prenom;
 
-	// ==================== Attributs ====================
-	private Integer id;
+    /**
+     * Obtient la valeur de la propriété id.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
 
-	private String nom;
+    /**
+     * Définit la valeur de la propriété id.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
+    }
 
-	private String prenom;
+    /**
+     * Obtient la valeur de la propriété nom.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNom() {
+        return nom;
+    }
 
-	// ==================== Constructeurs ====================
-	/**
-	 * Constructeur.
-	 */
-	public Auteur() {
-	}
+    /**
+     * Définit la valeur de la propriété nom.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNom(String value) {
+        this.nom = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété prenom.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPrenom() {
+        return prenom;
+    }
 
-	/**
-	 * Constructeur.
-	 *
-	 * @param pId -
-	 */
-	public Auteur(Integer pId) {
-		id = pId;
-	}
+    /**
+     * Définit la valeur de la propriété prenom.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPrenom(String value) {
+        this.prenom = value;
+    }
 
-
-	// ==================== Getters/Setters ====================
-	public Integer getId() {
-		return id;
-	}
-
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-
-	public String getNom() {
-		return nom;
-	}
-
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-	
-	// ==================== Méthodes ====================
-	@Override
-	public String toString() {
-		final StringBuilder vStB = new StringBuilder(this.getClass().getSimpleName());
-		final String vSeparateur = ", ";
-		vStB.append(" {")
-		.append("id=").append(id)
-		.append(vSeparateur).append("nom=\"").append(nom).append('"')
-		.append(vSeparateur).append("prenom=\"").append(prenom).append('"')
-		.append("}");
-		return vStB.toString();
-	}
 }

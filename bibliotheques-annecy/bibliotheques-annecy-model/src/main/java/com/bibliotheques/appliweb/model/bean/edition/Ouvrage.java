@@ -1,80 +1,137 @@
+
 package com.bibliotheques.appliweb.model.bean.edition;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
 /**
- * Classe du modèle lié au bean Ouvrage.
- * @author André Monnier
+ * <p>Classe Java pour Ouvrage complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Ouvrage"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="titre" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="resume" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="auteur" type="{http://www.example.org/beans}Auteur"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-public class Ouvrage implements java.io.Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Ouvrage", propOrder = {
+    "id",
+    "titre",
+    "resume",
+    "auteur"
+})
+public class Ouvrage {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6656259800464386715L;
-	
-	// ==================== Attributs ====================
-	private Integer id;
-	
-	private String titre;
-	
-	private String resume;
-	
-	// ==================== Constructeurs ====================
-	/**
-	 * Constructeur.
-	 */
-	public Ouvrage() {
-	}
+    protected int id;
+    @XmlElement(required = true)
+    protected String titre;
+    @XmlElement(required = true)
+    protected String resume;
+    @XmlElement(required = true)
+    protected Auteur auteur;
 
+    /**
+     * Obtient la valeur de la propriété id.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
 
-	/**
-	 * Constructeur.
-	 *
-	 * @param pId -
-	 */
-	public Ouvrage(Integer pId) {
-		id = pId;
-	}
+    /**
+     * Définit la valeur de la propriété id.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
+    }
 
-	// ==================== Getters/Setters ====================
-	public Integer getId() {
-		return id;
-	}
+    /**
+     * Obtient la valeur de la propriété titre.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTitre() {
+        return titre;
+    }
 
+    /**
+     * Définit la valeur de la propriété titre.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTitre(String value) {
+        this.titre = value;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    /**
+     * Obtient la valeur de la propriété resume.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getResume() {
+        return resume;
+    }
 
+    /**
+     * Définit la valeur de la propriété resume.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setResume(String value) {
+        this.resume = value;
+    }
 
-	public String getTitre() {
-		return titre;
-	}
+    /**
+     * Obtient la valeur de la propriété auteur.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Auteur }
+     *     
+     */
+    public Auteur getAuteur() {
+        return auteur;
+    }
 
+    /**
+     * Définit la valeur de la propriété auteur.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Auteur }
+     *     
+     */
+    public void setAuteur(Auteur value) {
+        this.auteur = value;
+    }
 
-	public void setTitre(String titre) {
-		this.titre = titre;
-	}
-
-
-	public String getResume() {
-		return resume;
-	}
-
-
-	public void setResume(String resume) {
-		this.resume = resume;
-	}
-	
-	// ==================== Méthodes ====================
-	@Override
-	public String toString() {
-		final StringBuilder vStB = new StringBuilder(this.getClass().getSimpleName());
-		final String vSeparateur = ", ";
-		vStB.append(" {")
-		.append("id=").append(id)
-		.append(vSeparateur).append("titre=\"").append(titre).append('"')
-		.append(vSeparateur).append("resume=\"").append(resume).append('"')
-		.append("}");
-		return vStB.toString();
-	}
 }

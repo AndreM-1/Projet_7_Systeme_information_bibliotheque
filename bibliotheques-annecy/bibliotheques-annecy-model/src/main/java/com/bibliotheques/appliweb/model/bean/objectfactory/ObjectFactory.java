@@ -3,7 +3,12 @@ package com.bibliotheques.appliweb.model.bean.objectfactory;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
+import com.bibliotheques.appliweb.model.bean.edition.Auteur;
+import com.bibliotheques.appliweb.model.bean.edition.Editeur;
 import com.bibliotheques.appliweb.model.bean.edition.Edition;
+import com.bibliotheques.appliweb.model.bean.edition.Genre;
+import com.bibliotheques.appliweb.model.bean.edition.Ouvrage;
+import com.bibliotheques.appliweb.model.bean.edition.Photo;
 
 
 /**
@@ -37,6 +42,46 @@ public class ObjectFactory {
      */
     public Edition createEdition() {
         return new Edition();
+    }
+
+    /**
+     * Create an instance of {@link Editeur }
+     * 
+     */
+    public Editeur createEditeur() {
+        return new Editeur();
+    }
+
+    /**
+     * Create an instance of {@link Photo }
+     * 
+     */
+    public Photo createPhoto() {
+        return new Photo();
+    }
+
+    /**
+     * Create an instance of {@link Ouvrage }
+     * 
+     */
+    public Ouvrage createOuvrage() {
+        return new Ouvrage();
+    }
+
+    /**
+     * Create an instance of {@link Auteur }
+     * 
+     */
+    public Auteur createAuteur() {
+        return new Auteur();
+    }
+
+    /**
+     * Create an instance of {@link Genre }
+     * 
+     */
+    public Genre createGenre() {
+        return new Genre();
     }
 
 }

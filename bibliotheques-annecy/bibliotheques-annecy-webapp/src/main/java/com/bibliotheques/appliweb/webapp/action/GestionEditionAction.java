@@ -1,5 +1,8 @@
 package com.bibliotheques.appliweb.webapp.action;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -28,6 +31,10 @@ public class GestionEditionAction extends ActionSupport {
 	// ----- Paramètres
 	private List<Edition> listEdition;
 	
+	private String moisCourant;
+	
+	private String anneeCourante;
+	
 	//Définition du LOGGER
 	private static final Logger LOGGER=(Logger) LogManager.getLogger(GestionEditionAction.class);
 	
@@ -40,9 +47,30 @@ public class GestionEditionAction extends ActionSupport {
 		this.listEdition = listEdition;
 	}
 	
+	public String getMoisCourant() {
+		return moisCourant;
+	}
+
+	public void setMoisCourant(String moisCourant) {
+		this.moisCourant = moisCourant;
+	}
+	
+	public String getAnneeCourante() {
+		return anneeCourante;
+	}
+
+	public void setAnneeCourante(String anneeCourante) {
+		this.anneeCourante = anneeCourante;
+	}
+
 	public String doList() {
 		LOGGER.info("GestionEditionAction - Méthode doList()");
-		listEdition=managerFactory.getEditionManager().getListEdition(6);
+		Date date =new Date();
+		DateFormat dfMois = new SimpleDateFormat("MMM");
+		DateFormat dfAnnee = new SimpleDateFormat("yyyy");
+		moisCourant=dfMois.format(date);
+		anneeCourante=dfAnnee.format(date);
+		listEdition=managerFactory.getEditionManager().getListEdition(12);
 		return ActionSupport.SUCCESS;
 		
 	}

@@ -20,10 +20,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="ISBN" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="isbn" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="dateParution" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
  *         &lt;element name="nbPages" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="format" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ouvrage" type="{http://www.example.org/beans}Ouvrage"/&gt;
+ *         &lt;element name="photo" type="{http://www.example.org/beans}Photo"/&gt;
+ *         &lt;element name="editeur" type="{http://www.example.org/beans}Editeur"/&gt;
+ *         &lt;element name="genre" type="{http://www.example.org/beans}Genre"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,12 +42,16 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "isbn",
     "dateParution",
     "nbPages",
-    "format"
+    "format",
+    "ouvrage",
+    "photo",
+    "editeur",
+    "genre"
 })
 public class Edition {
 
     protected int id;
-    @XmlElement(name = "ISBN", required = true)
+    @XmlElement(required = true)
     protected String isbn;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
@@ -51,6 +59,14 @@ public class Edition {
     protected int nbPages;
     @XmlElement(required = true)
     protected String format;
+    @XmlElement(required = true)
+    protected Ouvrage ouvrage;
+    @XmlElement(required = true)
+    protected Photo photo;
+    @XmlElement(required = true)
+    protected Editeur editeur;
+    @XmlElement(required = true)
+    protected Genre genre;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -155,20 +171,101 @@ public class Edition {
     public void setFormat(String value) {
         this.format = value;
     }
-    
 
-	// ==================== Méthodes ====================
-	@Override
-	public String toString() {
-		final StringBuilder vStB = new StringBuilder(this.getClass().getSimpleName());
-		final String vSeparateur = ", ";
-		vStB.append(" {")
-		.append("id=").append(id)
-		.append(vSeparateur).append("ISBN=\"").append(isbn).append('"')
-		.append(vSeparateur).append("dateParution=\"").append(dateParution).append('"')
-		.append(vSeparateur).append("nbPages=\"").append(nbPages).append('"')
-		.append(vSeparateur).append("format=\"").append(format).append('"')
-		.append("}");
-		return vStB.toString();
-	}
+    /**
+     * Obtient la valeur de la propriété ouvrage.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Ouvrage }
+     *     
+     */
+    public Ouvrage getOuvrage() {
+        return ouvrage;
+    }
+
+    /**
+     * Définit la valeur de la propriété ouvrage.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Ouvrage }
+     *     
+     */
+    public void setOuvrage(Ouvrage value) {
+        this.ouvrage = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété photo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Photo }
+     *     
+     */
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    /**
+     * Définit la valeur de la propriété photo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Photo }
+     *     
+     */
+    public void setPhoto(Photo value) {
+        this.photo = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété editeur.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Editeur }
+     *     
+     */
+    public Editeur getEditeur() {
+        return editeur;
+    }
+
+    /**
+     * Définit la valeur de la propriété editeur.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Editeur }
+     *     
+     */
+    public void setEditeur(Editeur value) {
+        this.editeur = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété genre.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Genre }
+     *     
+     */
+    public Genre getGenre() {
+        return genre;
+    }
+
+    /**
+     * Définit la valeur de la propriété genre.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Genre }
+     *     
+     */
+    public void setGenre(Genre value) {
+        this.genre = value;
+    }
+
 }

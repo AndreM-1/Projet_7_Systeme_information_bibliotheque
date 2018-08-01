@@ -8,17 +8,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour Editeur complex type.
+ * <p>Classe Java pour Photo complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="Editeur"&gt;
+ * &lt;complexType name="Photo"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="nomEditeur" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="nomPhoto" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,15 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Editeur", propOrder = {
+@XmlType(name = "Photo", propOrder = {
     "id",
-    "nomEditeur"
+    "nomPhoto"
 })
-public class Editeur {
+public class Photo {
 
     protected int id;
     @XmlElement(required = true)
-    protected String nomEditeur;
+    protected String nomPhoto;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -55,27 +55,27 @@ public class Editeur {
     }
 
     /**
-     * Obtient la valeur de la propriété nomEditeur.
+     * Obtient la valeur de la propriété nomPhoto.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getNomEditeur() {
-        return nomEditeur;
+    public String getNomPhoto() {
+        return nomPhoto;
     }
 
     /**
-     * Définit la valeur de la propriété nomEditeur.
+     * Définit la valeur de la propriété nomPhoto.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setNomEditeur(String value) {
-        this.nomEditeur = value;
+    public void setNomPhoto(String value) {
+        this.nomPhoto = value;
     }
 
 }
