@@ -9,6 +9,7 @@ import com.bibliotheques.ws.consumer.contract.dao.EditionDao;
 import com.bibliotheques.ws.consumer.contract.dao.GenreDao;
 import com.bibliotheques.ws.consumer.contract.dao.OuvrageDao;
 import com.bibliotheques.ws.consumer.contract.dao.PhotoDao;
+import com.bibliotheques.ws.consumer.contract.dao.UtilisateurDao;
 
 
 /**
@@ -31,6 +32,9 @@ public class DaoFactoryImpl implements DaoFactory{
 	
 	@Inject
 	private PhotoDao photoDao;
+	
+	@Inject
+	private UtilisateurDao utilisateurDao;
 	
 	@Override
 	public EditionDao getEditionDao() {
@@ -81,5 +85,14 @@ public class DaoFactoryImpl implements DaoFactory{
 	public void setPhotoDao(PhotoDao photoDao) {
 		this.photoDao = photoDao;
 	}
-		
+
+	@Override
+	public UtilisateurDao getUtilisateurDao() {
+		return utilisateurDao;
+	}
+
+	@Override
+	public void setUtilisateurDao(UtilisateurDao utilisateurDao) {
+		this.utilisateurDao = utilisateurDao;
+	}
 }

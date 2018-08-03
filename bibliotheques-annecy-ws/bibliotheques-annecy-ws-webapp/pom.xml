@@ -157,10 +157,7 @@
 	                        <wsdlOptions>
 	                            <wsdlOption>
 	                                <wsdl>${basedir}/src/main/resources/wsdl/EditionService.wsdl</wsdl>
-                                    <extraargs>
-						                <extraarg>-impl</extraarg>
-						                <extraarg>-server</extraarg>
-            						</extraargs>
+	                                <wsdl>${basedir}/src/main/resources/wsdl/UtilisateurService.wsdl</wsdl>	                         
 	                            </wsdlOption>
 	                        </wsdlOptions>
 	                    </configuration>

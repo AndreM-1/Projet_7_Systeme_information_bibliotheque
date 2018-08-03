@@ -5,6 +5,16 @@
 
 <struts>
 	<package name="default" extends="struts-default">
+	
+	<!-- Définition des intercepteurs -->
+	<interceptors>
+		<!-- Définition de l'intercepteur permettant de bloquer l'accès à la page de connexion et à la page de création de compte pour un utilisateur déjà connecté -->
+		<interceptor name="RefusAPC" class="com.bibliotheques.appliweb.webapp.interceptor.RefusAPCInterceptor"/>
+		<interceptor-stack name="RefusAccesPageConnexionStack">
+			<interceptor-ref name="RefusAPC"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</interceptor-stack>
+	</interceptors>
 
 		<!-- Action par défaut -->
 		<default-action-ref name="index" />
@@ -46,9 +56,16 @@
 		
 		 <!-- Actions connexion/deconnexion -->
 		<action name="connexion" class="com.bibliotheques.appliweb.webapp.action.GestionConnexionAction" method="doLogin">
+ 			<!-- Référence à l'intercepteur permettant de bloquer l'accès à la page de connexion pour un utilisateur déjà connecté -->
+ 			<interceptor-ref name="RefusAccesPageConnexionStack" />
+ 			<result name="refus-acces-page-connexion" type="redirectAction">index</result>
 			<result name="input">/jsp/authentification/connexion.jsp</result>
+			<result name="success" type="redirectAction">index</result>
 		</action>	
 		
-		
+		<action name="deconnexion" class="com.bibliotheques.appliweb.webapp.action.GestionConnexionAction" method="doLogout">
+       		<result type="redirectAction">index</result>
+        </action>
+			
 	</package>
 </struts>

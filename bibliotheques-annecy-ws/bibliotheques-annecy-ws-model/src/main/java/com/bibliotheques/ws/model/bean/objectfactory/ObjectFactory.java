@@ -9,6 +9,7 @@ import com.bibliotheques.ws.model.bean.edition.Edition;
 import com.bibliotheques.ws.model.bean.edition.Genre;
 import com.bibliotheques.ws.model.bean.edition.Ouvrage;
 import com.bibliotheques.ws.model.bean.edition.Photo;
+import com.bibliotheques.ws.model.bean.utilisateur.Utilisateur;
 
 
 /**
@@ -82,6 +83,14 @@ public class ObjectFactory {
      */
     public Genre createGenre() {
         return new Genre();
+    }
+
+    /**
+     * Create an instance of {@link Utilisateur }
+     * 
+     */
+    public Utilisateur createUtilisateur() {
+        return new Utilisateur();
     }
 
 }

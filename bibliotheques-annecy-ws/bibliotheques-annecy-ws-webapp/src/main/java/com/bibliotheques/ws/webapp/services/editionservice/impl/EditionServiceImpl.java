@@ -13,8 +13,6 @@ import com.bibliotheques.ws.model.bean.edition.Edition;
 import com.bibliotheques.ws.webapp.services.editionservice.generated.EditionService;
 
 
-
-
 public class EditionServiceImpl implements EditionService{
 	
 	@Inject

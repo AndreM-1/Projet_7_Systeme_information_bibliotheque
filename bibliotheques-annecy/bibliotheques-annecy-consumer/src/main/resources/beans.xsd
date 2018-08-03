@@ -81,4 +81,47 @@
     		<element name="genre" type="string" minOccurs="1" maxOccurs="1"></element>
     	</sequence>
     </complexType>
+
+    <complexType name="Utilisateur">
+    	<sequence>
+    		<element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="civilite" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="nom" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="prenom" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+            <element name="pseudo" type="string" minOccurs="1" maxOccurs="1"></element>
+            <element name="adresseMail" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="salt" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="motDePasseSecurise" type="string"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="telephone" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="dateNaissance" type="date" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="adresse" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="codePostal" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ville" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="pays" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
 </schema>

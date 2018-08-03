@@ -15,6 +15,8 @@
         http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<!-- Déclaration des web services -->
+	
+	<!-- Déclaration du web service EditionService -->
 	<jaxws:server
 		serviceClass="com.bibliotheques.ws.webapp.services.editionservice.generated.EditionService"
 		address="/edition" serviceBean="#edition"
@@ -22,6 +24,15 @@
 	</jaxws:server>
 	
 	<bean id="edition" class="com.bibliotheques.ws.webapp.services.editionservice.impl.EditionServiceImpl" />
+	
+	<!-- Déclaration du web service UtilisateurService -->
+	<jaxws:server
+		serviceClass="com.bibliotheques.ws.webapp.services.utilisateurservice.generated.UtilisateurService"
+		address="/utilisateur" serviceBean="#utilisateur"
+		wsdlLocation="wsdl/UtilisateurService.wsdl">
+	</jaxws:server>
+	
+	<bean id="utilisateur" class="com.bibliotheques.ws.webapp.services.utilisateurservice.impl.UtilisateurServiceImpl" />
 	
 	<!-- Ressources JNDI -->
 	<bean id="dataSourceBibliotheque" class="org.springframework.jndi.JndiObjectFactoryBean">

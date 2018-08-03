@@ -1,269 +1,414 @@
+
 package com.bibliotheques.appliweb.model.bean.utilisateur;
 
-import java.util.Date;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
-* Classe du modèle lié au bean Utilisateur.
-* @author André Monnier
-*/
-public class Utilisateur implements java.io.Serializable {
+ * <p>Classe Java pour Utilisateur complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Utilisateur"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="civilite" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="prenom" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="adresseMail" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="salt" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="motDePasseSecurise" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="telephone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="dateNaissance" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
+ *         &lt;element name="adresse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="codePostal" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="ville" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="pays" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Utilisateur", propOrder = {
+    "id",
+    "civilite",
+    "nom",
+    "prenom",
+    "pseudo",
+    "adresseMail",
+    "salt",
+    "motDePasseSecurise",
+    "telephone",
+    "dateNaissance",
+    "adresse",
+    "codePostal",
+    "ville",
+    "pays"
+})
+public class Utilisateur {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -293419294226839620L;
-	
-	// ==================== Attributs ====================
-	private Integer id;
-	
-	@NotEmpty (message="Model - L'attribut civilite doit être renseigné")
-	@NotBlank(message="Model - L'attribut civilite doit être renseigné")
-	@Size (min=1,max=8,message="Model - L'attribut civilite ne doit pas comporter plus de 8 caractères")
-	private String civilite;
-	
-	@NotEmpty (message="Model - L'attribut nom doit être renseigné")
-	@NotBlank(message="Model - L'attribut nom doit être renseigné")
-	@Size (min=1,max=100,message="Model - L'attribut nom ne doit pas comporter plus de 100 caractères")
-	private String nom;
-	
-	@NotEmpty (message="Model - L'attribut prenom doit être renseigné")
-	@NotBlank(message="Model - L'attribut prenom doit être renseigné")
-	@Size (min=1,max=100,message="Model - L'attribut prenom ne doit pas comporter plus de 100 caractères")
-	private String prenom;
-	
-	@NotEmpty (message="Model - L'attribut pseudo doit être renseigné")
-	@NotBlank(message="Model - L'attribut pseudo doit être renseigné")
-	@Size (min=1,max=100,message="Model - L'attribut pseudo ne doit pas comporter plus de 100 caractères")
-	private String pseudo;
-	
-	@NotEmpty (message="Model - L'attribut adresseMail doit être renseigné")
-	@NotBlank(message="Model - L'attribut adresseMail doit être renseigné")
-	@Email   (message="Model - Le format d'adresse mail n'est pas valide")
-	@Size (min=1,max=100,message="Model - L'attribut adresseMail ne doit pas comporter plus de 100 caractères")
-	private String adresseMail;
-	
-	@NotEmpty (message="Model - L'attribut motDePasse doit être renseigné")
-	@NotBlank(message="Model - L'attribut motDePasse doit être renseigné")
-	@Size (min=1,max=100,message="Model - L'attribut motDePasse ne doit pas comporter plus de 100 caractères")
-	private String motDePasse;
-	
-	private String salt;
-	
-	private String motDePasseSecurise;
-	
-	@Size(min=0, max=14, message="Model - L'attribut téléphone doit comporter 14 caractères")
-	private String telephone;
-	
-	private Date dateNaissance;
-	
-	@Size (min=0,max=100,message="Model - L'attribut adresse ne doit pas comporter plus de 100 caractères")
-	private String adresse;
-	
-	@Size (min=0,max=5,message="Model - L'attribut codePostal ne doit pas comporter plus de 5 caractères")
-	private String codePostal;
-	
-	@Size (min=0,max=100,message="Model - L'attribut ville ne doit pas comporter plus de 100 caractères")
-	private String ville;
-	
-	@Size (min=0,max=6,message="Model - L'attribut pays ne doit pas comporter plus de 6 caractères")
-	private String pays;
-	
+    protected int id;
+    @XmlElement(required = true)
+    protected String civilite;
+    @XmlElement(required = true)
+    protected String nom;
+    @XmlElement(required = true)
+    protected String prenom;
+    @XmlElement(required = true)
+    protected String pseudo;
+    @XmlElement(required = true)
+    protected String adresseMail;
+    @XmlElement(required = true)
+    protected String salt;
+    @XmlElement(required = true)
+    protected String motDePasseSecurise;
+    protected String telephone;
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar dateNaissance;
+    protected String adresse;
+    protected String codePostal;
+    protected String ville;
+    protected String pays;
 
-	// ==================== Constructeurs ====================
-	/**
-	 * Constructeur.
-	 */
-	public Utilisateur() {
-	}
+    /**
+     * Obtient la valeur de la propriété id.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
 
+    /**
+     * Définit la valeur de la propriété id.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
+    }
 
-	/**
-	 * Constructeur.
-	 *
-	 * @param pId -
-	 */
-	public Utilisateur(Integer pId) {
-		id = pId;
-	}
+    /**
+     * Obtient la valeur de la propriété civilite.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCivilite() {
+        return civilite;
+    }
 
-	// ==================== Getters/Setters ====================
-	public Integer getId() {
-		return id;
-	}
+    /**
+     * Définit la valeur de la propriété civilite.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCivilite(String value) {
+        this.civilite = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété nom.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNom() {
+        return nom;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    /**
+     * Définit la valeur de la propriété nom.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNom(String value) {
+        this.nom = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété prenom.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public String getCivilite() {
-		return civilite;
-	}
+    /**
+     * Définit la valeur de la propriété prenom.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPrenom(String value) {
+        this.prenom = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété pseudo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPseudo() {
+        return pseudo;
+    }
 
-	public void setCivilite(String civilite) {
-		this.civilite = civilite;
-	}
+    /**
+     * Définit la valeur de la propriété pseudo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPseudo(String value) {
+        this.pseudo = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété adresseMail.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAdresseMail() {
+        return adresseMail;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    /**
+     * Définit la valeur de la propriété adresseMail.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAdresseMail(String value) {
+        this.adresseMail = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété salt.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSalt() {
+        return salt;
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    /**
+     * Définit la valeur de la propriété salt.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSalt(String value) {
+        this.salt = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété motDePasseSecurise.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMotDePasseSecurise() {
+        return motDePasseSecurise;
+    }
 
-	public String getPrenom() {
-		return prenom;
-	}
+    /**
+     * Définit la valeur de la propriété motDePasseSecurise.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMotDePasseSecurise(String value) {
+        this.motDePasseSecurise = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété telephone.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTelephone() {
+        return telephone;
+    }
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+    /**
+     * Définit la valeur de la propriété telephone.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTelephone(String value) {
+        this.telephone = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété dateNaissance.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getDateNaissance() {
+        return dateNaissance;
+    }
 
-	public String getPseudo() {
-		return pseudo;
-	}
+    /**
+     * Définit la valeur de la propriété dateNaissance.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setDateNaissance(XMLGregorianCalendar value) {
+        this.dateNaissance = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété adresse.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAdresse() {
+        return adresse;
+    }
 
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
+    /**
+     * Définit la valeur de la propriété adresse.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAdresse(String value) {
+        this.adresse = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété codePostal.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCodePostal() {
+        return codePostal;
+    }
 
-	public String getAdresseMail() {
-		return adresseMail;
-	}
+    /**
+     * Définit la valeur de la propriété codePostal.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCodePostal(String value) {
+        this.codePostal = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété ville.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getVille() {
+        return ville;
+    }
 
-	public void setAdresseMail(String adresseMail) {
-		this.adresseMail = adresseMail;
-	}
+    /**
+     * Définit la valeur de la propriété ville.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setVille(String value) {
+        this.ville = value;
+    }
 
+    /**
+     * Obtient la valeur de la propriété pays.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPays() {
+        return pays;
+    }
 
-	public String getMotDePasse() {
-		return motDePasse;
-	}
+    /**
+     * Définit la valeur de la propriété pays.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPays(String value) {
+        this.pays = value;
+    }
 
-
-	public void setMotDePasse(String motDePasse) {
-		this.motDePasse = motDePasse;
-	}
-
-
-	public String getSalt() {
-		return salt;
-	}
-
-
-	public void setSalt(String salt) {
-		this.salt = salt;
-	}
-
-
-	public String getMotDePasseSecurise() {
-		return motDePasseSecurise;
-	}
-
-
-	public void setMotDePasseSecurise(String motDePasseSecurise) {
-		this.motDePasseSecurise = motDePasseSecurise;
-	}
-
-
-	public String getTelephone() {
-		return telephone;
-	}
-
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
-
-	public Date getDateNaissance() {
-		return dateNaissance;
-	}
-
-
-	public void setDateNaissance(Date dateNaissance) {
-		this.dateNaissance = dateNaissance;
-	}
-
-
-	public String getAdresse() {
-		return adresse;
-	}
-
-
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-
-
-	public String getCodePostal() {
-		return codePostal;
-	}
-
-
-	public void setCodePostal(String codePostal) {
-		this.codePostal = codePostal;
-	}
-
-
-	public String getVille() {
-		return ville;
-	}
-
-
-	public void setVille(String ville) {
-		this.ville = ville;
-	}
-
-
-	public String getPays() {
-		return pays;
-	}
-
-
-	public void setPays(String pays) {
-		this.pays = pays;
-	}
-	
-	// ==================== Méthodes ====================
-	@Override
-	public String toString() {
-		final StringBuilder vStB = new StringBuilder(this.getClass().getSimpleName());
-		final String vSeparateur = ", ";
-		vStB.append(" {")
-		.append("id=").append(id)
-		.append(vSeparateur).append("civilite=\"").append(civilite).append('"')
-		.append(vSeparateur).append("nom=\"").append(nom).append('"')
-		.append(vSeparateur).append("prenom=\"").append(prenom).append('"')
-		.append(vSeparateur).append("pseudo=\"").append(pseudo).append('"')
-		.append(vSeparateur).append("adresseMail=\"").append(adresseMail).append('"')
-		.append(vSeparateur).append("motDePasse=\"").append(motDePasse).append('"')
-		.append(vSeparateur).append("salt=\"").append(salt).append('"')
-		.append(vSeparateur).append("motDePasseSecurise=\"").append(motDePasseSecurise).append('"')
-		.append(vSeparateur).append("telephone=\"").append(telephone).append('"')
-		.append(vSeparateur).append("dateNaissance=\"").append(dateNaissance).append('"')
-		.append(vSeparateur).append("adresse=\"").append(adresse).append('"')
-		.append(vSeparateur).append("codePostal=\"").append(codePostal).append('"')
-		.append(vSeparateur).append("ville=\"").append(ville).append('"')
-		.append(vSeparateur).append("pays=\"").append(pays).append('"')
-		.append("}");
-		return vStB.toString();
-	}
 }

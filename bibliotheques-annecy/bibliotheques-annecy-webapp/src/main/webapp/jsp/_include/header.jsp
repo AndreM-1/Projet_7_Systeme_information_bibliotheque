@@ -28,7 +28,23 @@
 					</ul>
 				</li>
 				<li><s:a action="page_generique_ml">Mentions légales</s:a></li>
-				<li><s:a action="connexion" class="btn btn-primary boutonConnexion">Connexion</s:a></li>
+				<s:if test="#session.user">
+					<li>
+						<a class="btn btn-primary boutonConnexion dropdown-toggle" data-toggle="dropdown"><s:property value="#session.user.pseudo"/></a>
+						<ul class="dropdown-menu">
+							<li><s:a action="">Mes coordonnées</s:a></li>
+							<li class="divider"></li>
+							<li><s:a action="">Mon mot de passe</s:a></li>
+							<li class="divider"></li>
+							<li><s:a action="">Gestion des prêts</s:a></li>
+							<li class="divider"></li>
+							<li><s:a action="deconnexion">Déconnexion</s:a></li>
+						</ul>
+					</li>
+				</s:if>
+				<s:else>
+					<li><s:a action="connexion" class="btn btn-primary boutonConnexion">Connexion</s:a></li>
+				</s:else>
 			</ul>
 		</div>
 	</div>
@@ -57,4 +73,5 @@
 
 	<!-- Javascript de Bootstrap -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 </header>
