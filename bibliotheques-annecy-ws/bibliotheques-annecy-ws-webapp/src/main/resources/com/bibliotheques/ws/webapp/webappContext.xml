@@ -18,21 +18,21 @@
 	
 	<!-- Déclaration du web service EditionService -->
 	<jaxws:server
-		serviceClass="com.bibliotheques.ws.webapp.services.editionservice.generated.EditionService"
+		serviceClass="com.bibliotheques.ws.webapp.editionservice.generated.EditionService"
 		address="/edition" serviceBean="#edition"
 		wsdlLocation="wsdl/EditionService.wsdl">
 	</jaxws:server>
 	
-	<bean id="edition" class="com.bibliotheques.ws.webapp.services.editionservice.impl.EditionServiceImpl" />
+	<bean id="edition" class="com.bibliotheques.ws.webapp.editionservice.impl.EditionServiceImpl" />
 	
 	<!-- Déclaration du web service UtilisateurService -->
 	<jaxws:server
-		serviceClass="com.bibliotheques.ws.webapp.services.utilisateurservice.generated.UtilisateurService"
+		serviceClass="com.bibliotheques.ws.webapp.utilisateurservice.generated.UtilisateurService"
 		address="/utilisateur" serviceBean="#utilisateur"
 		wsdlLocation="wsdl/UtilisateurService.wsdl">
 	</jaxws:server>
 	
-	<bean id="utilisateur" class="com.bibliotheques.ws.webapp.services.utilisateurservice.impl.UtilisateurServiceImpl" />
+	<bean id="utilisateur" class="com.bibliotheques.ws.webapp.utilisateurservice.impl.UtilisateurServiceImpl" />
 	
 	<!-- Ressources JNDI -->
 	<bean id="dataSourceBibliotheque" class="org.springframework.jndi.JndiObjectFactoryBean">

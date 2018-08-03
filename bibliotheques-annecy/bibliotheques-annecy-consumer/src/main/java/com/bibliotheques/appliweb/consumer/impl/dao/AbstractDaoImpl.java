@@ -2,8 +2,8 @@ package com.bibliotheques.appliweb.consumer.impl.dao;
 
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
-import com.bibliotheques.appliweb.consumer.services.generated.editionservice.EditionService;
-import com.bibliotheques.appliweb.consumer.services.generated.utilisateurservice.UtilisateurService;
+import com.bibliotheques.appliweb.consumer.generated.editionservice.EditionService;
+import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UtilisateurService;
 
 /**
  * Classe permettant de définir des objets de type {@link EditionService} et {@link UtilisateurService}
