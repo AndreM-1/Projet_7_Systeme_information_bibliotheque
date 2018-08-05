@@ -51,7 +51,11 @@
 		
 		<!-- Action "page_creation_compte" -->
 		<action name="page_creation_compte" class="com.bibliotheques.appliweb.webapp.action.GestionCreationCompteAction" method="doCreationCompte">
+			<!-- Référence à l'intercepteur permettant de bloquer l'accès à la page de création de compte pour un utilisateur déjà connecté -->
+			<interceptor-ref name="RefusAccesPageConnexionStack" />
+			<result name="refus-acces-page-connexion" type="redirectAction">index</result>
 			<result name="input">/jsp/authentification/creationcompte.jsp</result>
+			<result name="success" type="redirectAction">index</result>
 		</action>	
 		
 		 <!-- Actions connexion/deconnexion -->

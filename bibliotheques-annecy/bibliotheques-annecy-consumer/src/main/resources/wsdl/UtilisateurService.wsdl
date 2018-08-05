@@ -32,13 +32,20 @@
       			<xsd:element name="prenom" type="xsd:string"
       				minOccurs="1">
       			</xsd:element>
-                        <xsd:element name="pseudo" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
-                        <xsd:element name="adresseMail" type="xsd:string"
+      			<xsd:element name="pseudo" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="adresseMail" type="xsd:string"
       				maxOccurs="1" minOccurs="1">
       			</xsd:element>
       			<xsd:element name="motDePasse" type="xsd:string"
       				minOccurs="1" maxOccurs="1">
-      			</xsd:element>
+      			</xsd:element>
+
+      			<xsd:element name="confirmationMotDePasse"
+      				type="xsd:string" minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="conditionsUtilisation" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>

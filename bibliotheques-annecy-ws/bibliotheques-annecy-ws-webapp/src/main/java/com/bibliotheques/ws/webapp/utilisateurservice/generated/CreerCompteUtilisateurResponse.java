@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.bibliotheques.ws.model.bean.utilisateur.Utilisateur;
 
+
 /**
  * <p>Classe Java pour anonymous complex type.
  * 

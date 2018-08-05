@@ -82,6 +82,12 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jcl</artifactId>
 		</dependency>
+		
+		<!-- Dépendance vers Apache Commons validator -->
+		<dependency>
+		    <groupId>commons-validator</groupId>
+		    <artifactId>commons-validator</artifactId>
+		</dependency>
 
 		<!-- Bibliothèque de tests unitaires utile uniquement pour la phase de 
 			test -->

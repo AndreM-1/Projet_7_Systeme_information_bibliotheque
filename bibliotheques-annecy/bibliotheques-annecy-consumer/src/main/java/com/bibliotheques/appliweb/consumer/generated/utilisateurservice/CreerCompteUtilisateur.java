@@ -24,6 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="adresseMail" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="motDePasse" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="confirmationMotDePasse" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="conditionsUtilisation" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -39,7 +41,9 @@ import javax.xml.bind.annotation.XmlType;
     "prenom",
     "pseudo",
     "adresseMail",
-    "motDePasse"
+    "motDePasse",
+    "confirmationMotDePasse",
+    "conditionsUtilisation"
 })
 @XmlRootElement(name = "creerCompteUtilisateur")
 public class CreerCompteUtilisateur {
@@ -56,6 +60,9 @@ public class CreerCompteUtilisateur {
     protected String adresseMail;
     @XmlElement(required = true)
     protected String motDePasse;
+    @XmlElement(required = true)
+    protected String confirmationMotDePasse;
+    protected boolean conditionsUtilisation;
 
     /**
      * Obtient la valeur de la propriété civilite.
@@ -199,6 +206,46 @@ public class CreerCompteUtilisateur {
      */
     public void setMotDePasse(String value) {
         this.motDePasse = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété confirmationMotDePasse.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getConfirmationMotDePasse() {
+        return confirmationMotDePasse;
+    }
+
+    /**
+     * Définit la valeur de la propriété confirmationMotDePasse.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setConfirmationMotDePasse(String value) {
+        this.confirmationMotDePasse = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété conditionsUtilisation.
+     * 
+     */
+    public boolean isConditionsUtilisation() {
+        return conditionsUtilisation;
+    }
+
+    /**
+     * Définit la valeur de la propriété conditionsUtilisation.
+     * 
+     */
+    public void setConditionsUtilisation(boolean value) {
+        this.conditionsUtilisation = value;
     }
 
 }

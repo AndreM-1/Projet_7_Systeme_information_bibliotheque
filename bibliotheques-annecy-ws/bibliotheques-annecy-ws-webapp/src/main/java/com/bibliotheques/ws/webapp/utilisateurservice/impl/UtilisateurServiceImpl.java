@@ -8,9 +8,11 @@ import org.apache.logging.log4j.Logger;
 
 import com.bibliotheques.ws.business.contract.ManagerFactory;
 import com.bibliotheques.ws.model.bean.utilisateur.Utilisateur;
+import com.bibliotheques.ws.model.exception.FunctionalException;
 import com.bibliotheques.ws.model.exception.NotFoundException;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.AuthentifierUtilisateurFault;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.AuthentifierUtilisateurFault_Exception;
+import com.bibliotheques.ws.webapp.utilisateurservice.generated.CreerCompteUtilisateurFault;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.CreerCompteUtilisateurFault_Exception;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.UpdateCoordUtilisateurFault_Exception;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.UpdateMdpUtilisateurFault_Exception;
@@ -30,6 +32,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Override
 	public Utilisateur authentifierUtilisateur(String adresseMail, String motDePasse)
 			throws AuthentifierUtilisateurFault_Exception {
+		
 		LOGGER.info("Web service - Méthode authentifierUtilisateur()");
 		LOGGER.info("Adresse mail :"+adresseMail);
 		LOGGER.info("Mot de Passe :"+motDePasse);
@@ -52,12 +55,38 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		return utilisateur;
 	}
 
-
 	@Override
 	public Utilisateur creerCompteUtilisateur(String civilite, String nom, String prenom, String pseudo,
-			String adresseMail, String motDePasse) throws CreerCompteUtilisateurFault_Exception {
-		// TODO Auto-generated method stub
-		return null;
+			String adresseMail, String motDePasse, String confirmationMotDePasse, boolean conditionsUtilisation)
+					throws CreerCompteUtilisateurFault_Exception {
+		
+		LOGGER.info("Web service - creerCompteUtilisateur()");
+
+		try {
+			managerFactory.getUtilisateurManager().insertUtilisateur(civilite,nom,prenom,pseudo,adresseMail,motDePasse,confirmationMotDePasse,conditionsUtilisation);
+
+		} catch (FunctionalException vFex) {
+			LOGGER.info(vFex.getMessage());
+			CreerCompteUtilisateurFault creerCompteUtilisateurFault=new CreerCompteUtilisateurFault(); 
+			creerCompteUtilisateurFault.setFaultMessageErreur(vFex.getMessage());
+			
+			if(vFex.getMessage().equals("Veuillez accepter les conditions d'utilisation.")) {
+				throw new CreerCompteUtilisateurFault_Exception(vFex.getMessage(),creerCompteUtilisateurFault);
+			} else if(vFex.getMessage().contains("champ")){
+				throw new CreerCompteUtilisateurFault_Exception("Certains paramètres ne sont pas renseignés correctement.",creerCompteUtilisateurFault);
+			}else if(vFex.getMessage().contains("pseudo")) {
+				throw new CreerCompteUtilisateurFault_Exception(vFex.getMessage(),creerCompteUtilisateurFault);
+			}
+		}
+
+		try {
+			utilisateur=managerFactory.getUtilisateurManager().getUtilisateur(adresseMail,motDePasse);
+			LOGGER.info("Utilisateur id : "+utilisateur.getId());
+		} catch (NotFoundException e) {
+			e.printStackTrace();
+		}
+
+		return utilisateur;
 	}
 
 	@Override
@@ -66,7 +95,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		// TODO Auto-generated method stub
 
 	}
-
 
 	@Override
 	public void updateCoordUtilisateur(Utilisateur utilisateur) throws UpdateCoordUtilisateurFault_Exception {
