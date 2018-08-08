@@ -6,16 +6,23 @@
 <struts>
 	<package name="default" extends="struts-default">
 	
-	<!-- Définition des intercepteurs -->
-	<interceptors>
-		<!-- Définition de l'intercepteur permettant de bloquer l'accès à la page de connexion et à la page de création de compte pour un utilisateur déjà connecté -->
-		<interceptor name="RefusAPC" class="com.bibliotheques.appliweb.webapp.interceptor.RefusAPCInterceptor"/>
-		<interceptor-stack name="RefusAccesPageConnexionStack">
-			<interceptor-ref name="RefusAPC"></interceptor-ref>
-			<interceptor-ref name="defaultStack"></interceptor-ref>
-		</interceptor-stack>
-	</interceptors>
-
+		<!-- Définition des intercepteurs -->
+		<interceptors>
+			<!-- Définition de l'intercepteur permettant de bloquer l'accès à la page de connexion et à la page de création de compte pour un utilisateur déjà connecté -->
+			<interceptor name="RefusAPC" class="com.bibliotheques.appliweb.webapp.interceptor.RefusAPCInterceptor"/>
+			<interceptor-stack name="RefusAccesPageConnexionStack">
+				<interceptor-ref name="RefusAPC"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			
+			<!-- Définition de l'intercepteur permettant de bloquer l'accès à la page de profil et d'emprunt pour un utilisateur non connecté -->
+			<interceptor name="Auth" class="com.bibliotheques.appliweb.webapp.interceptor.AuthInterceptor"></interceptor>
+			<interceptor-stack name="AuthenticatedStack">
+				<interceptor-ref name="Auth"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+	
 		<!-- Action par défaut -->
 		<default-action-ref name="index" />
 
@@ -56,7 +63,24 @@
 			<result name="refus-acces-page-connexion" type="redirectAction">index</result>
 			<result name="input">/jsp/authentification/creationcompte.jsp</result>
 			<result name="success" type="redirectAction">index</result>
-		</action>	
+		</action>
+
+		<!-- Action "page_utilisateur_coord" -->
+		<action name="page_utilisateur_coord" class="com.bibliotheques.appliweb.webapp.action.GestionProfilUtilisateurAction"  method="doUpdateCoord">
+			<interceptor-ref name="AuthenticatedStack" />
+			<result name="refus-acces-page-profil-emprunt" type="redirectAction">connexion</result>
+			<result name="input">/jsp/utilisateur/utilisateurcoord.jsp</result>
+			<result name="success">/jsp/utilisateur/utilisateurcoord.jsp</result>
+		</action>
+
+		<!-- Action "page_utilisateur_mdp" -->
+		<action name="page_utilisateur_mdp" class="com.bibliotheques.appliweb.webapp.action.GestionProfilUtilisateurAction"  method="doUpdateMdp">
+			<interceptor-ref name="AuthenticatedStack" />
+			<result name="refus-acces-page-profil-emprunt" type="redirectAction">connexion</result>
+			<result name="input">/jsp/utilisateur/utilisateurmdp.jsp</result>
+			<result name="success">/jsp/utilisateur/utilisateurmdp.jsp</result>
+			<result name="error">/jsp/erreur.jsp</result>
+		</action>		
 		
 		 <!-- Actions connexion/deconnexion -->
 		<action name="connexion" class="com.bibliotheques.appliweb.webapp.action.GestionConnexionAction" method="doLogin">

@@ -12,12 +12,11 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
  */
 public class RefusAPCInterceptor extends AbstractInterceptor {
 
-
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1335959011697441679L;
+	
 	//Définition du LOGGER
 	private static final Logger LOGGER=(Logger) LogManager.getLogger(RefusAPCInterceptor.class);
 

@@ -7,6 +7,13 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.bibliotheques.ws.model.bean.edition.Auteur;
 
+
+/**
+ * Classe de type RowMapper permettant de mapper des
+ * lignes de résultats (du resultSet en BDD) en objet
+ * de type {@link Auteur}
+ * @author André Monnier
+ */
 public class AuteurRM implements RowMapper<Auteur>{
 
 	@Override

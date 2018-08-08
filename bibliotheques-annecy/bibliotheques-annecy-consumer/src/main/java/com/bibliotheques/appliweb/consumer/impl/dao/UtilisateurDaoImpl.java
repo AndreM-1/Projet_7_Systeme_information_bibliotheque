@@ -1,6 +1,7 @@
 package com.bibliotheques.appliweb.consumer.impl.dao;
 
 import javax.inject.Named;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,6 +9,8 @@ import org.apache.logging.log4j.Logger;
 import com.bibliotheques.appliweb.consumer.contract.dao.UtilisateurDao;
 import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.AuthentifierUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.CreerCompteUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateCoordUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateMdpUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.model.bean.utilisateur.Utilisateur;
 
 @Named
@@ -43,5 +46,32 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 		}
 		LOGGER.info("Réponse du web service : "+utilisateur);
 		return utilisateur;
+	}
+	
+	@Override
+	public void updateCoordUtilisateur(int id, String civilite, String nom, String prenom, String pseudo,
+			String adresseMail, String telephone, XMLGregorianCalendar dateNaissance, String adresse, String codePostal,
+			String ville, String pays) throws UpdateCoordUtilisateurFault_Exception{
+		LOGGER.info("Couche Consumer - Méthode updateCoordUtilisateur()");
+		
+		try {
+			getUtilisateurService().updateCoordUtilisateur(id, civilite, nom, prenom, pseudo, adresseMail, telephone, dateNaissance, adresse, codePostal, ville, pays);
+		} catch (UpdateCoordUtilisateurFault_Exception e) {
+			LOGGER.info(e.getMessage());
+			throw new UpdateCoordUtilisateurFault_Exception(e.getMessage());
+		}
+	}
+	
+	@Override
+	public void updateMdpUtilisateur(int id, String ancienMotDePasse, String nouveauMotDePasse, String confirmationNouveauMotDePasse) 
+			throws UpdateMdpUtilisateurFault_Exception{
+		LOGGER.info("Couche Consumer - Méthode updateMdpUtilisateur()");
+		
+		try {
+			getUtilisateurService().updateMdpUtilisateur(id, ancienMotDePasse, nouveauMotDePasse, confirmationNouveauMotDePasse);
+		} catch (UpdateMdpUtilisateurFault_Exception e) {
+			LOGGER.info(e.getMessage());
+			throw new UpdateMdpUtilisateurFault_Exception (e.getMessage());
+		}
 	}
 }

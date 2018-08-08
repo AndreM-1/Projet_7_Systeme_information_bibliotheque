@@ -7,6 +7,11 @@ import com.bibliotheques.ws.consumer.contract.dao.OuvrageDao;
 import com.bibliotheques.ws.consumer.contract.dao.PhotoDao;
 import com.bibliotheques.ws.consumer.contract.dao.UtilisateurDao;
 
+
+/**
+ * Factory des DAO
+ * @author André Monnier
+ */
 public interface DaoFactory {
 
 	void setEditionDao(EditionDao editionDao);

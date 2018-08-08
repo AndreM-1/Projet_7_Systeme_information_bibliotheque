@@ -103,6 +103,43 @@ section{
 	box-shadow: 0px 4px 4px #1c1a19;
 }
 
+#navProfilUtilisateur ul{
+	margin-top:25px;
+	list-style-type:none;
+	display:flex;
+	border-bottom: 1px solid grey;
+	padding-left:0px;
+}
+
+
+#navProfilUtilisateur li{
+	margin-right:30px;
+}
+
+
+#navProfilUtilisateur a{
+	font-size: 1.5em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+#navProfilUtilisateur a:hover{
+	color: #181818;
+    border-bottom: 4px solid #181818;
+}
+
+#formUtilisateurCoord,#formUtilisateurMdp{
+	margin-bottom:10px;
+}
+
+
+#mescoordonnees, #monmotdepasse{
+	border-bottom: 4px solid #181818;	
+}
+
+
+
 footer{
 	margin-bottom:5px;
 }

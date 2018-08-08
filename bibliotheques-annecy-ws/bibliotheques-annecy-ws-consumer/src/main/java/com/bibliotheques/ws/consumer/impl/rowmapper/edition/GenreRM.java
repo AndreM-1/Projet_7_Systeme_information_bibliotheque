@@ -7,6 +7,12 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.bibliotheques.ws.model.bean.edition.Genre;
 
+/**
+ * Classe de type RowMapper permettant de mapper des
+ * lignes de résultats (du resultSet en BDD) en objet
+ * de type {@link Genre}
+ * @author André Monnier
+ */
 public class GenreRM implements RowMapper<Genre> {
 
 	@Override

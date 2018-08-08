@@ -61,7 +61,40 @@
       	<xsd:complexType>
       		<xsd:sequence>
 
-      			<xsd:element name="utilisateur" type="Q1:Utilisateur" minOccurs="1" maxOccurs="1"></xsd:element>
+      			<xsd:element name="id" type="xsd:int" minOccurs="1"
+      				maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="civilite" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="nom" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="prenom" type="xsd:string"
+      				maxOccurs="1" minOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="pseudo" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="adresseMail" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="telephone" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="dateNaissance" type="xsd:date"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="adresse" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="codePostal" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="ville" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="pays" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>
@@ -73,13 +106,16 @@
       	<xsd:complexType>
       		<xsd:sequence>
 
-      			<xsd:element name="ancienMdp" type="xsd:string"
+                        <xsd:element name="id" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+                        <xsd:element name="ancienMdp" type="xsd:string"
       				minOccurs="1" maxOccurs="1">
       			</xsd:element>
       			<xsd:element name="nouveauMdp" type="xsd:string"
       				minOccurs="1" maxOccurs="1">
       			</xsd:element>
-      			<xsd:element name="confirmationNouveauMdp" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      			<xsd:element name="confirmationNouveauMdp"
+      				type="xsd:string" minOccurs="1" maxOccurs="1">
+      			</xsd:element>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>

@@ -1,6 +1,7 @@
 package com.bibliotheques.appliweb.business.impl.manager;
 
 import javax.inject.Named;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,7 +9,10 @@ import org.apache.logging.log4j.Logger;
 import com.bibliotheques.appliweb.business.contract.manager.UtilisateurManager;
 import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.AuthentifierUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.CreerCompteUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateCoordUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateMdpUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.model.bean.utilisateur.Utilisateur;
+
 
 @Named
 public class UtilisateurManagerImpl extends AbstractManager implements UtilisateurManager{
@@ -44,5 +48,33 @@ public class UtilisateurManagerImpl extends AbstractManager implements Utilisate
 		}
 		
 		return utilisateur;
+	}
+	
+	@Override
+	public void updateCoordUtilisateur(int id, String civilite, String nom, String prenom, String pseudo,
+			String adresseMail, String telephone, XMLGregorianCalendar dateNaissance, String adresse, String codePostal,
+			String ville, String pays) throws UpdateCoordUtilisateurFault_Exception{
+		LOGGER.info("Couche Business - Méthode updateCoordUtilisateur()");
+		
+		try {
+			getDaoFactory().getUtilisateurDao().updateCoordUtilisateur(id, civilite, nom, prenom, pseudo, adresseMail, telephone, dateNaissance, adresse, codePostal,
+					ville, pays);
+		} catch (UpdateCoordUtilisateurFault_Exception e) {
+			LOGGER.info(e.getMessage());
+			throw new UpdateCoordUtilisateurFault_Exception(e.getMessage());
+		}
+	}
+	
+	@Override
+	public void updateMdpUtilisateur(int id, String ancienMotDePasse, String nouveauMotDePasse, String confirmationNouveauMotDePasse) 
+			throws UpdateMdpUtilisateurFault_Exception{
+		LOGGER.info("Couche Business - Méthode updateMdpUtilisateur()");
+		
+		try {
+			getDaoFactory().getUtilisateurDao().updateMdpUtilisateur(id, ancienMotDePasse, nouveauMotDePasse, confirmationNouveauMotDePasse);
+		} catch (UpdateMdpUtilisateurFault_Exception e) {
+			LOGGER.info(e.getMessage());
+			throw new UpdateMdpUtilisateurFault_Exception (e.getMessage());
+		}
 	}
 }

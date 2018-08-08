@@ -32,9 +32,9 @@
 					<li>
 						<a class="btn btn-primary boutonConnexion dropdown-toggle" data-toggle="dropdown"><s:property value="#session.user.pseudo"/></a>
 						<ul class="dropdown-menu">
-							<li><s:a action="">Mes coordonnées</s:a></li>
+							<li><s:a action="page_utilisateur_coord">Mes coordonnées</s:a></li>
 							<li class="divider"></li>
-							<li><s:a action="">Mon mot de passe</s:a></li>
+							<li><s:a action="page_utilisateur_mdp">Mon mot de passe</s:a></li>
 							<li class="divider"></li>
 							<li><s:a action="">Gestion des prêts</s:a></li>
 							<li class="divider"></li>

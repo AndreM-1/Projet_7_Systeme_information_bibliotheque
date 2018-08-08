@@ -13,7 +13,11 @@ import javax.xml.ws.WebFault;
 @WebFault(name = "creerCompteUtilisateurFault", targetNamespace = "http://www.example.org/UtilisateurService/")
 public class CreerCompteUtilisateurFault_Exception extends Exception {
 
-    private CreerCompteUtilisateurFault creerCompteUtilisateurFault;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7987346686588436790L;
+	private CreerCompteUtilisateurFault creerCompteUtilisateurFault;
 
     public CreerCompteUtilisateurFault_Exception() {
         super();

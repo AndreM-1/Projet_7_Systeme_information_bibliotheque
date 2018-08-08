@@ -13,7 +13,11 @@ import javax.xml.ws.WebFault;
 @WebFault(name = "authentifierUtilisateurFault", targetNamespace = "http://www.example.org/UtilisateurService/")
 public class AuthentifierUtilisateurFault_Exception extends Exception {
 
-    private AuthentifierUtilisateurFault authentifierUtilisateurFault;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1517495871781095853L;
+	private AuthentifierUtilisateurFault authentifierUtilisateurFault;
 
     public AuthentifierUtilisateurFault_Exception() {
         super();

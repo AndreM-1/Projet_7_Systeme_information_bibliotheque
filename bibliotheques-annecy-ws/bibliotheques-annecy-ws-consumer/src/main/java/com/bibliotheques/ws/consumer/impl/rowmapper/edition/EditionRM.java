@@ -18,6 +18,12 @@ import com.bibliotheques.ws.consumer.contract.dao.OuvrageDao;
 import com.bibliotheques.ws.consumer.contract.dao.PhotoDao;
 import com.bibliotheques.ws.model.bean.edition.Edition;
 
+/**
+ * Classe de type RowMapper permettant de mapper des
+ * lignes de résultats (du resultSet en BDD) en objet
+ * de type {@link Edition}
+ * @author André Monnier
+ */
 public class EditionRM implements RowMapper<Edition>{
 	
 	private OuvrageDao ouvrageDao;
@@ -47,6 +53,7 @@ public class EditionRM implements RowMapper<Edition>{
         XMLGregorianCalendar xmlCalendar = null;
         try {
             xmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(gCalendar);
+            LOGGER.info("Web Service : EditionService -Edition RM - xmlCalendar :"+xmlCalendar);
             vEdition.setDateParution(xmlCalendar);
         } catch (DatatypeConfigurationException ex) {
             LOGGER.info("Problème de conversion du format Date en format XMLGregorianCalendar");

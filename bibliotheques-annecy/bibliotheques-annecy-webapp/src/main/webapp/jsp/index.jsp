@@ -30,8 +30,6 @@
 						</div>
 					</s:iterator>
 				</div>
-				
-			
 			</section>
 		
 			<!-- Footer -->

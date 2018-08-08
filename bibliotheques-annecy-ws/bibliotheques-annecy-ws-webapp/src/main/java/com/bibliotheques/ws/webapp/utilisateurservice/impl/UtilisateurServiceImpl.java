@@ -1,6 +1,7 @@
 package com.bibliotheques.ws.webapp.utilisateurservice.impl;
 
 import javax.inject.Inject;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,9 @@ import com.bibliotheques.ws.webapp.utilisateurservice.generated.AuthentifierUtil
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.AuthentifierUtilisateurFault_Exception;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.CreerCompteUtilisateurFault;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.CreerCompteUtilisateurFault_Exception;
+import com.bibliotheques.ws.webapp.utilisateurservice.generated.UpdateCoordUtilisateurFault;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.UpdateCoordUtilisateurFault_Exception;
+import com.bibliotheques.ws.webapp.utilisateurservice.generated.UpdateMdpUtilisateurFault;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.UpdateMdpUtilisateurFault_Exception;
 import com.bibliotheques.ws.webapp.utilisateurservice.generated.UtilisateurService;
 
@@ -90,16 +93,50 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	}
 
 	@Override
-	public void updateMdpUtilisateur(String ancienMdp, String nouveauMdp, String confirmationNouveauMdp)
-			throws UpdateMdpUtilisateurFault_Exception {
-		// TODO Auto-generated method stub
-
+	public void updateCoordUtilisateur(int id, String civilite, String nom, String prenom, String pseudo,
+			String adresseMail, String telephone, XMLGregorianCalendar dateNaissance, String adresse, String codePostal,
+			String ville, String pays) throws UpdateCoordUtilisateurFault_Exception {
+		
+		LOGGER.info("Web service - updateCoordUtilisateur()");
+		
+		try {
+			managerFactory.getUtilisateurManager().updateCoordUtilisateur(id, civilite, nom, prenom, pseudo,
+					adresseMail, telephone, dateNaissance, adresse, codePostal, ville, pays);
+		} catch (FunctionalException vFex) {
+			LOGGER.info(vFex.getMessage());
+			UpdateCoordUtilisateurFault updateCoordUtilisateurFault=new UpdateCoordUtilisateurFault();
+			updateCoordUtilisateurFault.setFaultMessageErreur(vFex.getMessage());
+			
+			if(vFex.getMessage().contains("champ")) {
+				throw new UpdateCoordUtilisateurFault_Exception("Certains paramètres ne sont pas renseignés correctement.",updateCoordUtilisateurFault);
+			}else if(vFex.getMessage().contains("pseudo")) {
+				throw new UpdateCoordUtilisateurFault_Exception(vFex.getMessage(),updateCoordUtilisateurFault);
+			}
+		}
 	}
-
+	
 	@Override
-	public void updateCoordUtilisateur(Utilisateur utilisateur) throws UpdateCoordUtilisateurFault_Exception {
-		// TODO Auto-generated method stub
-
+	public void updateMdpUtilisateur(int id, String ancienMdp, String nouveauMdp, String confirmationNouveauMdp)
+			throws UpdateMdpUtilisateurFault_Exception {
+		
+		LOGGER.info("Web service - updateMdpUtilisateur()");
+		
+		try {
+			managerFactory.getUtilisateurManager().updateMdpUtilisateur(id, ancienMdp, nouveauMdp, confirmationNouveauMdp);
+		} 
+		
+		catch (NotFoundException vNFEx) {
+			LOGGER.info(vNFEx.getMessage());
+			UpdateMdpUtilisateurFault updateMdpUtilisateurFault=new UpdateMdpUtilisateurFault();
+			updateMdpUtilisateurFault.setFaultMessageErreur(vNFEx.getMessage());
+			throw new UpdateMdpUtilisateurFault_Exception(vNFEx.getMessage(),updateMdpUtilisateurFault);
+		}
+		
+		catch (FunctionalException vFEx) {
+			LOGGER.info(vFEx.getMessage());
+			UpdateMdpUtilisateurFault updateMdpUtilisateurFault=new UpdateMdpUtilisateurFault();
+			updateMdpUtilisateurFault.setFaultMessageErreur(vFEx.getMessage());
+			throw new UpdateMdpUtilisateurFault_Exception(vFEx.getMessage(),updateMdpUtilisateurFault);
+		}
 	}
-
 }

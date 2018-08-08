@@ -135,9 +135,9 @@ public class GestionCreationCompteAction extends ActionSupport implements Sessio
 		LOGGER.info("Conditions d'Utilisation :"+conditionsUtilisation);
 
 		//Si les champs ci-dessous sont null, c'est que l'on entre dans le formulaire de création de compte utilisateur.
-		// Sinon, c'est que l'on vient de valider le formulaire de création de compte.
+		//Sinon, c'est que l'on vient de valider le formulaire de création de compte.
 		//Par défaut, le result est "input".
-		if(civilite==null && nom==null && prenom==null && adresseMail==null && motDePasse==null && confirmationMotDePasse==null && conditionsUtilisation==false) {
+		if(civilite==null && nom==null && prenom==null && pseudo==null &&adresseMail==null && motDePasse==null && confirmationMotDePasse==null && conditionsUtilisation==false) {
 			vResult = ActionSupport.INPUT;
 		}else {
 			try {
