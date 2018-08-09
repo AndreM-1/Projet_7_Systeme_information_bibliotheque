@@ -3,6 +3,11 @@ package com.bibliotheques.appliweb.consumer.generated.utilisateurservice;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
+import com.bibliotheques.appliweb.model.exception.AuthentifierUtilisateurFault;
+import com.bibliotheques.appliweb.model.exception.CreerCompteUtilisateurFault;
+import com.bibliotheques.appliweb.model.exception.UpdateCoordUtilisateurFault;
+import com.bibliotheques.appliweb.model.exception.UpdateMdpUtilisateurFault;
+
 
 /**
  * This object contains factory methods for each 

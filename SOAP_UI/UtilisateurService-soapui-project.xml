@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="1b737e73-ce62-4b23-9bc8-acdb86d48c90" activeEnvironment="Default" name="UtilisateurService" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="85a53440-63f7-4ac1-8272-f3cd5ac7497c" wsaVersion="NONE" name="UtilisateurServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/UtilisateurService/}UtilisateurServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint></con:endpoints><con:operation id="464b5c41-4887-4b9a-abb2-73e8d1bde9b7" isOneWay="false" action="" name="authentifierUtilisateur" bindingOperationName="authentifierUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7981570-9fa2-4911-89a5-d57390e77fec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+<con:soapui-project id="1b737e73-ce62-4b23-9bc8-acdb86d48c90" activeEnvironment="Default" name="UtilisateurService" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="85a53440-63f7-4ac1-8272-f3cd5ac7497c" wsaVersion="NONE" name="UtilisateurServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/UtilisateurService/}UtilisateurServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint></con:endpoints><con:operation id="464b5c41-4887-4b9a-abb2-73e8d1bde9b7" isOneWay="false" action="" name="authentifierUtilisateur" bindingOperationName="authentifierUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7981570-9fa2-4911-89a5-d57390e77fec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:authentifierUtilisateur>\r
@@ -415,14 +415,14 @@
          <civilite>Monsieur</civilite>\r
          <nom>Gallet</nom>\r
          <prenom>Romuald</prenom>\r
-         <pseudo>André M.</pseudo>\r
+         <pseudo>Romu G.</pseudo>\r
          <adresseMail>romuald.gallet@yahoo.fr</adresseMail>\r
-         <telephone>06-85-96-55-90</telephone>\r
-         <dateNaissance>1980-10-20</dateNaissance>\r
+         <telephone>07-85-96-55-90</telephone>\r
+         <dateNaissance></dateNaissance>\r
          <adresse></adresse>\r
-         <codePostal>74007</codePostal>\r
-         <ville>Grenoble</ville>\r
-         <pays>france</pays>\r
+         <codePostal></codePostal>\r
+         <ville>Le Mans</ville>\r
+         <pays>France</pays>\r
       </util:updateCoordUtilisateur>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateCoordUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e8e71dcd-5e39-4562-b585-69d01c76a15f" isOneWay="false" action="" name="updateMdpUtilisateur" bindingOperationName="updateMdpUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="62b79591-d39e-48da-9804-b7755b8db94e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
@@ -435,4 +435,4 @@
          <confirmationNouveauMdp>GEsc@L@Dais?</confirmationNouveauMdp>\r
       </util:updateMdpUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateMdpUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateMdpUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

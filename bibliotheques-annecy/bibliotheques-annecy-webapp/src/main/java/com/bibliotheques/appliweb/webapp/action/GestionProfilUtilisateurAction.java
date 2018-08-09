@@ -10,9 +10,9 @@ import org.apache.logging.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.bibliotheques.appliweb.business.contract.ManagerFactory;
-import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateCoordUtilisateurFault_Exception;
-import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateMdpUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.model.bean.utilisateur.Utilisateur;
+import com.bibliotheques.appliweb.model.exception.UpdateCoordUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.model.exception.UpdateMdpUtilisateurFault_Exception;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

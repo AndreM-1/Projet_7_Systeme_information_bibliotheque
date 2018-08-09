@@ -1,5 +1,5 @@
 
-package com.bibliotheques.appliweb.consumer.generated.utilisateurservice;
+package com.bibliotheques.appliweb.model.exception;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,8 +31,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "faultMessageErreur"
 })
-@XmlRootElement(name = "updateMdpUtilisateurFault")
-public class UpdateMdpUtilisateurFault {
+@XmlRootElement(name = "authentifierUtilisateurFault")
+public class AuthentifierUtilisateurFault {
 
     @XmlElement(required = true)
     protected String faultMessageErreur;

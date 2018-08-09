@@ -11,8 +11,8 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.bibliotheques.appliweb.business.contract.ManagerFactory;
-import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.AuthentifierUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.model.bean.utilisateur.Utilisateur;
+import com.bibliotheques.appliweb.model.exception.AuthentifierUtilisateurFault_Exception;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

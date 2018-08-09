@@ -7,11 +7,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.bibliotheques.appliweb.business.contract.manager.UtilisateurManager;
-import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.AuthentifierUtilisateurFault_Exception;
-import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.CreerCompteUtilisateurFault_Exception;
-import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateCoordUtilisateurFault_Exception;
-import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UpdateMdpUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.model.bean.utilisateur.Utilisateur;
+import com.bibliotheques.appliweb.model.exception.AuthentifierUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.model.exception.CreerCompteUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.model.exception.UpdateCoordUtilisateurFault_Exception;
+import com.bibliotheques.appliweb.model.exception.UpdateMdpUtilisateurFault_Exception;
 
 
 @Named

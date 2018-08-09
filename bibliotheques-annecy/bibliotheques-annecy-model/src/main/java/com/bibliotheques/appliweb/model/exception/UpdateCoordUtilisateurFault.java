@@ -1,5 +1,5 @@
 
-package com.bibliotheques.appliweb.consumer.generated.utilisateurservice;
+package com.bibliotheques.appliweb.model.exception;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
