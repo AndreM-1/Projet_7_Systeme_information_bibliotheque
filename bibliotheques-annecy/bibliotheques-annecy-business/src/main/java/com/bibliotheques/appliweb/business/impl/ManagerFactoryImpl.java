@@ -5,6 +5,7 @@ import javax.inject.Named;
 
 import com.bibliotheques.appliweb.business.contract.ManagerFactory;
 import com.bibliotheques.appliweb.business.contract.manager.EditionManager;
+import com.bibliotheques.appliweb.business.contract.manager.ExemplaireManager;
 import com.bibliotheques.appliweb.business.contract.manager.UtilisateurManager;
 
 
@@ -19,6 +20,9 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	
 	@Inject
 	private UtilisateurManager utilisateurManager;
+	
+	@Inject
+	private ExemplaireManager exemplaireManager;
 
 	@Override
 	public EditionManager getEditionManager() {
@@ -39,5 +43,14 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	public void setUtilisateurManager(UtilisateurManager utilisateurManager) {
 		this.utilisateurManager = utilisateurManager;
 	}
-	
+
+	@Override
+	public ExemplaireManager getExemplaireManager() {
+		return exemplaireManager;
+	}
+
+	@Override
+	public void setExemplaireManager(ExemplaireManager exemplaireManager) {
+		this.exemplaireManager = exemplaireManager;
+	}
 }

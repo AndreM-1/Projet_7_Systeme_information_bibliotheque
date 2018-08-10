@@ -3,6 +3,8 @@ package com.bibliotheques.appliweb.consumer.generated.editionservice;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
+import com.bibliotheques.appliweb.model.exception.GetListExemplaireFault;
+
 
 /**
  * This object contains factory methods for each 
@@ -43,6 +45,30 @@ public class ObjectFactory {
      */
     public GetListEditionResponse createGetListEditionResponse() {
         return new GetListEditionResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetListExemplaire }
+     * 
+     */
+    public GetListExemplaire createGetListExemplaire() {
+        return new GetListExemplaire();
+    }
+
+    /**
+     * Create an instance of {@link GetListExemplaireResponse }
+     * 
+     */
+    public GetListExemplaireResponse createGetListExemplaireResponse() {
+        return new GetListExemplaireResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetListExemplaireFault }
+     * 
+     */
+    public GetListExemplaireFault createGetListExemplaireFault() {
+        return new GetListExemplaireFault();
     }
 
 }

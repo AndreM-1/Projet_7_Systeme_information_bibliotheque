@@ -45,4 +45,28 @@ public class ObjectFactory {
         return new GetListEditionResponse();
     }
 
+    /**
+     * Create an instance of {@link GetListExemplaire }
+     * 
+     */
+    public GetListExemplaire createGetListExemplaire() {
+        return new GetListExemplaire();
+    }
+
+    /**
+     * Create an instance of {@link GetListExemplaireResponse }
+     * 
+     */
+    public GetListExemplaireResponse createGetListExemplaireResponse() {
+        return new GetListExemplaireResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetListExemplaireFault }
+     * 
+     */
+    public GetListExemplaireFault createGetListExemplaireFault() {
+        return new GetListExemplaireFault();
+    }
+
 }

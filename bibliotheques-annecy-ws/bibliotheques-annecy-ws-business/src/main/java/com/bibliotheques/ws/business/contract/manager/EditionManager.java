@@ -17,4 +17,5 @@ public interface EditionManager {
 	 * @return List
 	 */
 	List<Edition> getListEdition(int nbEdition);
+
 }

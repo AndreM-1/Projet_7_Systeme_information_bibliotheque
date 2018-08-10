@@ -1,6 +1,7 @@
 package com.bibliotheques.appliweb.consumer.contract;
 
 import com.bibliotheques.appliweb.consumer.contract.dao.EditionDao;
+import com.bibliotheques.appliweb.consumer.contract.dao.ExemplaireDao;
 import com.bibliotheques.appliweb.consumer.contract.dao.UtilisateurDao;
 
 /**
@@ -16,4 +17,8 @@ public interface DaoFactory {
 	void setUtilisateurDao(UtilisateurDao utilisateurDao);
 
 	UtilisateurDao getUtilisateurDao();
+
+	void setExemplaireDao(ExemplaireDao exemplaireDao);
+
+	ExemplaireDao getExemplaireDao();
 }

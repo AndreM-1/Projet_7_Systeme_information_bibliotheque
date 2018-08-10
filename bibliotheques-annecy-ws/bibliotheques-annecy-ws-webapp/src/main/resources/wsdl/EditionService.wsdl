@@ -18,8 +18,35 @@
           	<xsd:element name="edition" type="Q1:Edition" minOccurs="1" maxOccurs="unbounded"></xsd:element>
           </xsd:sequence>
         </xsd:complexType>
-      </xsd:element>
-        </xsd:schema>
+      </xsd:element>
+
+      <xsd:element name="getListExemplaire">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="editionId" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListExemplaireResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="exemplaire" type="Q1:Exemplaire" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListExemplaireFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="faultMessageErreur"
+      				type="xsd:string" minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
   </wsdl:types>
   <wsdl:message name="getListEditionRequest">
     <wsdl:part element="tns:getListEdition" name="parameters"/>
@@ -27,16 +54,39 @@
   <wsdl:message name="getListEditionResponse">
     <wsdl:part element="tns:getListEditionResponse" name="parameters"/>
   </wsdl:message>
+  <wsdl:message name="getListExemplaireRequest">
+  	<wsdl:part name="parameters" element="tns:getListExemplaire"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListExemplaireResponse">
+  	<wsdl:part name="parameters" element="tns:getListExemplaireResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListExemplaireFault">
+  	<wsdl:part name="parameters" element="tns:getListExemplaireFault"></wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="EditionService">
     <wsdl:operation name="getListEdition">
       <wsdl:input message="tns:getListEditionRequest"/>
       <wsdl:output message="tns:getListEditionResponse"/>
+        </wsdl:operation>
+    <wsdl:operation name="getListExemplaire">
+    	<wsdl:input message="tns:getListExemplaireRequest"></wsdl:input>
+    	<wsdl:output message="tns:getListExemplaireResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:getListExemplaireFault"></wsdl:fault>
         </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
   	<soap:binding style="document"
   		transport="http://schemas.xmlsoap.org/soap/http" />
   	<wsdl:operation name="getListEdition">
+  		<soap:operation soapAction="" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getListExemplaire">
   		<soap:operation
   			soapAction="" />
   		<wsdl:input>
@@ -45,6 +95,9 @@
   		<wsdl:output>
   			<soap:body use="literal" />
   		</wsdl:output>
+  		<wsdl:fault name="fault">
+  			<soap:fault use="literal" name="fault" />
+  		</wsdl:fault>
   	</wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="EditionService">

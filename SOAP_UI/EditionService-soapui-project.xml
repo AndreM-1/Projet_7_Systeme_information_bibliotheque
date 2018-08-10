@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="02bc0aae-d4b3-4103-b5b6-803e180aacff" activeEnvironment="Default" name="EditionService" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3da242c4-a3b3-4698-ba60-c0a55c9a0aca" wsaVersion="NONE" name="EditionServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="fdd1eb43-7d73-4d42-9caf-030737cedd27" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ab940f7-40af-4bdf-b06a-ddcd7a382735" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:getListEdition>\r
+         <nbEdition>?</nbEdition>\r
+      </edit:getListEdition>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="e7be8bc2-7b4c-4c79-84a2-241b09425f0a" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="526bc799-938f-47da-8852-d641616e6892" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:getListExemplaire>\r
+         <editionId>?</editionId>\r
+      </edit:getListExemplaire>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3092f0f8-8f73-44ea-82fd-d47e2dc77b0e" wsaVersion="NONE" name="EditionServiceSOAP" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl"><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="EditionService" targetNamespace="http://www.example.org/EditionService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/EditionService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/EditionService/" xmlns:Q1="http://www.example.org/beans">
+      <xsd:import namespace="http://www.example.org/beans" schemaLocation="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?xsd=../beans.xsd"/>
+      <xsd:element name="getListEdition">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="nbEdition" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListEditionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="edition" type="Q1:Edition"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListExemplaire">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="editionId" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListExemplaireResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="exemplaire" type="Q1:Exemplaire"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListExemplaireFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="faultMessageErreur" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getListExemplaireRequest">
+    <wsdl:part element="tns:getListExemplaire" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListExemplaireResponse">
+    <wsdl:part element="tns:getListExemplaireResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListEditionRequest">
+    <wsdl:part element="tns:getListEdition" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListEditionResponse">
+    <wsdl:part element="tns:getListEditionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListExemplaireFault">
+    <wsdl:part element="tns:getListExemplaireFault" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EditionService">
+    <wsdl:operation name="getListEdition">
+      <wsdl:input message="tns:getListEditionRequest"></wsdl:input>
+      <wsdl:output message="tns:getListEditionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListExemplaire">
+      <wsdl:input message="tns:getListExemplaireRequest"></wsdl:input>
+      <wsdl:output message="tns:getListExemplaireResponse"></wsdl:output>
+      <wsdl:fault message="tns:getListExemplaireFault" name="fault"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EditionServiceSoapBinding" type="tns:EditionService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getListEdition">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListExemplaire">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getListEdition">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListExemplaire">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EditionService">
+    <wsdl:port binding="tns:EditionServiceSOAP" name="EditionServiceSOAP">
+      <soap:address location="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:service name="EditionServiceService">
+    <wsdl:port binding="tns:EditionServiceSoapBinding" name="EditionServicePort">
+      <soap:address location="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?xsd=../beans.xsd</con:url><con:content><![CDATA[<schema elementFormDefault="qualified" targetNamespace="http://www.example.org/beans" xmlns:tns="http://www.example.org/beans" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="Edition">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="isbn" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="dateParution" type="date"></element>
+      <element maxOccurs="1" minOccurs="1" name="nbPages" type="int"></element>
+      <element maxOccurs="1" minOccurs="1" name="format" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="ouvrage" type="tns:Ouvrage"></element>
+      <element maxOccurs="1" minOccurs="1" name="photo" type="tns:Photo"></element>
+      <element maxOccurs="1" minOccurs="1" name="editeur" type="tns:Editeur"></element>
+      <element maxOccurs="1" minOccurs="1" name="genre" type="tns:Genre"></element>
+    </sequence>
+  </complexType>
+  <complexType name="Editeur">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="nomEditeur" type="string"></element>
+    </sequence>
+  </complexType>
+  <complexType name="Photo">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="nomPhoto" type="string"></element>
+    </sequence>
+  </complexType>
+  <complexType name="Ouvrage">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="titre" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="resume" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="auteur" type="tns:Auteur"></element>
+    </sequence>
+  </complexType>
+  <complexType name="Auteur">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="nom" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="prenom" type="string"></element>
+    </sequence>
+  </complexType>
+  <complexType name="Genre">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="genre" type="string"/>
+    </sequence>
+  </complexType>
+  <complexType name="Utilisateur">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="civilite" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="nom" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="prenom" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="pseudo" type="string"/>
+      <element maxOccurs="1" minOccurs="1" name="adresseMail" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="salt" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="motDePasseSecurise" type="string"></element>
+      <element maxOccurs="1" minOccurs="0" name="telephone" type="string"></element>
+      <element maxOccurs="1" minOccurs="0" name="dateNaissance" type="date"></element>
+      <element maxOccurs="1" minOccurs="0" name="adresse" type="string"></element>
+      <element maxOccurs="1" minOccurs="0" name="codePostal" type="string"></element>
+      <element maxOccurs="1" minOccurs="0" name="ville" type="string"></element>
+      <element maxOccurs="1" minOccurs="0" name="pays" type="string"></element>
+    </sequence>
+  </complexType>
+  <complexType name="Bibliotheque">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="nomBibliotheque" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="telephone" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="adresse" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="codePostal" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="ville" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="pays" type="string"/>
+    </sequence>
+  </complexType>
+  <complexType name="Exemplaire">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="bibliotheque" type="tns:Bibliotheque"></element>
+      <element maxOccurs="1" minOccurs="1" name="edition" type="tns:Edition"></element>
+      <element maxOccurs="1" minOccurs="1" name="nbExemplaires" type="int"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="c19d6e9c-9fe9-4a98-9a98-2c504b660165" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="857b41cc-f432-4175-a9bf-e953e1e5dfc1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:getListEdition>\r
+         <nbEdition>2</nbEdition>\r
+      </edit:getListEdition>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3f8137fb-c683-4b80-bf4f-87a03ddeed76" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44959436-a078-40f3-9038-01d24cbc0a28" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:getListExemplaire>\r
+         <editionId>1</editionId>\r
+      </edit:getListExemplaire>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

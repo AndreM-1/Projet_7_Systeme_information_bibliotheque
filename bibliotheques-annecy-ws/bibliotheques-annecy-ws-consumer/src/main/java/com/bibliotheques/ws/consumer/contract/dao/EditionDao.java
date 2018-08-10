@@ -17,4 +17,12 @@ public interface EditionDao {
 	 * @return List
 	 */
 	List<Edition> getListEdition(int nbEdition);
+
+	/**
+	 * Méthode permettant de renvoyer un objet de type Edition en fonction de son identifiant.
+	 * @param editionId : L'identifiant de l'édition
+	 * @return Un objet de type {@link Edition}
+	 */
+	Edition getEdition(int editionId);
+
 }

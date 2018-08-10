@@ -124,4 +124,38 @@
     		</element>
     	</sequence>
     </complexType>
+
+    <complexType name="Bibliotheque">
+    	<sequence>
+    		<element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="nomBibliotheque" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="telephone" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="adresse" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="codePostal" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ville" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="pays" type="string" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Exemplaire">
+    	<sequence>
+    		<element name="bibliotheque" type="tns:Bibliotheque"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="edition" type="tns:Edition" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="nbExemplaires" type="int" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
 </schema>

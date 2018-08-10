@@ -14,7 +14,7 @@
 		 	 Annecy</s:a>
 	 	</div>
 	 	
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse navbar-right">
 			<ul class="nav navbar-nav">
 				<li><s:a action="page_generique_qsn">Qui sommes-nous?</s:a></li>
 				<li class="dropdown">

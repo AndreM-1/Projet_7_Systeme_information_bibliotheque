@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="1b737e73-ce62-4b23-9bc8-acdb86d48c90" activeEnvironment="Default" name="UtilisateurService" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="85a53440-63f7-4ac1-8272-f3cd5ac7497c" wsaVersion="NONE" name="UtilisateurServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/UtilisateurService/}UtilisateurServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint></con:endpoints><con:operation id="464b5c41-4887-4b9a-abb2-73e8d1bde9b7" isOneWay="false" action="" name="authentifierUtilisateur" bindingOperationName="authentifierUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7981570-9fa2-4911-89a5-d57390e77fec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+<con:soapui-project id="e115d936-5203-4e17-825b-c4874de54191" activeEnvironment="Default" name="UtilisateurService" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a404de2a-c533-4b82-845c-6939eedc9d7e" wsaVersion="NONE" name="UtilisateurServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/UtilisateurService/}UtilisateurServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint></con:endpoints><con:operation id="ab709ffb-5694-4067-b1ff-32e9891cfc35" isOneWay="false" action="" name="authentifierUtilisateur" bindingOperationName="authentifierUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2c15113b-170c-441c-b901-e4ec32ebf0a5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:authentifierUtilisateur>\r
@@ -7,7 +7,7 @@
          <motDePasse>?</motDePasse>\r
       </util:authentifierUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/authentifierUtilisateurRequest"/></con:call></con:operation><con:operation id="1953a09f-369e-42c6-9826-d6512d8a4b04" isOneWay="false" action="" name="creerCompteUtilisateur" bindingOperationName="creerCompteUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c1aa7a01-28fd-4fb3-b5ba-69e6be6a543a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/authentifierUtilisateurRequest"/></con:call></con:operation><con:operation id="2c6289d5-18c2-483f-9bda-9220a2f5d6d5" isOneWay="false" action="" name="creerCompteUtilisateur" bindingOperationName="creerCompteUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2a9cd70b-359e-4b56-8b00-fcb6b00d9216" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:creerCompteUtilisateur>\r
@@ -21,7 +21,7 @@
          <conditionsUtilisation>?</conditionsUtilisation>\r
       </util:creerCompteUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/creerCompteUtilisateurRequest"/></con:call></con:operation><con:operation id="f8be605d-6aec-439d-8854-7c0ed17b065f" isOneWay="false" action="" name="updateCoordUtilisateur" bindingOperationName="updateCoordUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="769fd2ab-2b2f-48d9-a0c0-81e4502e27da" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/creerCompteUtilisateurRequest"/></con:call></con:operation><con:operation id="186521b5-1395-4119-8ac5-8aeea29eb2f1" isOneWay="false" action="" name="updateCoordUtilisateur" bindingOperationName="updateCoordUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e106896a-06d4-4692-9b92-e2fe09a97639" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:updateCoordUtilisateur>\r
@@ -39,7 +39,7 @@
          <pays>?</pays>\r
       </util:updateCoordUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateCoordUtilisateurRequest"/></con:call></con:operation><con:operation id="a5e5a77b-67fc-4ac5-a5e7-65f3f7f854e3" isOneWay="false" action="" name="updateMdpUtilisateur" bindingOperationName="updateMdpUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="60bef769-0b5b-44a0-a099-d070da95ebe6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateCoordUtilisateurRequest"/></con:call></con:operation><con:operation id="3b98a2ff-f651-410e-a5b3-94663ee60d29" isOneWay="false" action="" name="updateMdpUtilisateur" bindingOperationName="updateMdpUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ec9e97ff-e153-457d-a632-23d0ef5d0e13" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:updateMdpUtilisateur>\r
@@ -49,7 +49,7 @@
          <confirmationNouveauMdp>?</confirmationNouveauMdp>\r
       </util:updateMdpUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateMdpUtilisateurRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="744f403a-07cc-49e2-bb50-69e3cfa08174" wsaVersion="NONE" name="UtilisateurServiceSOAP" type="wsdl" bindingName="{http://www.example.org/UtilisateurService/}UtilisateurServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl"><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="UtilisateurService" targetNamespace="http://www.example.org/UtilisateurService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/UtilisateurService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateMdpUtilisateurRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="ceedd24e-643b-4d72-bf4e-60503468f728" wsaVersion="NONE" name="UtilisateurServiceSOAP" type="wsdl" bindingName="{http://www.example.org/UtilisateurService/}UtilisateurServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl"><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="UtilisateurService" targetNamespace="http://www.example.org/UtilisateurService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/UtilisateurService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.example.org/UtilisateurService/" xmlns:Q1="http://www.example.org/beans">
       <xsd:import namespace="http://www.example.org/beans" schemaLocation="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?xsd=../beans.xsd"/>
@@ -385,15 +385,33 @@
       <element maxOccurs="1" minOccurs="0" name="pays" type="string"></element>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint></con:endpoints><con:operation id="70fa9c2d-8fb7-4720-94d4-e71e59114b5e" isOneWay="false" action="" name="authentifierUtilisateur" bindingOperationName="authentifierUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e3f915f0-0472-4cea-bf73-ac917c96bf68" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+  <complexType name="Bibliotheque">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="id" type="int"/>
+      <element maxOccurs="1" minOccurs="1" name="nomBibliotheque" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="telephone" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="adresse" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="codePostal" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="ville" type="string"></element>
+      <element maxOccurs="1" minOccurs="1" name="pays" type="string"/>
+    </sequence>
+  </complexType>
+  <complexType name="Exemplaire">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="bibliotheque" type="tns:Bibliotheque"></element>
+      <element maxOccurs="1" minOccurs="1" name="edition" type="tns:Edition"></element>
+      <element maxOccurs="1" minOccurs="1" name="nbExemplaires" type="int"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint></con:endpoints><con:operation id="0d36c83b-a9f1-4564-a815-802132017b85" isOneWay="false" action="" name="authentifierUtilisateur" bindingOperationName="authentifierUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="097848fa-71df-4b25-8675-e5553c5bcf8f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:authentifierUtilisateur>\r
-         <adresseMail>romuald.gallet@yahoo.fr</adresseMail>\r
-         <motDePasse>GEsc@L@Dais?</motDePasse>\r
+         <adresseMail>?</adresseMail>\r
+         <motDePasse>?</motDePasse>\r
       </util:authentifierUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/authentifierUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c09c7a56-8d42-4d25-82d8-6ce2018efc7a" isOneWay="false" action="" name="creerCompteUtilisateur" bindingOperationName="creerCompteUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1d7cce3f-80af-4a9c-8a20-9a8a2712007c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/authentifierUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="09c42bf8-d133-4c0e-977f-5095eec144f0" isOneWay="false" action="" name="creerCompteUtilisateur" bindingOperationName="creerCompteUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7beaf0ef-cd7d-450c-a41d-7635c970abb1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:creerCompteUtilisateur>\r
@@ -407,32 +425,32 @@
          <conditionsUtilisation>?</conditionsUtilisation>\r
       </util:creerCompteUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/creerCompteUtilisateurRequest"/></con:call></con:operation><con:operation id="67fcc15d-21d9-40d3-ad32-b2f039cfab57" isOneWay="false" action="" name="updateCoordUtilisateur" bindingOperationName="updateCoordUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7f01b9e4-ab3b-4c4e-b314-e78a7f0a2aeb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/creerCompteUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="681cb997-071e-4b71-861e-bbb9ca3541de" isOneWay="false" action="" name="updateCoordUtilisateur" bindingOperationName="updateCoordUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e3990e91-7fcf-4296-9cc2-7cdac38ad20e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:updateCoordUtilisateur>\r
-         <id>3</id>\r
-         <civilite>Monsieur</civilite>\r
-         <nom>Gallet</nom>\r
-         <prenom>Romuald</prenom>\r
-         <pseudo>Romu G.</pseudo>\r
-         <adresseMail>romuald.gallet@yahoo.fr</adresseMail>\r
-         <telephone>07-85-96-55-90</telephone>\r
-         <dateNaissance></dateNaissance>\r
-         <adresse></adresse>\r
-         <codePostal></codePostal>\r
-         <ville>Le Mans</ville>\r
-         <pays>France</pays>\r
+         <id>?</id>\r
+         <civilite>?</civilite>\r
+         <nom>?</nom>\r
+         <prenom>?</prenom>\r
+         <pseudo>?</pseudo>\r
+         <adresseMail>?</adresseMail>\r
+         <telephone>?</telephone>\r
+         <dateNaissance>?</dateNaissance>\r
+         <adresse>?</adresse>\r
+         <codePostal>?</codePostal>\r
+         <ville>?</ville>\r
+         <pays>?</pays>\r
       </util:updateCoordUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateCoordUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e8e71dcd-5e39-4562-b585-69d01c76a15f" isOneWay="false" action="" name="updateMdpUtilisateur" bindingOperationName="updateMdpUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="62b79591-d39e-48da-9804-b7755b8db94e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateCoordUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="39fe3370-ded3-418a-b22f-13b293961b14" isOneWay="false" action="" name="updateMdpUtilisateur" bindingOperationName="updateMdpUtilisateur" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9bb16af0-e891-4677-adb4-55c5d9d35f2e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://www.example.org/UtilisateurService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <util:updateMdpUtilisateur>\r
-         <id>3</id>\r
-         <ancienMdp>azertyuiopqsdfghjklmwxcvbnazertyuiopqsdfghjklmwxcvbn</ancienMdp>\r
-         <nouveauMdp>GEsc@L@Dais?</nouveauMdp>\r
-         <confirmationNouveauMdp>GEsc@L@Dais?</confirmationNouveauMdp>\r
+         <id>?</id>\r
+         <ancienMdp>?</ancienMdp>\r
+         <nouveauMdp>?</nouveauMdp>\r
+         <confirmationNouveauMdp>?</confirmationNouveauMdp>\r
       </util:updateMdpUtilisateur>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateMdpUtilisateurRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/UtilisateurService/UtilisateurService/updateMdpUtilisateurRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -48,4 +48,14 @@ public class EditionDaoImpl extends AbstractDaoImpl implements EditionDao{
 
 		return vListEdition;
 	}
+	
+	@Override
+	public Edition getEdition(int editionId) {
+		LOGGER.info("Web Service : EditionService - Couche Consumer - Méthode getEdition()");
+		String vSQL="SELECT * FROM public.edition WHERE id="+editionId;
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource()); 
+		RowMapper<Edition> vRowMapper=new EditionRM(ouvrageDao,photoDao,editeurDao,genreDao);
+		List<Edition> vListEdition=vJdbcTemplate.query(vSQL, vRowMapper);
+		return vListEdition.get(0);
+	}
 }

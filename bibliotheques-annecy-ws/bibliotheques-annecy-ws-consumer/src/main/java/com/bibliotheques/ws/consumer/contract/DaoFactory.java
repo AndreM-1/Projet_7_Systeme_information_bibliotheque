@@ -2,6 +2,7 @@ package com.bibliotheques.ws.consumer.contract;
 
 import com.bibliotheques.ws.consumer.contract.dao.EditeurDao;
 import com.bibliotheques.ws.consumer.contract.dao.EditionDao;
+import com.bibliotheques.ws.consumer.contract.dao.ExemplaireDao;
 import com.bibliotheques.ws.consumer.contract.dao.GenreDao;
 import com.bibliotheques.ws.consumer.contract.dao.OuvrageDao;
 import com.bibliotheques.ws.consumer.contract.dao.PhotoDao;
@@ -37,4 +38,8 @@ public interface DaoFactory {
 	void setUtilisateurDao(UtilisateurDao utilisateurDao);
 
 	UtilisateurDao getUtilisateurDao();
+
+	void setExemplaireDao(ExemplaireDao exemplaireDao);
+
+	ExemplaireDao getExemplaireDao();
 }

@@ -5,6 +5,7 @@ import javax.inject.Named;
 
 import com.bibliotheques.appliweb.consumer.contract.DaoFactory;
 import com.bibliotheques.appliweb.consumer.contract.dao.EditionDao;
+import com.bibliotheques.appliweb.consumer.contract.dao.ExemplaireDao;
 import com.bibliotheques.appliweb.consumer.contract.dao.UtilisateurDao;
 
 
@@ -19,6 +20,9 @@ public class DaoFactoryImpl implements DaoFactory{
 	
 	@Inject
 	private UtilisateurDao utilisateurDao;
+	
+	@Inject
+	private ExemplaireDao exemplaireDao;
 
 	@Override
 	public EditionDao getEditionDao() {
@@ -38,5 +42,15 @@ public class DaoFactoryImpl implements DaoFactory{
 	@Override
 	public void setUtilisateurDao(UtilisateurDao utilisateurDao) {
 		this.utilisateurDao = utilisateurDao;
+	}
+
+	@Override
+	public ExemplaireDao getExemplaireDao() {
+		return exemplaireDao;
+	}
+
+	@Override
+	public void setExemplaireDao(ExemplaireDao exemplaireDao) {
+		this.exemplaireDao = exemplaireDao;
 	}
 }

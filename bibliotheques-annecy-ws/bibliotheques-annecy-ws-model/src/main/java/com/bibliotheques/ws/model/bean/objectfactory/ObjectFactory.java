@@ -4,8 +4,10 @@ package com.bibliotheques.ws.model.bean.objectfactory;
 import javax.xml.bind.annotation.XmlRegistry;
 
 import com.bibliotheques.ws.model.bean.edition.Auteur;
+import com.bibliotheques.ws.model.bean.edition.Bibliotheque;
 import com.bibliotheques.ws.model.bean.edition.Editeur;
 import com.bibliotheques.ws.model.bean.edition.Edition;
+import com.bibliotheques.ws.model.bean.edition.Exemplaire;
 import com.bibliotheques.ws.model.bean.edition.Genre;
 import com.bibliotheques.ws.model.bean.edition.Ouvrage;
 import com.bibliotheques.ws.model.bean.edition.Photo;
@@ -91,6 +93,22 @@ public class ObjectFactory {
      */
     public Utilisateur createUtilisateur() {
         return new Utilisateur();
+    }
+
+    /**
+     * Create an instance of {@link Bibliotheque }
+     * 
+     */
+    public Bibliotheque createBibliotheque() {
+        return new Bibliotheque();
+    }
+
+    /**
+     * Create an instance of {@link Exemplaire }
+     * 
+     */
+    public Exemplaire createExemplaire() {
+        return new Exemplaire();
     }
 
 }
