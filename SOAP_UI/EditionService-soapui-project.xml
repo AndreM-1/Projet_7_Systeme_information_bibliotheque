@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="02bc0aae-d4b3-4103-b5b6-803e180aacff" activeEnvironment="Default" name="EditionService" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3da242c4-a3b3-4698-ba60-c0a55c9a0aca" wsaVersion="NONE" name="EditionServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="fdd1eb43-7d73-4d42-9caf-030737cedd27" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ab940f7-40af-4bdf-b06a-ddcd7a382735" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+<con:soapui-project id="5fc1c0b9-1cf8-47f9-acf2-2d64c3d567ee" activeEnvironment="Default" name="EditionService" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3bd13379-f2c0-4be0-b0b1-85879df1c80a" wsaVersion="NONE" name="EditionServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="6bab4834-baad-4d34-86ae-b29c5641f249" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="761f3688-1af5-4a87-a27b-764efa1ff910" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListEdition>\r
          <nbEdition>?</nbEdition>\r
       </edit:getListEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="e7be8bc2-7b4c-4c79-84a2-241b09425f0a" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="526bc799-938f-47da-8852-d641616e6892" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="1dab536b-5253-49b0-ae6c-9d2297ef89b3" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44b76cd5-ea4d-4b75-b614-d04b1ab68c84" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListExemplaire>\r
          <editionId>?</editionId>\r
       </edit:getListExemplaire>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3092f0f8-8f73-44ea-82fd-d47e2dc77b0e" wsaVersion="NONE" name="EditionServiceSOAP" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl"><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="EditionService" targetNamespace="http://www.example.org/EditionService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/EditionService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation><con:operation id="13aedd28-3cc8-4a50-9548-dce822e27056" isOneWay="false" action="" name="rechercheAvanceeEdition" bindingOperationName="rechercheAvanceeEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d0b04efa-2aec-443a-b20c-7906349003b1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:rechercheAvanceeEdition>\r
+         <titre>?</titre>\r
+         <nomAuteur>?</nomAuteur>\r
+         <nomEditeur>?</nomEditeur>\r
+         <anneeParution>?</anneeParution>\r
+         <genre>?</genre>\r
+      </edit:rechercheAvanceeEdition>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheAvanceeEditionRequest"/></con:call></con:operation><con:operation id="194bcd2a-3232-4aa1-82a6-93fd3a28f6cd" isOneWay="false" action="" name="rechercheEdition" bindingOperationName="rechercheEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="482f5a3c-1e7b-4ebc-a131-f335b26c87a7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:rechercheEdition>\r
+         <titre>?</titre>\r
+      </edit:rechercheEdition>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheEditionRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="89d624cf-121a-49ba-a7a4-dac0c06bb3da" wsaVersion="NONE" name="EditionServiceSOAP" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl"><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="EditionService" targetNamespace="http://www.example.org/EditionService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/EditionService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.example.org/EditionService/" xmlns:Q1="http://www.example.org/beans">
       <xsd:import namespace="http://www.example.org/beans" schemaLocation="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?xsd=../beans.xsd"/>
@@ -52,10 +70,59 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="rechercheEdition">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="titre" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheEditionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="edition" type="Q1:Edition"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheAvanceeEdition">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="titre" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="nomAuteur" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="nomEditeur" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="anneeParution" type="xsd:string"></xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="genre" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheAvanceeEditionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="edition" type="Q1:Edition"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheEditionFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="faultMessageErreur" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheAvanceeEditionFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="faultMessageErreur" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="getListExemplaireRequest">
     <wsdl:part element="tns:getListExemplaire" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheEditionFault">
+    <wsdl:part element="tns:rechercheEditionFault" name="parameters"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="getListExemplaireResponse">
     <wsdl:part element="tns:getListExemplaireResponse" name="parameters"></wsdl:part>
@@ -63,11 +130,26 @@
   <wsdl:message name="getListEditionRequest">
     <wsdl:part element="tns:getListEdition" name="parameters"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="rechercheAvanceeEditionFault">
+    <wsdl:part element="tns:rechercheAvanceeEditionFault" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheEditionResponse">
+    <wsdl:part element="tns:rechercheEditionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getListEditionResponse">
     <wsdl:part element="tns:getListEditionResponse" name="parameters"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="getListExemplaireFault">
     <wsdl:part element="tns:getListExemplaireFault" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheEditionRequest">
+    <wsdl:part element="tns:rechercheEdition" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheAvanceeEditionResponse">
+    <wsdl:part element="tns:rechercheAvanceeEditionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheAvanceeEditionRequest">
+    <wsdl:part element="tns:rechercheAvanceeEdition" name="parameters"></wsdl:part>
   </wsdl:message>
   <wsdl:portType name="EditionService">
     <wsdl:operation name="getListEdition">
@@ -78,6 +160,16 @@
       <wsdl:input message="tns:getListExemplaireRequest"></wsdl:input>
       <wsdl:output message="tns:getListExemplaireResponse"></wsdl:output>
       <wsdl:fault message="tns:getListExemplaireFault" name="fault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechercheEdition">
+      <wsdl:input message="tns:rechercheEditionRequest"></wsdl:input>
+      <wsdl:output message="tns:rechercheEditionResponse"></wsdl:output>
+      <wsdl:fault message="tns:rechercheEditionFault" name="fault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechercheAvanceeEdition">
+      <wsdl:input message="tns:rechercheAvanceeEditionRequest"></wsdl:input>
+      <wsdl:output message="tns:rechercheAvanceeEditionResponse"></wsdl:output>
+      <wsdl:fault message="tns:rechercheAvanceeEditionFault" name="fault"></wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EditionServiceSoapBinding" type="tns:EditionService">
@@ -103,6 +195,30 @@
         <soap:fault name="fault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="rechercheEdition">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechercheAvanceeEdition">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -116,6 +232,30 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getListExemplaire">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechercheEdition">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechercheAvanceeEdition">
       <soap:operation soapAction=""/>
       <wsdl:input>
         <soap:body use="literal"/>
@@ -221,18 +361,36 @@
       <element maxOccurs="1" minOccurs="1" name="nbExemplaires" type="int"/>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="c19d6e9c-9fe9-4a98-9a98-2c504b660165" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="857b41cc-f432-4175-a9bf-e953e1e5dfc1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="fc6bca63-1690-4cba-bd2c-434cb289dcce" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="224f0ae8-cda9-424a-98eb-cb998730be8b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListEdition>\r
-         <nbEdition>2</nbEdition>\r
+         <nbEdition>?</nbEdition>\r
       </edit:getListEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3f8137fb-c683-4b80-bf4f-87a03ddeed76" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44959436-a078-40f3-9038-01d24cbc0a28" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="ded5ad73-0a2c-4b76-9e5e-bf282ac8ce37" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1be59783-452a-4bff-b7b7-9e07aa0fe9e5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListExemplaire>\r
-         <editionId>1</editionId>\r
+         <editionId>?</editionId>\r
       </edit:getListExemplaire>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation><con:operation id="e5c58a7f-7e72-4811-a3a8-9346ca8b076f" isOneWay="false" action="" name="rechercheAvanceeEdition" bindingOperationName="rechercheAvanceeEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="241fd26c-6aa4-4128-b744-2a7420579154" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:rechercheAvanceeEdition>\r
+         <titre> le crime de l'Orient  - Express  </titre>\r
+         <nomAuteur>ag  atha christie </nomAuteur>\r
+         <nomEditeur></nomEditeur>\r
+         <anneeParution>2011</anneeParution>\r
+         <genre></genre>\r
+      </edit:rechercheAvanceeEdition>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheAvanceeEditionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dd77d83f-2b2c-471a-881f-7b9c7c05a676" isOneWay="false" action="" name="rechercheEdition" bindingOperationName="rechercheEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5606086e-345f-4cc0-a249-037e85f0127e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:rechercheEdition>\r
+         <titre>l  e Seigneur des anneaux - Tome 01 :La communauté de l'anneau</titre>\r
+      </edit:rechercheEdition>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheEditionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

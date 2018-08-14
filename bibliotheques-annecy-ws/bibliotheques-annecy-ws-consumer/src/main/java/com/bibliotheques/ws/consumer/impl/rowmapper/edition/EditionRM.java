@@ -43,6 +43,7 @@ public class EditionRM implements RowMapper<Edition>{
 
 	@Override
 	public Edition mapRow(ResultSet pRS, int pRowNum) throws SQLException {
+		LOGGER.info("Web Service : EditionService -Edition RM");
 		Edition vEdition=new Edition();
 		vEdition.setId(pRS.getInt("id"));
 		vEdition.setIsbn(pRS.getString("isbn"));

@@ -11,10 +11,15 @@ import org.apache.logging.log4j.Logger;
 import com.bibliotheques.ws.business.contract.ManagerFactory;
 import com.bibliotheques.ws.model.bean.edition.Edition;
 import com.bibliotheques.ws.model.bean.edition.Exemplaire;
+import com.bibliotheques.ws.model.exception.FunctionalException;
 import com.bibliotheques.ws.model.exception.NotFoundException;
 import com.bibliotheques.ws.webapp.editionservice.generated.EditionService;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault_Exception;
+import com.bibliotheques.ws.webapp.editionservice.generated.RechercheAvanceeEditionFault;
+import com.bibliotheques.ws.webapp.editionservice.generated.RechercheAvanceeEditionFault_Exception;
+import com.bibliotheques.ws.webapp.editionservice.generated.RechercheEditionFault;
+import com.bibliotheques.ws.webapp.editionservice.generated.RechercheEditionFault_Exception;
 
 
 public class EditionServiceImpl implements EditionService{
@@ -51,5 +56,41 @@ public class EditionServiceImpl implements EditionService{
 			
 		}
 		return listExemplaire;
+	}
+
+	@Override
+	public List<Edition> rechercheEdition(String titre) throws RechercheEditionFault_Exception {
+		LOGGER.info("Web Service : EditionService - Couche Webapp - Méthode rechercheEdition()");
+		listEdition = new ArrayList<>();
+		try {
+			listEdition=managerFactory.getEditionManager().rechercheEdition(titre);
+		} catch (NotFoundException e) {
+			LOGGER.info(e.getMessage());
+			RechercheEditionFault rechercheEditionFault =new RechercheEditionFault();
+			rechercheEditionFault.setFaultMessageErreur(e.getMessage());
+			throw new RechercheEditionFault_Exception(e.getMessage(),rechercheEditionFault);
+		}
+		return listEdition;
+	}
+
+	@Override
+	public List<Edition> rechercheAvanceeEdition(String titre, String nomAuteur, String nomEditeur,
+			String anneeParution, String genre) throws RechercheAvanceeEditionFault_Exception {
+		LOGGER.info("Web Service : EditionService - Couche Webapp - Méthode rechercheAvanceeEdition()");
+		listEdition = new ArrayList<>();
+		try {
+			listEdition=managerFactory.getEditionManager().rechercheAvanceeEdition(titre, nomAuteur, nomEditeur, anneeParution, genre);
+		} catch (NotFoundException e) {
+			LOGGER.info(e.getMessage());
+			RechercheAvanceeEditionFault rechercheAvanceeEditionFault =new RechercheAvanceeEditionFault();
+			rechercheAvanceeEditionFault.setFaultMessageErreur(e.getMessage());
+			throw new RechercheAvanceeEditionFault_Exception(e.getMessage(),rechercheAvanceeEditionFault);
+		} catch (FunctionalException e) {
+			LOGGER.info(e.getMessage());
+			RechercheAvanceeEditionFault rechercheAvanceeEditionFault =new RechercheAvanceeEditionFault();
+			rechercheAvanceeEditionFault.setFaultMessageErreur(e.getMessage());
+			throw new RechercheAvanceeEditionFault_Exception(e.getMessage(),rechercheAvanceeEditionFault);
+		}
+		return listEdition;
 	}
 }

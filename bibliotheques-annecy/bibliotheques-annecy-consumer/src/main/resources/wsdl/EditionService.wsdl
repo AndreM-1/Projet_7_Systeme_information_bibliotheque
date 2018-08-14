@@ -46,6 +46,70 @@
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>
+      <xsd:element name="rechercheEdition">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="titre" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheEditionResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="edition" type="Q1:Edition" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheAvanceeEdition">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="titre" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="nomAuteur" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="nomEditeur" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="anneeParution" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="genre" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheAvanceeEditionResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="edition" type="Q1:Edition" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheEditionFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="faultMessageErreur"
+      				type="xsd:string" minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rechercheAvanceeEditionFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="faultMessageErreur"
+      				type="xsd:string" minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="getListEditionRequest">
@@ -63,6 +127,24 @@
   <wsdl:message name="getListExemplaireFault">
   	<wsdl:part name="parameters" element="tns:getListExemplaireFault"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="rechercheEditionRequest">
+  	<wsdl:part name="parameters" element="tns:rechercheEdition"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheEditionResponse">
+  	<wsdl:part name="parameters" element="tns:rechercheEditionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheAvanceeEditionRequest">
+  	<wsdl:part name="parameters" element="tns:rechercheAvanceeEdition"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheAvanceeEditionResponse">
+  	<wsdl:part name="parameters" element="tns:rechercheAvanceeEditionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheEditionFault">
+  	<wsdl:part name="parameters" element="tns:rechercheEditionFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercheAvanceeEditionFault">
+  	<wsdl:part name="parameters" element="tns:rechercheAvanceeEditionFault"></wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="EditionService">
     <wsdl:operation name="getListEdition">
       <wsdl:input message="tns:getListEditionRequest"/>
@@ -72,6 +154,16 @@
     	<wsdl:input message="tns:getListExemplaireRequest"></wsdl:input>
     	<wsdl:output message="tns:getListExemplaireResponse"></wsdl:output>
             <wsdl:fault name="fault" message="tns:getListExemplaireFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="rechercheEdition">
+    	<wsdl:input message="tns:rechercheEditionRequest"></wsdl:input>
+    	<wsdl:output message="tns:rechercheEditionResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:rechercheEditionFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="rechercheAvanceeEdition">
+    	<wsdl:input message="tns:rechercheAvanceeEditionRequest"></wsdl:input>
+    	<wsdl:output message="tns:rechercheAvanceeEditionResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:rechercheAvanceeEditionFault"></wsdl:fault>
         </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
@@ -87,6 +179,31 @@
   		</wsdl:output>
   	</wsdl:operation>
   	<wsdl:operation name="getListExemplaire">
+  		<soap:operation soapAction="" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  		<wsdl:fault name="fault">
+  			<soap:fault use="literal" name="fault" />
+  		</wsdl:fault>
+  	</wsdl:operation>
+  	<wsdl:operation name="rechercheEdition">
+  		<soap:operation
+  			soapAction="" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  		<wsdl:fault name="fault">
+  			<soap:fault use="literal" name="fault" />
+  		</wsdl:fault>
+  	</wsdl:operation>
+  	<wsdl:operation name="rechercheAvanceeEdition">
   		<soap:operation
   			soapAction="" />
   		<wsdl:input>

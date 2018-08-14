@@ -88,6 +88,18 @@
 			<result name="error">/jsp/erreur.jsp</result>
 		</action>
 		
+		<!-- Action "recherche_edition" -->
+		<action name="recherche_edition" class="com.bibliotheques.appliweb.webapp.action.GestionRechercheAction" method="doRecherche">
+			<result name="success">/jsp/recherche/resultatrecherche.jsp</result>
+			<result name="error">/jsp/erreur.jsp</result>
+		</action>
+		
+		<!-- Action "recherche_edition_avancee" -->
+		<action name="recherche_edition_avancee" class="com.bibliotheques.appliweb.webapp.action.GestionRechercheAction" method="doRechercheAvancee">
+			<result name="input">/jsp/recherche/pagerechercheavancee.jsp</result>
+			<result name="success">/jsp/recherche/resultatrecherche.jsp</result>
+		</action>
+		
 		 <!-- Actions connexion/deconnexion -->
 		<action name="connexion" class="com.bibliotheques.appliweb.webapp.action.GestionConnexionAction" method="doLogin">
  			<!-- Référence à l'intercepteur permettant de bloquer l'accès à la page de connexion pour un utilisateur déjà connecté -->

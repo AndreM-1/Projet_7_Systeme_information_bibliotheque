@@ -53,16 +53,17 @@
 	<div id="banniereImage">
 		<div id="zoneRecherche" class="row">
 			<div class="col-lg-12 text-right">
-				<form class="form-inline text-right" method="POST">
+				<!-- Pas besoin de formulaire Struts ici. -->
+				<form class="form-inline text-right" action="recherche_edition" method="POST">
 					<div class="input-group">
-						<input type="text" autocomplete="off" class="form-control input-lg" name="" placeholder="Entrer votre titre ici..."/>
+						<input type="text" autocomplete="off" class="form-control input-lg" name="titre" placeholder="Entrer votre titre ici..."/>
 						<span class="input-group-btn">
 							<button class="btn btn-default btn-lg" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 						</span>
 					</div>
 				</form>
 			</div>
-			<div id="rechercheAvancee" class="col-lg-12 text-right"><s:a action="" >+Recherche avancée</s:a></div>
+			<div id="rechercheAvancee" class="col-lg-12 text-right"><s:a action="recherche_edition_avancee" >+Recherche avancée</s:a></div>
 		</div>
 	
 	</div>
