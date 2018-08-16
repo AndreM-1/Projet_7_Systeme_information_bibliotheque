@@ -36,7 +36,7 @@
 							<li class="divider"></li>
 							<li><s:a action="page_utilisateur_mdp">Mon mot de passe</s:a></li>
 							<li class="divider"></li>
-							<li><s:a action="">Gestion des prêts</s:a></li>
+							<li><s:a action="page_utilisateur_gdp">Gestion des prêts</s:a></li>
 							<li class="divider"></li>
 							<li><s:a action="deconnexion">Déconnexion</s:a></li>
 						</ul>

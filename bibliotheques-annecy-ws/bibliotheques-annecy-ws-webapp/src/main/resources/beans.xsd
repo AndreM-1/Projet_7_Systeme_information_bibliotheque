@@ -158,4 +158,42 @@
     		<element name="nbExemplaires" type="int" minOccurs="1" maxOccurs="1"></element>
     	</sequence>
     </complexType>
+
+    <complexType name="StatutEmprunt">
+    	<sequence>
+    		<element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="statutEmprunt" type="string" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Emprunt">
+    	<sequence>
+    		<element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="dateDeDebut" type="date" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="dateDeFin" type="date" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="prolongation" type="boolean" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="dateDeProlongation" type="date" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="dureeProlongation" type="string"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="dateDeRetourEffective" type="date"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="utilisateur" type="tns:Utilisateur"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="statutEmprunt" type="tns:StatutEmprunt"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="exemplaire" type="tns:Exemplaire" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
 </schema>

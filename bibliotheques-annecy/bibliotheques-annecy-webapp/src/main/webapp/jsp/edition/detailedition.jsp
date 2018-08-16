@@ -17,13 +17,13 @@
 							<!-- Il faut appliquer les classes Bootstrap à l'image et non à un bloc contenant l'image !!! -->
 							<img class="col-xs-5 col-sm-4 col-md-3 col-lg-3" src="<s:property value="edition.photo.nomPhoto"/>" alt="Photo Couverture livre" height=401px width=268px/>
 							<div class="col-xs-7 col-sm-8 col-md-9 col-lg-9">
-							<h4><s:property value="edition.ouvrage.titre"/></h4>				
-							<p><em>Auteur : </em><s:property value="edition.ouvrage.auteur.prenom"/> <s:property value="edition.ouvrage.auteur.nom"/></p>
-							<p><em>Edité par</em> <s:property value="edition.editeur.nomEditeur"/> le <s:property value="edition.dateParution"/></p>
-							<p><em>Genre :</em> <s:property value="edition.genre.genre"/></p>
-							<p><em>ISBN :</em> <s:property value="edition.isbn"/></p>
-							<p><em>Nombre de pages :</em> <s:property value="edition.nbPages"/> pages</p>
-							<p class="text-justify"><em>Resumé : </em><s:property value="edition.ouvrage.resume"/></p>
+								<h4><s:property value="edition.ouvrage.titre"/></h4>				
+								<p><em>Auteur : </em><s:property value="edition.ouvrage.auteur.prenom"/> <s:property value="edition.ouvrage.auteur.nom"/></p>
+								<p><em>Edité par</em> <s:property value="edition.editeur.nomEditeur"/> le <s:property value="edition.dateParution"/></p>
+								<p><em>Genre :</em> <s:property value="edition.genre.genre"/></p>
+								<p><em>ISBN :</em> <s:property value="edition.isbn"/></p>
+								<p><em>Nombre de pages :</em> <s:property value="edition.nbPages"/> pages</p>
+								<p class="text-justify"><em>Resumé : </em><s:property value="edition.ouvrage.resume"/></p>
 							</div>
 						</div>
 					</s:iterator>

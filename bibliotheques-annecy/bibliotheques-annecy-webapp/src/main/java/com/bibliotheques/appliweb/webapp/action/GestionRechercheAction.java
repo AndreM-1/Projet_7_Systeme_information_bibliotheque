@@ -9,7 +9,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.bibliotheques.appliweb.business.contract.ManagerFactory;
-import com.bibliotheques.appliweb.model.bean.edition.Editeur;
 import com.bibliotheques.appliweb.model.bean.edition.Edition;
 import com.bibliotheques.appliweb.model.exception.RechercheAvanceeEditionFault_Exception;
 import com.bibliotheques.appliweb.model.exception.RechercheEditionFault_Exception;

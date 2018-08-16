@@ -135,8 +135,14 @@ section{
 }
 
 
-#mescoordonnees, #monmotdepasse{
+#mescoordonnees, #monmotdepasse, #gestionprets{
 	border-bottom: 4px solid #181818;	
+}
+
+.statutPret{
+	border-bottom: 3px solid grey;
+	padding-top :5px;
+	padding-bottom :5px;
 }
 
 #editionDetailee, #resultatRecherche{

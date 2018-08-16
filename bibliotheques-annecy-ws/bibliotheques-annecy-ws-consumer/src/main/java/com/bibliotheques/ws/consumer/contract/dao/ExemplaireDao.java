@@ -20,4 +20,14 @@ public interface ExemplaireDao {
 	 */
 	List<Exemplaire> getListExemplaire(int editionId) throws NotFoundException;
 
+	/**
+	 * Méthode permettant de renvoyer un objet de type {@link Exemplaire} en fonction 
+	 * des identifiants de la bibliothèque et de l'edition.
+	 * @param bibliothequeId : L'identifiant de la bibliothèque
+	 * @param editionId : L'identifiant de l'édition
+	 * @return Un objet de type {@link Exemplaire}
+	 * @throws NotFoundException
+	 */
+	Exemplaire getExemplaire(int bibliothequeId, int editionId) throws NotFoundException;
+
 }

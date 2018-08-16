@@ -26,9 +26,9 @@
 										<s:property value="ouvrage.titre"/>
 									</s:a>
 								</h4>				
-								<p><s:property value="ouvrage.auteur.prenom"/> <s:property value="ouvrage.auteur.nom"/></p>
-								<p>Edité par <s:property value="editeur.nomEditeur"/> le <s:property value="dateParution"/></p>
-								<p><s:property value="genre.genre"/></p>
+								<p><em>Auteur :</em> <s:property value="ouvrage.auteur.prenom"/> <s:property value="ouvrage.auteur.nom"/></p>
+								<p><em>Edité par</em> <s:property value="editeur.nomEditeur"/> le <s:property value="dateParution"/></p>
+								<p><em>Genre :</em> <s:property value="genre.genre"/></p>
 							</div>
 						</div>
 					</s:iterator>

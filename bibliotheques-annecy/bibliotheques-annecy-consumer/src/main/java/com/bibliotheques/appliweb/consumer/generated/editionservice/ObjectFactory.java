@@ -3,6 +3,7 @@ package com.bibliotheques.appliweb.consumer.generated.editionservice;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
+import com.bibliotheques.appliweb.model.exception.GestionPretFault;
 import com.bibliotheques.appliweb.model.exception.GetListExemplaireFault;
 import com.bibliotheques.appliweb.model.exception.RechercheAvanceeEditionFault;
 import com.bibliotheques.appliweb.model.exception.RechercheEditionFault;
@@ -119,6 +120,30 @@ public class ObjectFactory {
      */
     public RechercheAvanceeEditionFault createRechercheAvanceeEditionFault() {
         return new RechercheAvanceeEditionFault();
+    }
+
+    /**
+     * Create an instance of {@link GestionPret }
+     * 
+     */
+    public GestionPret createGestionPret() {
+        return new GestionPret();
+    }
+
+    /**
+     * Create an instance of {@link GestionPretResponse }
+     * 
+     */
+    public GestionPretResponse createGestionPretResponse() {
+        return new GestionPretResponse();
+    }
+
+    /**
+     * Create an instance of {@link GestionPretFault }
+     * 
+     */
+    public GestionPretFault createGestionPretFault() {
+        return new GestionPretFault();
     }
 
 }

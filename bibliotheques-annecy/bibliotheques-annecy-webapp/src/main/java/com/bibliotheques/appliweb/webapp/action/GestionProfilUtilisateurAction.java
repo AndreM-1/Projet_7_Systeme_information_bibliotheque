@@ -1,5 +1,7 @@
 package com.bibliotheques.appliweb.webapp.action;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -10,7 +12,9 @@ import org.apache.logging.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.bibliotheques.appliweb.business.contract.ManagerFactory;
+import com.bibliotheques.appliweb.model.bean.edition.Emprunt;
 import com.bibliotheques.appliweb.model.bean.utilisateur.Utilisateur;
+import com.bibliotheques.appliweb.model.exception.GestionPretFault_Exception;
 import com.bibliotheques.appliweb.model.exception.UpdateCoordUtilisateurFault_Exception;
 import com.bibliotheques.appliweb.model.exception.UpdateMdpUtilisateurFault_Exception;
 import com.opensymphony.xwork2.ActionSupport;
@@ -48,6 +52,15 @@ public class GestionProfilUtilisateurAction extends ActionSupport implements Ses
 	private String ancienMotDePasse;
 	private String nouveauMotDePasse;
 	private String confirmationNouveauMotDePasse;
+	
+	private List<Emprunt> listEmprunt;
+	private List<Emprunt> listEmpruntNonRendu=new ArrayList<>();
+	private List<Emprunt> listEmpruntEnCours=new ArrayList<>();
+	private List<Emprunt> listEmpruntRendu=new ArrayList<>();
+	
+	private boolean bEmpruntNonRendu=false;
+	private boolean bEmpruntEnCours =false;
+	private boolean bEmpruntRendu =false;
 	
 	// ----- Eléments Struts
 	private Map<String, Object> session;
@@ -184,6 +197,54 @@ public class GestionProfilUtilisateurAction extends ActionSupport implements Ses
 	public void setConfirmationNouveauMotDePasse(String confirmationNouveauMotDePasse) {
 		this.confirmationNouveauMotDePasse = confirmationNouveauMotDePasse;
 	}
+	
+	public List<Emprunt> getListEmpruntNonRendu() {
+		return listEmpruntNonRendu;
+	}
+
+	public void setListEmpruntNonRendu(List<Emprunt> listEmpruntNonRendu) {
+		this.listEmpruntNonRendu = listEmpruntNonRendu;
+	}
+
+	public List<Emprunt> getListEmpruntEnCours() {
+		return listEmpruntEnCours;
+	}
+
+	public void setListEmpruntEnCours(List<Emprunt> listEmpruntEnCours) {
+		this.listEmpruntEnCours = listEmpruntEnCours;
+	}
+
+	public List<Emprunt> getListEmpruntRendu() {
+		return listEmpruntRendu;
+	}
+
+	public void setListEmpruntRendu(List<Emprunt> listEmpruntRendu) {
+		this.listEmpruntRendu = listEmpruntRendu;
+	}
+	
+	public boolean isbEmpruntNonRendu() {
+		return bEmpruntNonRendu;
+	}
+
+	public void setbEmpruntNonRendu(boolean bEmpruntNonRendu) {
+		this.bEmpruntNonRendu = bEmpruntNonRendu;
+	}
+
+	public boolean isbEmpruntEnCours() {
+		return bEmpruntEnCours;
+	}
+
+	public void setbEmpruntEnCours(boolean bEmpruntEnCours) {
+		this.bEmpruntEnCours = bEmpruntEnCours;
+	}
+
+	public boolean isbEmpruntRendu() {
+		return bEmpruntRendu;
+	}
+
+	public void setbEmpruntRendu(boolean bEmpruntRendu) {
+		this.bEmpruntRendu = bEmpruntRendu;
+	}
 
 	@Override
 	public void setSession(Map<String, Object> pSession) {
@@ -291,6 +352,8 @@ public class GestionProfilUtilisateurAction extends ActionSupport implements Ses
 	public String doUpdateMdp() {
 		LOGGER.info("GestionProfilUtilisateurAction - Méthode doUpdateMdp()");
 		String vResult;
+		
+		//Récupération de la variable de session relative à l'utilisateur.
 		Utilisateur vUtilisateurSession= (Utilisateur)this.session.get("user");
 		LOGGER.info("Utilisateur Id : "+id);
 		
@@ -315,6 +378,52 @@ public class GestionProfilUtilisateurAction extends ActionSupport implements Ses
 		}
 		
 		return vResult;
+	}
+	
+	/**
+	 * Méthode permettant de visualiser les prêts effectués par un utilisateur
+	 * @return success
+	 */
+	public String doGestionPret() {
+		LOGGER.info("GestionProfilUtilisateurAction - Méthode doGestionPret()");
+		
+		//Récupération de la variable de session relative à l'utilisateur.
+		Utilisateur vUtilisateurSession= (Utilisateur)this.session.get("user");
+		id=vUtilisateurSession.getId();
+		LOGGER.info("Utilisateur Id : "+id);
+		try {
+			listEmprunt=managerFactory.getEmpruntManager().gestionPret(id);
+			
+			for(Emprunt emprunt:listEmprunt) {
+				if(emprunt.getStatutEmprunt().getStatutEmprunt().equals("Non rendu à temps")) {
+					listEmpruntNonRendu.add(emprunt);
+				}else if(emprunt.getStatutEmprunt().getStatutEmprunt().equals("En cours")) {
+					listEmpruntEnCours.add(emprunt);
+				}else {
+					listEmpruntRendu.add(emprunt);
+				}
+			}
+			
+			if(listEmpruntNonRendu.size()==0) {
+				bEmpruntNonRendu=true;
+			}
+				
+			if(listEmpruntEnCours.size()==0) {
+				bEmpruntEnCours=true;
+			}
+				
+			if(listEmpruntRendu.size()==0) {
+				bEmpruntRendu=true;
+			}
+				
+		} catch (GestionPretFault_Exception e) {
+			LOGGER.info(e.getMessage());
+			bEmpruntNonRendu=true;
+			bEmpruntEnCours=true;
+			bEmpruntRendu=true;
+		}
+		
+		return ActionSupport.SUCCESS;
 	}
 	
 }

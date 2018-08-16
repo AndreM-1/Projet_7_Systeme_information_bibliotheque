@@ -7,10 +7,12 @@ import com.bibliotheques.ws.model.bean.edition.Auteur;
 import com.bibliotheques.ws.model.bean.edition.Bibliotheque;
 import com.bibliotheques.ws.model.bean.edition.Editeur;
 import com.bibliotheques.ws.model.bean.edition.Edition;
+import com.bibliotheques.ws.model.bean.edition.Emprunt;
 import com.bibliotheques.ws.model.bean.edition.Exemplaire;
 import com.bibliotheques.ws.model.bean.edition.Genre;
 import com.bibliotheques.ws.model.bean.edition.Ouvrage;
 import com.bibliotheques.ws.model.bean.edition.Photo;
+import com.bibliotheques.ws.model.bean.edition.StatutEmprunt;
 import com.bibliotheques.ws.model.bean.utilisateur.Utilisateur;
 
 
@@ -109,6 +111,22 @@ public class ObjectFactory {
      */
     public Exemplaire createExemplaire() {
         return new Exemplaire();
+    }
+
+    /**
+     * Create an instance of {@link StatutEmprunt }
+     * 
+     */
+    public StatutEmprunt createStatutEmprunt() {
+        return new StatutEmprunt();
+    }
+
+    /**
+     * Create an instance of {@link Emprunt }
+     * 
+     */
+    public Emprunt createEmprunt() {
+        return new Emprunt();
     }
 
 }

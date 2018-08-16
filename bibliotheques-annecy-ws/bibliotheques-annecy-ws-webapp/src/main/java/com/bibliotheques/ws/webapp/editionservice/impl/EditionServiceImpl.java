@@ -10,10 +10,13 @@ import org.apache.logging.log4j.Logger;
 
 import com.bibliotheques.ws.business.contract.ManagerFactory;
 import com.bibliotheques.ws.model.bean.edition.Edition;
+import com.bibliotheques.ws.model.bean.edition.Emprunt;
 import com.bibliotheques.ws.model.bean.edition.Exemplaire;
 import com.bibliotheques.ws.model.exception.FunctionalException;
 import com.bibliotheques.ws.model.exception.NotFoundException;
 import com.bibliotheques.ws.webapp.editionservice.generated.EditionService;
+import com.bibliotheques.ws.webapp.editionservice.generated.GestionPretFault;
+import com.bibliotheques.ws.webapp.editionservice.generated.GestionPretFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.RechercheAvanceeEditionFault;
@@ -30,6 +33,7 @@ public class EditionServiceImpl implements EditionService{
 	// ----- Paramètres
 	private List<Edition> listEdition;
 	private List<Exemplaire> listExemplaire;
+	private List<Emprunt> listEmprunt;
 	
 	//Définition du LOGGER
 	private static final Logger LOGGER=(Logger) LogManager.getLogger(EditionServiceImpl.class);
@@ -92,5 +96,20 @@ public class EditionServiceImpl implements EditionService{
 			throw new RechercheAvanceeEditionFault_Exception(e.getMessage(),rechercheAvanceeEditionFault);
 		}
 		return listEdition;
+	}
+
+	@Override
+	public List<Emprunt> gestionPret(int utilisateurId) throws GestionPretFault_Exception {
+		LOGGER.info("Web Service : EditionService - Couche Webapp - Méthode gestionPret()");
+		listEmprunt=new ArrayList<>();
+		try {
+			listEmprunt=managerFactory.getEmpruntManager().getListEmprunt(utilisateurId);
+		} catch (NotFoundException e) {
+			LOGGER.info(e.getMessage());
+			GestionPretFault gestionPretFault=new GestionPretFault();
+			gestionPretFault.setFaultMessageErreur(e.getMessage());
+			throw new GestionPretFault_Exception(e.getMessage(),gestionPretFault);
+		}
+		return listEmprunt;
 	}
 }

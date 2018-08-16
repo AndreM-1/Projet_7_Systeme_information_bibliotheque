@@ -105,7 +105,6 @@ public class GestionEditionAction extends ActionSupport {
 		anneeCourante=dfAnnee.format(date);
 		listEdition=managerFactory.getEditionManager().getListEdition(12);
 		return ActionSupport.SUCCESS;
-		
 	}
 	
 	/**

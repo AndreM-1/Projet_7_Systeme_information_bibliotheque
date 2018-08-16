@@ -43,6 +43,22 @@ public class ExemplaireDaoImpl extends AbstractDaoImpl implements ExemplaireDao{
 		}
 		else
 			throw new NotFoundException("Aucun exemplaire trouvé.");
+	}
+	
+	@Override
+	public Exemplaire getExemplaire(int bibliothequeId, int editionId) throws NotFoundException{
+		LOGGER.info("Web Service : EditionService - Couche Consumer - Méthode getExemplaire()");
+		String vSQL = "SELECT * FROM public.exemplaire where bibliotheque_id ="+bibliothequeId+" AND edition_id ="+editionId;
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource()); 
+		
+		RowMapper<Exemplaire> vRowMapper=new ExemplaireRM(bibliothequeDao,editionDao);
+		List<Exemplaire> vListExemplaire=vJdbcTemplate.query(vSQL, vRowMapper);
+
+		if(vListExemplaire.size()!=0){
+			return vListExemplaire.get(0);
+		}
+		else
+			throw new NotFoundException("Aucun exemplaire trouvé.");
 		
 	}
 }

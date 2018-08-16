@@ -1,6 +1,7 @@
 package com.bibliotheques.ws.business.contract;
 
 import com.bibliotheques.ws.business.contract.manager.EditionManager;
+import com.bibliotheques.ws.business.contract.manager.EmpruntManager;
 import com.bibliotheques.ws.business.contract.manager.ExemplaireManager;
 import com.bibliotheques.ws.business.contract.manager.UtilisateurManager;
 
@@ -21,4 +22,8 @@ public interface ManagerFactory {
 	void setExemplaireManager(ExemplaireManager exemplaireManager);
 
 	ExemplaireManager getExemplaireManager();
+
+	void setEmpruntManager(EmpruntManager empruntManager);
+
+	EmpruntManager getEmpruntManager();
 }

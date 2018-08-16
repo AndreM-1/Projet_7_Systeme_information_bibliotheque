@@ -18,7 +18,7 @@
 						<ul>
 							<li><s:a action="page_utilisateur_coord" id="mescoordonnees">Mes coordonnées</s:a></li>
 							<li><s:a action="page_utilisateur_mdp">Modifier mon mot de passe</s:a></li>
-							<li><s:a action="">Gestion des prêts</s:a></li>
+							<li><s:a action="page_utilisateur_gdp">Gestion des prêts</s:a></li>
 						</ul>
 					</nav>
 					<s:actionerror/>

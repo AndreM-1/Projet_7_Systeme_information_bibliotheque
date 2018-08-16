@@ -1,6 +1,7 @@
 package com.bibliotheques.appliweb.consumer.contract;
 
 import com.bibliotheques.appliweb.consumer.contract.dao.EditionDao;
+import com.bibliotheques.appliweb.consumer.contract.dao.EmpruntDao;
 import com.bibliotheques.appliweb.consumer.contract.dao.ExemplaireDao;
 import com.bibliotheques.appliweb.consumer.contract.dao.UtilisateurDao;
 
@@ -21,4 +22,8 @@ public interface DaoFactory {
 	void setExemplaireDao(ExemplaireDao exemplaireDao);
 
 	ExemplaireDao getExemplaireDao();
+
+	void setEmpruntDao(EmpruntDao empruntDao);
+
+	EmpruntDao getEmpruntDao();
 }

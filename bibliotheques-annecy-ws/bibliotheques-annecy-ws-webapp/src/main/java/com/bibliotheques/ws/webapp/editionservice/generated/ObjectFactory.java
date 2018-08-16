@@ -117,4 +117,28 @@ public class ObjectFactory {
         return new RechercheAvanceeEditionFault();
     }
 
+    /**
+     * Create an instance of {@link GestionPret }
+     * 
+     */
+    public GestionPret createGestionPret() {
+        return new GestionPret();
+    }
+
+    /**
+     * Create an instance of {@link GestionPretResponse }
+     * 
+     */
+    public GestionPretResponse createGestionPretResponse() {
+        return new GestionPretResponse();
+    }
+
+    /**
+     * Create an instance of {@link GestionPretFault }
+     * 
+     */
+    public GestionPretFault createGestionPretFault() {
+        return new GestionPretFault();
+    }
+
 }
