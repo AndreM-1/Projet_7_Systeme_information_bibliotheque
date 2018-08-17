@@ -1,3 +1,7 @@
+.settings/
+.classpath
+.project
+target/
 Diagrammes_UML/
 Images_Projet/
 OC_P7_Diagrammes_UML/
@@ -9,11 +13,6 @@ Projet_7_MPD_Systeme_information_bibliotheque_v1.architect~
 Projet_7_Systeme_information_bibliotheque_v1.xmind
 Schema_architecture_logicielle_et_web_services_v1.docx
 Schema_architecture_logicielle_OF.png
-old.gitignore
-target/
-.classpath
-.project
-.settings/
 test_soap_ui.png
 print_screen_url_web_services.png
 
