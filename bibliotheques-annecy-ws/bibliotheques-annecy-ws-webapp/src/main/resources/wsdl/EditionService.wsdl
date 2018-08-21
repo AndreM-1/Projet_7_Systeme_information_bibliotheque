@@ -136,6 +136,62 @@
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>
+      <xsd:element name="emprunterEdition">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="utilisateurId" type="xsd:int"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="bibliothequeId" type="xsd:int"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="editionId" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="emprunterEditionResponse">
+      	<xsd:complexType>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="emprunterEditionFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="faultMessageErreur"
+      				type="xsd:string" minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="prolongerEmprunt">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="utilisateurId" type="xsd:int"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="bibliothequeId" type="xsd:int"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="editionId" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="prolongerEmpruntResponse">
+      	<xsd:complexType>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="prolongerEmpruntFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="faultMessageErreur"
+      				type="xsd:string" minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="getListEditionRequest">
@@ -180,6 +236,24 @@
   <wsdl:message name="gestionPretFault">
   	<wsdl:part name="parameters" element="tns:gestionPretFault"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="emprunterEditionRequest">
+  	<wsdl:part name="parameters" element="tns:emprunterEdition"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="emprunterEditionResponse">
+  	<wsdl:part name="parameters" element="tns:emprunterEditionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="emprunterEditionFault">
+  	<wsdl:part name="parameters" element="tns:emprunterEditionFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="prolongerEmpruntRequest">
+  	<wsdl:part name="parameters" element="tns:prolongerEmprunt"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="prolongerEmpruntResponse">
+  	<wsdl:part name="parameters" element="tns:prolongerEmpruntResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="prolongerEmpruntFault">
+  	<wsdl:part name="parameters" element="tns:prolongerEmpruntFault"></wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="EditionService">
     <wsdl:operation name="getListEdition">
       <wsdl:input message="tns:getListEditionRequest"/>
@@ -204,6 +278,16 @@
     	<wsdl:input message="tns:gestionPretRequest"></wsdl:input>
     	<wsdl:output message="tns:gestionPretResponse"></wsdl:output>
             <wsdl:fault name="fault" message="tns:gestionPretFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="emprunterEdition">
+    	<wsdl:input message="tns:emprunterEditionRequest"></wsdl:input>
+    	<wsdl:output message="tns:emprunterEditionResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:emprunterEditionFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="prolongerEmprunt">
+    	<wsdl:input message="tns:prolongerEmpruntRequest"></wsdl:input>
+    	<wsdl:output message="tns:prolongerEmpruntResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:prolongerEmpruntFault"></wsdl:fault>
         </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
@@ -255,8 +339,31 @@
   		</wsdl:fault>
   	</wsdl:operation>
   	<wsdl:operation name="gestionPret">
-  		<soap:operation
-  			soapAction="" />
+  		<soap:operation soapAction="" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  		<wsdl:fault name="fault">
+  			<soap:fault use="literal" name="fault" />
+  		</wsdl:fault>
+  	</wsdl:operation>
+  	<wsdl:operation name="emprunterEdition">
+  		<soap:operation soapAction="" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  		<wsdl:fault name="fault">
+  			<soap:fault use="literal" name="fault" />
+  		</wsdl:fault>
+  	</wsdl:operation>
+  	<wsdl:operation name="prolongerEmprunt">
+  		<soap:operation soapAction="" />
   		<wsdl:input>
   			<soap:body use="literal" />
   		</wsdl:input>

@@ -7,6 +7,7 @@ import javax.inject.Named;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -16,6 +17,7 @@ import com.bibliotheques.ws.consumer.contract.dao.ExemplaireDao;
 import com.bibliotheques.ws.consumer.impl.rowmapper.edition.ExemplaireRM;
 import com.bibliotheques.ws.model.bean.edition.Exemplaire;
 import com.bibliotheques.ws.model.exception.NotFoundException;
+import com.bibliotheques.ws.model.exception.TechnicalException;
 
 @Named
 public class ExemplaireDaoImpl extends AbstractDaoImpl implements ExemplaireDao{
@@ -60,5 +62,19 @@ public class ExemplaireDaoImpl extends AbstractDaoImpl implements ExemplaireDao{
 		else
 			throw new NotFoundException("Aucun exemplaire trouvé.");
 		
+	}
+	
+	@Override
+	public void updateNbExemplaire(int bibliothequeId, int editionId) throws TechnicalException {
+		LOGGER.info("Web Service : EditionService - Couche Consumer - Méthode updateNbExemplaire()");
+		String vSQL ="UPDATE public.exemplaire SET nb_exemplaires=nb_exemplaires-1 WHERE bibliotheque_id ="+bibliothequeId+" AND edition_id ="+editionId;
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource()); 
+		
+		try {
+			vJdbcTemplate.update(vSQL);
+		} catch (DataAccessException e) {
+			LOGGER.info(e.getMessage());
+			throw new TechnicalException("Erreur technique lors de l'accès en base de données.");
+		}
 	}
 }

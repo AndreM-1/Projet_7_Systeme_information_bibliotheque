@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bibliotheques.ws.model.bean.edition.Exemplaire;
 import com.bibliotheques.ws.model.exception.NotFoundException;
+import com.bibliotheques.ws.model.exception.TechnicalException;
 
 /**
  * Interface ExemplaireDao
@@ -29,5 +30,13 @@ public interface ExemplaireDao {
 	 * @throws NotFoundException
 	 */
 	Exemplaire getExemplaire(int bibliothequeId, int editionId) throws NotFoundException;
+
+	/**
+	 * Méthode permettant de mettre à jour le nombre d'exemplaires d'une édition dans une bibliothèque donnée.
+	 * @param bibliothequeId : L'identifiant de la bibliothèque
+	 * @param editionId : L'identifiant de l'édition
+	 * @throws TechnicalException
+	 */
+	void updateNbExemplaire(int bibliothequeId, int editionId) throws TechnicalException;
 
 }

@@ -14,11 +14,16 @@ import com.bibliotheques.ws.model.bean.edition.Emprunt;
 import com.bibliotheques.ws.model.bean.edition.Exemplaire;
 import com.bibliotheques.ws.model.exception.FunctionalException;
 import com.bibliotheques.ws.model.exception.NotFoundException;
+import com.bibliotheques.ws.model.exception.TechnicalException;
 import com.bibliotheques.ws.webapp.editionservice.generated.EditionService;
+import com.bibliotheques.ws.webapp.editionservice.generated.EmprunterEditionFault;
+import com.bibliotheques.ws.webapp.editionservice.generated.EmprunterEditionFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.GestionPretFault;
 import com.bibliotheques.ws.webapp.editionservice.generated.GestionPretFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault_Exception;
+import com.bibliotheques.ws.webapp.editionservice.generated.ProlongerEmpruntFault;
+import com.bibliotheques.ws.webapp.editionservice.generated.ProlongerEmpruntFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.RechercheAvanceeEditionFault;
 import com.bibliotheques.ws.webapp.editionservice.generated.RechercheAvanceeEditionFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.RechercheEditionFault;
@@ -111,5 +116,38 @@ public class EditionServiceImpl implements EditionService{
 			throw new GestionPretFault_Exception(e.getMessage(),gestionPretFault);
 		}
 		return listEmprunt;
+	}
+
+	@Override
+	public void emprunterEdition(int utilisateurId, int bibliothequeId, int editionId)
+			throws EmprunterEditionFault_Exception {
+		LOGGER.info("Web Service : EditionService - Couche Webapp - Méthode emprunterEdition()");
+		try {
+			managerFactory.getEmpruntManager().emprunterEdition(utilisateurId,bibliothequeId,editionId);
+		} catch (FunctionalException e) {
+			LOGGER.info(e.getMessage());
+			EmprunterEditionFault emprunterEditionFault=new EmprunterEditionFault();
+			emprunterEditionFault.setFaultMessageErreur(e.getMessage());
+			throw new EmprunterEditionFault_Exception(e.getMessage(),emprunterEditionFault);	
+		} catch (TechnicalException e) {
+			LOGGER.info(e.getMessage());
+			EmprunterEditionFault emprunterEditionFault=new EmprunterEditionFault();
+			emprunterEditionFault.setFaultMessageErreur(e.getMessage());
+			throw new EmprunterEditionFault_Exception(e.getMessage(),emprunterEditionFault);
+		}
+	}
+
+	@Override
+	public void prolongerEmprunt(int utilisateurId, int bibliothequeId, int editionId)
+			throws ProlongerEmpruntFault_Exception {
+		LOGGER.info("Web Service : EditionService - Couche Webapp - Méthode prolongerEmprunt()");
+		try {
+			managerFactory.getEmpruntManager().prolongerEmprunt(utilisateurId, bibliothequeId, editionId);
+		} catch (TechnicalException e) {
+			LOGGER.info(e.getMessage());
+			ProlongerEmpruntFault prolongerEmpruntFault=new ProlongerEmpruntFault();
+			prolongerEmpruntFault.setFaultMessageErreur(e.getMessage());
+			throw new ProlongerEmpruntFault_Exception (e.getMessage(),prolongerEmpruntFault);
+		}	
 	}
 }

@@ -181,6 +181,12 @@ CREATE TABLE public.emprunt (
 
 ALTER SEQUENCE public.emprunt_id_seq OWNED BY public.emprunt.id;
 
+
+CREATE UNIQUE INDEX emprunt_idx
+ ON public.emprunt
+ ( utilisateur_id, exemplaire_edition_id );
+
+
 ALTER TABLE public.ouvrage ADD CONSTRAINT auteur_ouvrage_fk
 FOREIGN KEY (auteur_id)
 REFERENCES public.auteur (id)

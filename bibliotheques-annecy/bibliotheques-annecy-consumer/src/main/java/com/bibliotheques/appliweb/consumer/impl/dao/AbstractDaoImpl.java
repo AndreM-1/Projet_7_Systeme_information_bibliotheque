@@ -1,6 +1,8 @@
 package com.bibliotheques.appliweb.consumer.impl.dao;
 
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.bibliotheques.appliweb.consumer.generated.editionservice.EditionService;
 import com.bibliotheques.appliweb.consumer.generated.utilisateurservice.UtilisateurService;
@@ -15,10 +17,27 @@ public abstract class AbstractDaoImpl {
 	private EditionService editionService;
 	
 	private UtilisateurService utilisateurService;
+	
+	private static String adresseEditionService;
+	
+	private static String adresseUtilisateurService;
+	
+	//Définition du LOGGER
+	private static final Logger LOGGER=(Logger) LogManager.getLogger(AbstractDaoImpl.class);
+	
+	
+	public static void setAdresseEditionService(String adresseEditionService) {
+		AbstractDaoImpl.adresseEditionService = adresseEditionService;
+	}
+
+	public static void setAdresseUtilisateurService(String adresseUtilisateurService) {
+		AbstractDaoImpl.adresseUtilisateurService = adresseUtilisateurService;
+	}
 
 	public EditionService getEditionService() {
 		JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
-        factory.setAddress("http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition");
+		LOGGER.info("Adresse Web service -  Edition Service : "+adresseEditionService);
+        factory.setAddress(adresseEditionService);
         factory.setServiceClass(EditionService.class);
         editionService=(EditionService)factory.create();
 		return editionService;
@@ -26,7 +45,8 @@ public abstract class AbstractDaoImpl {
 	
 	public UtilisateurService getUtilisateurService() {
 		JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
-		factory.setAddress("http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur");
+		LOGGER.info("Adresse Web service -  Utilisateur Service : "+adresseUtilisateurService);
+		factory.setAddress(adresseUtilisateurService);
 		factory.setServiceClass(UtilisateurService.class);
 		utilisateurService=(UtilisateurService)factory.create();
 		return utilisateurService;

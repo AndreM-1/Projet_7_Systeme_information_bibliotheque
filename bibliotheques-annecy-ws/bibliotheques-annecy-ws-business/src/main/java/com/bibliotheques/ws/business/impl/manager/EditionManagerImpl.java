@@ -24,6 +24,7 @@ public class EditionManagerImpl extends AbstractManager implements EditionManage
 	@Override
 	public List<Edition> getListEdition(int nbEdition) {
 		LOGGER.info("Web Service : EditionService - Couche Business - Méthode getListEdition()");
+		LOGGER.info("Web Service : EditionService - Couche Business - dureeMaxEmprunt : "+getDureeMaxEmprunt());
 		listEdition=getDaoFactory().getEditionDao().getListEdition(nbEdition);
 		return this.listEdition;
 	}

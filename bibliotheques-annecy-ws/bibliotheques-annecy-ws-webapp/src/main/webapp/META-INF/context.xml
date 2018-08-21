@@ -27,4 +27,11 @@
               testWhileIdle="true"
               testOnBorrow="true"
     />
+    
+    <!-- Valeur acceptée pour la durée max de l'emprunt : 1 semaine, 2 semaines, 3 semaines et 4 semaines -->
+    <Environment
+    	name="dureeMaxEmprunt"
+    	value="4 semaines"
+    	type="java.lang.String"  
+   />
 </Context>

@@ -107,6 +107,22 @@
 			<result name="success">/jsp/recherche/resultatrecherche.jsp</result>
 		</action>
 		
+		<!-- Action emprunter_edition -->
+		<action name="emprunter_edition" class="com.bibliotheques.appliweb.webapp.action.GestionEditionAction" method="doEmprunt">
+			<interceptor-ref name="AuthenticatedStack" />
+			<result name="refus-acces-page-profil-emprunt" type="redirectAction">connexion</result>
+			<result name="success" type="redirectAction">page_utilisateur_gdp</result>
+			<result name="error">/jsp/erreur.jsp</result>
+		</action>
+		
+		<!-- Action prolonger_emprunt -->
+		<action name="prolonger_emprunt" class="com.bibliotheques.appliweb.webapp.action.GestionEditionAction" method="doProlongerEmprunt">
+			<interceptor-ref name="AuthenticatedStack" />
+			<result name="refus-acces-page-profil-emprunt" type="redirectAction">connexion</result>
+			<result name="success" type="redirectAction">page_utilisateur_gdp</result>
+			<result name="error">/jsp/erreur.jsp</result>
+		</action>
+		
 		 <!-- Actions connexion/deconnexion -->
 		<action name="connexion" class="com.bibliotheques.appliweb.webapp.action.GestionConnexionAction" method="doLogin">
  			<!-- Référence à l'intercepteur permettant de bloquer l'accès à la page de connexion pour un utilisateur déjà connecté -->

@@ -3,8 +3,10 @@ package com.bibliotheques.appliweb.consumer.generated.editionservice;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
+import com.bibliotheques.appliweb.model.exception.EmprunterEditionFault;
 import com.bibliotheques.appliweb.model.exception.GestionPretFault;
 import com.bibliotheques.appliweb.model.exception.GetListExemplaireFault;
+import com.bibliotheques.appliweb.model.exception.ProlongerEmpruntFault;
 import com.bibliotheques.appliweb.model.exception.RechercheAvanceeEditionFault;
 import com.bibliotheques.appliweb.model.exception.RechercheEditionFault;
 
@@ -144,6 +146,54 @@ public class ObjectFactory {
      */
     public GestionPretFault createGestionPretFault() {
         return new GestionPretFault();
+    }
+
+    /**
+     * Create an instance of {@link EmprunterEdition }
+     * 
+     */
+    public EmprunterEdition createEmprunterEdition() {
+        return new EmprunterEdition();
+    }
+
+    /**
+     * Create an instance of {@link EmprunterEditionResponse }
+     * 
+     */
+    public EmprunterEditionResponse createEmprunterEditionResponse() {
+        return new EmprunterEditionResponse();
+    }
+
+    /**
+     * Create an instance of {@link EmprunterEditionFault }
+     * 
+     */
+    public EmprunterEditionFault createEmprunterEditionFault() {
+        return new EmprunterEditionFault();
+    }
+
+    /**
+     * Create an instance of {@link ProlongerEmprunt }
+     * 
+     */
+    public ProlongerEmprunt createProlongerEmprunt() {
+        return new ProlongerEmprunt();
+    }
+
+    /**
+     * Create an instance of {@link ProlongerEmpruntResponse }
+     * 
+     */
+    public ProlongerEmpruntResponse createProlongerEmpruntResponse() {
+        return new ProlongerEmpruntResponse();
+    }
+
+    /**
+     * Create an instance of {@link ProlongerEmpruntFault }
+     * 
+     */
+    public ProlongerEmpruntFault createProlongerEmpruntFault() {
+        return new ProlongerEmpruntFault();
     }
 
 }

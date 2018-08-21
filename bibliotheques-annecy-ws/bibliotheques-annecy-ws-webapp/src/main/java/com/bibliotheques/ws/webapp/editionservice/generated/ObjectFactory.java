@@ -141,4 +141,52 @@ public class ObjectFactory {
         return new GestionPretFault();
     }
 
+    /**
+     * Create an instance of {@link EmprunterEdition }
+     * 
+     */
+    public EmprunterEdition createEmprunterEdition() {
+        return new EmprunterEdition();
+    }
+
+    /**
+     * Create an instance of {@link EmprunterEditionResponse }
+     * 
+     */
+    public EmprunterEditionResponse createEmprunterEditionResponse() {
+        return new EmprunterEditionResponse();
+    }
+
+    /**
+     * Create an instance of {@link EmprunterEditionFault }
+     * 
+     */
+    public EmprunterEditionFault createEmprunterEditionFault() {
+        return new EmprunterEditionFault();
+    }
+
+    /**
+     * Create an instance of {@link ProlongerEmprunt }
+     * 
+     */
+    public ProlongerEmprunt createProlongerEmprunt() {
+        return new ProlongerEmprunt();
+    }
+
+    /**
+     * Create an instance of {@link ProlongerEmpruntResponse }
+     * 
+     */
+    public ProlongerEmpruntResponse createProlongerEmpruntResponse() {
+        return new ProlongerEmpruntResponse();
+    }
+
+    /**
+     * Create an instance of {@link ProlongerEmpruntFault }
+     * 
+     */
+    public ProlongerEmpruntFault createProlongerEmpruntFault() {
+        return new ProlongerEmpruntFault();
+    }
+
 }

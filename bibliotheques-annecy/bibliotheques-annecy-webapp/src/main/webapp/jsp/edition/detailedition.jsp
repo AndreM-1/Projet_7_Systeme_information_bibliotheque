@@ -45,7 +45,13 @@
 											<tr>
 												<td class="text-center"><s:property value="bibliotheque.nomBibliotheque"/></td>
 												<td class="text-center"><s:property value="nbExemplaires"/></td>
-												<td class="text-center"><s:a action="" class="btn btn-primary">Emprunter</s:a></td>
+												<td class="text-center">
+												<s:a action="emprunter_edition" class="btn btn-primary">
+													<s:param name="bibliothequeId" value="bibliotheque.id"/>
+													<s:param name="editionId" value="edition.id"/>
+													Emprunter
+												</s:a>
+												</td>
 											</tr>
 										</s:if>
 									</s:iterator>
