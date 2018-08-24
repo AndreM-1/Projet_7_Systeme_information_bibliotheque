@@ -41,4 +41,11 @@ public interface EmpruntManager {
 	 */
 	void prolongerEmprunt(int utilisateurId, int bibliothequeId, int editionId) throws TechnicalException;
 
+	/**
+	 * Méthode permettant de renvoyer la liste de l'ensemble des emprunts en retard.
+	 * @return List
+	 * @throws NotFoundException
+	 */
+	List<Emprunt> getListEmpruntEnRetard() throws NotFoundException;
+
 }

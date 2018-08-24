@@ -205,4 +205,16 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 			throw new TechnicalException(e.getMessage());
 		}	
 	}
+	
+	@Override
+	public List<Emprunt> getListEmpruntEnRetard() throws NotFoundException{
+		LOGGER.info("Web Service : EditionService - Couche Business - Méthode getListEmpruntEnRetard()");
+		try {
+			listEmprunt=getDaoFactory().getEmpruntDao().getListEmpruntEnRetard();
+		} catch (NotFoundException e) {
+			LOGGER.info(e.getMessage());
+			throw new NotFoundException(e.getMessage());
+		}
+		return listEmprunt;
+	}
 }

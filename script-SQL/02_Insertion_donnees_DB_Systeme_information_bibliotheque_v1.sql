@@ -438,10 +438,10 @@ VALUES
 INSERT INTO public.utilisateur(civilite,nom,prenom,pseudo,adresse_mail,salt,mot_de_passe_securise,telephone,date_naissance,adresse,code_postal,ville,pays) 
 VALUES
 -- Mot de passe non sécurisé :M0tp@SAdM83!!
-('Monsieur', 'Monnier','André','André M.','andre.monnier@hotmail.fr','duWHFkUYaDVcIY2F52OFhYM08rSp2U','ukdUT1hmMrcHbEC2lFb5/3CoeH1hSJyhWlslAs6k0GU=','07-74-13-52-09','1983-09-03','667 Chemin de sur la ville','74340','ANNECY','France'),
+('Monsieur', 'Monnier','André','André M.','andre_monnier@yahoo.fr','duWHFkUYaDVcIY2F52OFhYM08rSp2U','ukdUT1hmMrcHbEC2lFb5/3CoeH1hSJyhWlslAs6k0GU=','07-74-13-52-09','1983-09-03','667 Chemin de sur la ville','74340','ANNECY','France'),
 
 -- Mot de passe non sécurisé :M@rt1R@778?
-('Monsieur', 'Durand','Martin','Martin D','martin.durand@gmail.com','nwhMGwRv5k1HTLIGjmrdyQsoBSYmcb','96MJCGUsI6yzRM53HIugWIF/s1E5ykiQ+GIe1BXi8XM=','06-31-47-36-82','1982-10-03','1 AVENUE BERTHOLLET','74000','ANNECY','France'),
+('Monsieur', 'Durand','Martin','Martin D','andre.monnier@hotmail.fr','nwhMGwRv5k1HTLIGjmrdyQsoBSYmcb','96MJCGUsI6yzRM53HIugWIF/s1E5ykiQ+GIe1BXi8XM=','06-31-47-36-82','1982-10-03','1 AVENUE BERTHOLLET','74000','ANNECY','France'),
 
 -- Mot de passe non sécurisé :GEsc@L@Dais?
 ('Monsieur', 'Gallet','Romuald','Romu G.','romuald.gallet@yahoo.fr','lLGSalPUNp8LaK5YezAzvGiuqvH5Va','QYWhASzYFe0L1TYrKNMovzj9hQ5fLfEaYlqkjP5iKFc=',NULL,NULL,NULL,NULL,NULL,'France');
@@ -452,17 +452,17 @@ VALUES
 INSERT INTO public.emprunt(date_de_debut,date_de_fin,prolongation,date_de_prolongation,duree_prolongation,date_de_retour_effective,utilisateur_id,statut_emprunt_id,
 exemplaire_bibliotheque_id,exemplaire_edition_id)
 VALUES
-('2018-07-18','2018-08-15',true,NULL,NULL,NULL,1,1,1,1),
-('2018-07-18','2018-08-15',true,NULL,NULL,NULL,1,1,1,3),
-('2018-07-18','2018-08-15',true,NULL,NULL,NULL,1,1,1,6),
-('2018-07-18','2018-09-12',false,'2018-08-10','4 semaines',NULL,1,1,1,11),
-('2018-06-19','2018-07-17',true,NULL,NULL,NULL,1,2,1,8),
-('2018-06-19','2018-07-24',false,'2018-07-16','1 semaine',NULL,1,2,1,10),
+('2018-08-22','2018-09-19',true,NULL,NULL,NULL,1,1,1,1),
+('2018-08-22','2018-09-19',true,NULL,NULL,NULL,1,1,1,3),
+('2018-08-22','2018-09-19',true,NULL,NULL,NULL,1,1,1,6),
+('2018-07-26','2018-09-20',false,'2018-08-17','4 semaines',NULL,1,1,1,11),
+('2018-06-19','2018-07-17',false,NULL,NULL,NULL,1,2,1,8),
+('2018-06-19','2018-08-14',false,'2018-07-16','4 semaines',NULL,1,2,1,10),
 ('2018-06-02','2018-06-30',true,NULL,NULL,'2018-06-30',1,3,1,12),
 ('2018-06-02','2018-06-30',true,NULL,NULL,'2018-06-16',1,3,1,17),
 ('2018-06-02','2018-06-30',true,NULL,NULL,'2018-07-02',1,3,1,31),
-('2018-05-24','2018-07-12',false,'2018-06-21','3 semaines','2018-07-13',1,3,1,34),
-('2018-07-16','2018-08-13',true,NULL,NULL,NULL,2,1,2,32),
-('2018-07-16','2018-08-13',true,NULL,NULL,NULL,2,1,4,36),
-('2018-06-20','2018-07-18',true,NULL,NULL,NULL,2,2,2,9),
-('2018-06-06','2018-07-18',false,'2018-07-02','2 semaines',NULL,2,2,2,22);
+('2018-05-24','2018-07-19',false,'2018-06-21','4 semaines','2018-07-13',1,3,1,34),
+('2018-08-24','2018-09-21',true,NULL,NULL,NULL,2,1,2,32),
+('2018-08-24','2018-09-21',true,NULL,NULL,NULL,2,1,4,36),
+('2018-07-26','2018-08-23',true,NULL,NULL,NULL,2,2,2,9),
+('2018-06-06','2018-08-01',false,'2018-07-02','4 semaines',NULL,2,2,2,22);

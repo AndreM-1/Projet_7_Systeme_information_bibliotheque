@@ -110,4 +110,20 @@ public class EmpruntDaoImpl extends AbstractDaoImpl implements EmpruntDao {
 			throw new TechnicalException("Erreur technique lors de l'accès en base de données.");
 		}
 	}
+	
+	@Override
+	public List<Emprunt> getListEmpruntEnRetard() throws NotFoundException{
+		LOGGER.info("Web Service : EditionService - Couche Consumer - Méthode getListEmpruntEnRetard()");
+		String vSQL = "SELECT * FROM public.emprunt WHERE statut_emprunt_id=2 ORDER by utilisateur_id,id";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource()); 
+		
+		RowMapper<Emprunt> vRowMapper=new EmpruntRM(utilisateurDao,statutEmpruntDao,exemplaireDao);
+		List<Emprunt> vListEmprunt=vJdbcTemplate.query(vSQL, vRowMapper);
+
+		if(vListEmprunt.size()!=0){
+			return vListEmprunt;
+		}
+		else
+			throw new NotFoundException("Aucun emprunt en retard dans l'ensemble du réseau de bibliothèques!!!");
+	}
 }

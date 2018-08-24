@@ -61,4 +61,11 @@ public interface EmpruntDao {
 	void updateEmprunt(Date dateDeFin, boolean prolongation, Date dateDeProlongation, String dureeProlongation, int utilisateurId, int statutEmpruntId, int bibliothequeId,
 			int editionId) throws TechnicalException;
 
+	/**
+	 * Méthode permettant de renvoyer la liste de l'ensemble des emprunts en retard.
+	 * @return List
+	 * @throws NotFoundException
+	 */
+	List<Emprunt> getListEmpruntEnRetard() throws NotFoundException;
+
 }

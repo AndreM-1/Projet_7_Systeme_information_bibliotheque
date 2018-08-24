@@ -20,6 +20,8 @@ import com.bibliotheques.ws.webapp.editionservice.generated.EmprunterEditionFaul
 import com.bibliotheques.ws.webapp.editionservice.generated.EmprunterEditionFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.GestionPretFault;
 import com.bibliotheques.ws.webapp.editionservice.generated.GestionPretFault_Exception;
+import com.bibliotheques.ws.webapp.editionservice.generated.GetListEmpruntEnRetardFault;
+import com.bibliotheques.ws.webapp.editionservice.generated.GetListEmpruntEnRetardFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault;
 import com.bibliotheques.ws.webapp.editionservice.generated.GetListExemplaireFault_Exception;
 import com.bibliotheques.ws.webapp.editionservice.generated.ProlongerEmpruntFault;
@@ -149,5 +151,20 @@ public class EditionServiceImpl implements EditionService{
 			prolongerEmpruntFault.setFaultMessageErreur(e.getMessage());
 			throw new ProlongerEmpruntFault_Exception (e.getMessage(),prolongerEmpruntFault);
 		}	
+	}
+
+	@Override
+	public List<Emprunt> getListEmpruntEnRetard() throws GetListEmpruntEnRetardFault_Exception {
+		LOGGER.info("Web Service : EditionService - Couche Webapp - Méthode getListEmpruntEnRetard()");
+		listEmprunt=new ArrayList<>();
+		try {
+			listEmprunt=managerFactory.getEmpruntManager().getListEmpruntEnRetard();
+		} catch (NotFoundException e) {
+			LOGGER.info(e.getMessage());
+			GetListEmpruntEnRetardFault getListEmpruntEnRetardFault= new GetListEmpruntEnRetardFault();
+			getListEmpruntEnRetardFault.setFaultMessageErreur(e.getMessage());
+			throw new GetListEmpruntEnRetardFault_Exception(e.getMessage(),getListEmpruntEnRetardFault);
+		}
+		return listEmprunt;
 	}
 }

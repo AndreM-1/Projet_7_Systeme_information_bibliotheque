@@ -150,7 +150,7 @@
 	    	ce qui peut engendrer des erreurs car je copie-colle ces classes ailleurs. L'idéal aurait été de créer un PROFIL pour générer les classes Java via Apache-CXF. 
 	   		****************************A FAIRE POUR LE P10****************************. Dans l'immédiat, je vais mettre ces actions en commentaires dans le POM.-->
 			
-			<!-- Generate source with Apache-CXF plugin from wsdl file  
+			<!-- Generate source with Apache-CXF plugin from wsdl file 
 			<plugin>
 	            <groupId>org.apache.cxf</groupId>
 	            <artifactId>cxf-codegen-plugin</artifactId>
@@ -172,7 +172,7 @@
 	                    </goals>
 	                </execution>
 	            </executions>			
-			</plugin>-->
+			</plugin>--> 
 		</plugins>
 	</build>
 </project>

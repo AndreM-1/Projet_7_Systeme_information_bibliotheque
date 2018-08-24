@@ -1,5 +1,5 @@
 
-package com.bibliotheques.ws.webapp.editionservice.generated;
+package com.bibliotheques.ws.batch.generated.editionservice;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

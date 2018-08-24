@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="b1edf062-2d00-48a2-9582-cf48b0224160" activeEnvironment="Default" name="EditionService" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d399f22a-d87d-4014-9c1c-5cf91a2164b3" wsaVersion="NONE" name="EditionServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="0b7a3475-251e-4e0f-b14c-50312a155e04" isOneWay="false" action="" name="emprunterEdition" bindingOperationName="emprunterEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a807dbb1-1808-4dd7-8063-251e3a53df05" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+<con:soapui-project id="5e7bfbaf-38eb-44ef-a53d-e291b00863e9" activeEnvironment="Default" name="EditionService" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="528b6c14-e06f-40ff-a564-2a73f4b92690" wsaVersion="NONE" name="EditionServiceSoapBinding" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="889ade6d-cf23-4a05-b120-e8cc6f290c3a" isOneWay="false" action="" name="emprunterEdition" bindingOperationName="emprunterEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a514fe9b-21ef-4b3d-b3b8-aca253846c53" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:emprunterEdition>\r
@@ -8,28 +8,33 @@
          <editionId>?</editionId>\r
       </edit:emprunterEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/emprunterEditionRequest"/></con:call></con:operation><con:operation id="05dd8ef8-d468-4fb6-991f-a6564be3f589" isOneWay="false" action="" name="gestionPret" bindingOperationName="gestionPret" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="33b84dd7-36ac-4f15-8720-05ca23b31e50" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/emprunterEditionRequest"/></con:call></con:operation><con:operation id="155bc70e-cc11-46f1-a7d0-253ec847da54" isOneWay="false" action="" name="gestionPret" bindingOperationName="gestionPret" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bbbf1c16-6591-4927-ab25-182af93298a8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:gestionPret>\r
          <utilisateurId>?</utilisateurId>\r
       </edit:gestionPret>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/gestionPretRequest"/></con:call></con:operation><con:operation id="05b1541d-4c58-45ac-849a-24512c3fba83" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="af71b600-e3ce-46c5-891d-1cb0d945c0da" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/gestionPretRequest"/></con:call></con:operation><con:operation id="3a7cf40f-cb6a-497a-be35-552c68d4707c" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fedbb012-7696-49dc-8aeb-61ce1ff523ce" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListEdition>\r
          <nbEdition>?</nbEdition>\r
       </edit:getListEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="e3dbd4da-22a5-441e-a831-678a32f0b681" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aa9d0065-2d9d-4e8a-b873-054d0d56924c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="211b1200-d382-4e1b-9d02-54979066c31d" isOneWay="false" action="" name="getListEmpruntEnRetard" bindingOperationName="getListEmpruntEnRetard" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="73f8bf17-8572-4eb3-8eb7-3a8959ada491" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:getListEmpruntEnRetard/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEmpruntEnRetardRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="af7e6332-7981-4c18-be3c-dc59a1baa420" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eb8cd1ba-2717-49bd-8131-9c5cb996105d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListExemplaire>\r
          <editionId>?</editionId>\r
       </edit:getListExemplaire>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation><con:operation id="e0a28c72-3451-4937-b3d4-7da6308573c4" isOneWay="false" action="" name="prolongerEmprunt" bindingOperationName="prolongerEmprunt" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1509d6d0-0470-4a8b-a193-821531eb22bc" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation><con:operation id="a9ab9f42-c3a8-4979-a003-9f381ced74ec" isOneWay="false" action="" name="prolongerEmprunt" bindingOperationName="prolongerEmprunt" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d4c275d1-7e84-4e33-b876-2b1e6160c634" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:prolongerEmprunt>\r
@@ -38,7 +43,7 @@
          <editionId>?</editionId>\r
       </edit:prolongerEmprunt>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/prolongerEmpruntRequest"/></con:call></con:operation><con:operation id="da823fa7-288c-46a8-979c-61999baf878f" isOneWay="false" action="" name="rechercheAvanceeEdition" bindingOperationName="rechercheAvanceeEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c4c5a94e-bac6-49a5-85a8-b1c4a286dc7b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/prolongerEmpruntRequest"/></con:call></con:operation><con:operation id="5813cdae-d17a-4703-a920-47563e106660" isOneWay="false" action="" name="rechercheAvanceeEdition" bindingOperationName="rechercheAvanceeEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="baf3fcda-8eb9-46e0-a979-f63fd5f6d6d8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:rechercheAvanceeEdition>\r
@@ -49,14 +54,14 @@
          <genre>?</genre>\r
       </edit:rechercheAvanceeEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheAvanceeEditionRequest"/></con:call></con:operation><con:operation id="7e2875c8-2042-4e99-8ee9-fe20fa950568" isOneWay="false" action="" name="rechercheEdition" bindingOperationName="rechercheEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bcdaea0b-c3a7-4d3a-92dd-40654e6a589d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheAvanceeEditionRequest"/></con:call></con:operation><con:operation id="4a7b8454-23aa-4424-bdfa-5f2ae2565b1b" isOneWay="false" action="" name="rechercheEdition" bindingOperationName="rechercheEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2e6cad30-d974-4fc3-ba30-86fe7459e4f8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:rechercheEdition>\r
          <titre>?</titre>\r
       </edit:rechercheEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheEditionRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="7af1e95d-4f42-468a-9b56-32e2847d1f54" wsaVersion="NONE" name="EditionServiceSOAP" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl"><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="EditionService" targetNamespace="http://www.example.org/EditionService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/EditionService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheEditionRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="a39db3b8-1640-4817-93f8-d22047ea1f6b" wsaVersion="NONE" name="EditionServiceSOAP" type="wsdl" bindingName="{http://www.example.org/EditionService/}EditionServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl"><con:part><con:url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="EditionService" targetNamespace="http://www.example.org/EditionService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/EditionService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.example.org/EditionService/" xmlns:Q1="http://www.example.org/beans">
       <xsd:import namespace="http://www.example.org/beans" schemaLocation="http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?xsd=../beans.xsd"/>
@@ -200,6 +205,23 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="getListEmpruntEnRetard">
+        <xsd:complexType></xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListEmpruntEnRetardResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="emprunt" type="Q1:Emprunt"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListEmpruntEnRetardFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="faultMessageErreur" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="emprunterEditionResponse">
@@ -232,6 +254,9 @@
   <wsdl:message name="getListExemplaireRequest">
     <wsdl:part element="tns:getListExemplaire" name="parameters"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="getListEmpruntEnRetardRequest">
+    <wsdl:part element="tns:getListEmpruntEnRetard" name="parameters"></wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getListEditionRequest">
     <wsdl:part element="tns:getListEdition" name="parameters"></wsdl:part>
   </wsdl:message>
@@ -250,11 +275,17 @@
   <wsdl:message name="gestionPretFault">
     <wsdl:part element="tns:gestionPretFault" name="parameters"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="getListEmpruntEnRetardResponse">
+    <wsdl:part element="tns:getListEmpruntEnRetardResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
   <wsdl:message name="rechercheAvanceeEditionResponse">
     <wsdl:part element="tns:rechercheAvanceeEditionResponse" name="parameters"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="emprunterEditionRequest">
     <wsdl:part element="tns:emprunterEdition" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListEmpruntEnRetardFault">
+    <wsdl:part element="tns:getListEmpruntEnRetardFault" name="parameters"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="rechercheAvanceeEditionRequest">
     <wsdl:part element="tns:rechercheAvanceeEdition" name="parameters"></wsdl:part>
@@ -296,6 +327,11 @@
       <wsdl:input message="tns:prolongerEmpruntRequest"></wsdl:input>
       <wsdl:output message="tns:prolongerEmpruntResponse"></wsdl:output>
       <wsdl:fault message="tns:prolongerEmpruntFault" name="fault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListEmpruntEnRetard">
+      <wsdl:input message="tns:getListEmpruntEnRetardRequest"></wsdl:input>
+      <wsdl:output message="tns:getListEmpruntEnRetardResponse"></wsdl:output>
+      <wsdl:fault message="tns:getListEmpruntEnRetardFault" name="fault"></wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EditionServiceSoapBinding" type="tns:EditionService">
@@ -381,6 +417,18 @@
         <soap:fault name="fault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="getListEmpruntEnRetard">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -454,6 +502,18 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="prolongerEmprunt">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListEmpruntEnRetard">
       <soap:operation soapAction=""/>
       <wsdl:input>
         <soap:body use="literal"/>
@@ -579,46 +639,51 @@
       <element maxOccurs="1" minOccurs="1" name="exemplaire" type="tns:Exemplaire"/>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="03680c66-3ae8-4150-b96c-ac56d4d4c7e2" isOneWay="false" action="" name="emprunterEdition" bindingOperationName="emprunterEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2f41668b-7b4a-4eb6-a439-52670a1d44ce" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint></con:endpoints><con:operation id="11b64426-d6f1-4229-8327-057eacc0473c" isOneWay="false" action="" name="emprunterEdition" bindingOperationName="emprunterEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e1581e2-1fb5-4d3e-a83f-4a11af1126d0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:emprunterEdition>\r
-         <utilisateurId>1</utilisateurId>\r
-         <bibliothequeId>1</bibliothequeId>\r
-         <editionId>36</editionId>\r
+         <utilisateurId>?</utilisateurId>\r
+         <bibliothequeId>?</bibliothequeId>\r
+         <editionId>?</editionId>\r
       </edit:emprunterEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/emprunterEditionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="66881a77-b6e2-41d8-a489-02c78706075d" isOneWay="false" action="" name="gestionPret" bindingOperationName="gestionPret" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="209406bd-c315-4496-8265-226c17753676" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/emprunterEditionRequest"/></con:call></con:operation><con:operation id="31319dc0-44fa-4310-87c2-1d7780979b7c" isOneWay="false" action="" name="gestionPret" bindingOperationName="gestionPret" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f14f06a5-c03f-4c43-8698-dd1c49a89813" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:gestionPret>\r
          <utilisateurId>?</utilisateurId>\r
       </edit:gestionPret>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/gestionPretRequest"/></con:call></con:operation><con:operation id="4ce9d9f5-51e0-4328-babe-6bf9135698fd" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="676b9fff-6f06-4234-adda-bb51a7d19cdf" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/gestionPretRequest"/></con:call></con:operation><con:operation id="67fb1c2d-586c-409b-bbec-6527fa438c15" isOneWay="false" action="" name="getListEdition" bindingOperationName="getListEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5f0098cc-f220-4a6e-ab10-1ed321085578" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListEdition>\r
          <nbEdition>?</nbEdition>\r
       </edit:getListEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="97aecd0f-9549-49b7-ad12-2061f88e891e" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="694ba465-abc6-4c25-b832-f08e3d886f3b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEditionRequest"/></con:call></con:operation><con:operation id="45cb5394-4448-4c9a-95be-8103915dbcfb" isOneWay="false" action="" name="getListEmpruntEnRetard" bindingOperationName="getListEmpruntEnRetard" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1f545233-c73d-4962-b22b-b3cbc899603a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <edit:getListEmpruntEnRetard/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListEmpruntEnRetardRequest"/></con:call></con:operation><con:operation id="ac9af992-f71b-4390-bf62-21fef060b689" isOneWay="false" action="" name="getListExemplaire" bindingOperationName="getListExemplaire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="54fc00ca-5bcc-45df-8e66-5c46109b3a83" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:getListExemplaire>\r
          <editionId>?</editionId>\r
       </edit:getListExemplaire>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation><con:operation id="68975d03-2374-4057-a80e-4600854fb646" isOneWay="false" action="" name="prolongerEmprunt" bindingOperationName="prolongerEmprunt" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b78d13ad-4775-4181-b439-8c39a375fd80" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/getListExemplaireRequest"/></con:call></con:operation><con:operation id="27e24419-6859-4704-96cf-89164c721b3b" isOneWay="false" action="" name="prolongerEmprunt" bindingOperationName="prolongerEmprunt" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="37f22d6a-f1c2-44a2-9d7d-99bca1c4a7d1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:prolongerEmprunt>\r
-         <utilisateurId>2</utilisateurId>\r
-         <bibliothequeId>2</bibliothequeId>\r
-         <editionId>9</editionId>\r
+         <utilisateurId>?</utilisateurId>\r
+         <bibliothequeId>?</bibliothequeId>\r
+         <editionId>?</editionId>\r
       </edit:prolongerEmprunt>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/prolongerEmpruntRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="093b73cd-0347-4f45-969b-9895184ebb4b" isOneWay="false" action="" name="rechercheAvanceeEdition" bindingOperationName="rechercheAvanceeEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5daa51c9-0c62-4184-b59c-ead5acfe88de" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/prolongerEmpruntRequest"/></con:call></con:operation><con:operation id="24776399-a8b7-4a57-bd53-efd8c3037488" isOneWay="false" action="" name="rechercheAvanceeEdition" bindingOperationName="rechercheAvanceeEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4d8e0633-a321-461e-8d47-b1db0150f35d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:rechercheAvanceeEdition>\r
@@ -629,7 +694,7 @@
          <genre>?</genre>\r
       </edit:rechercheAvanceeEdition>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheAvanceeEditionRequest"/></con:call></con:operation><con:operation id="a833bb2c-1450-4a27-8015-c1c58fd46f1b" isOneWay="false" action="" name="rechercheEdition" bindingOperationName="rechercheEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a486936c-c344-4168-9da4-a1c3c0291029" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EditionService/EditionService/rechercheAvanceeEditionRequest"/></con:call></con:operation><con:operation id="908051dd-5dae-4db6-834b-21e9c39b215c" isOneWay="false" action="" name="rechercheEdition" bindingOperationName="rechercheEdition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bf18b82f-9952-4d32-988f-de61290f39ee" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edit="http://www.example.org/EditionService/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <edit:rechercheEdition>\r
