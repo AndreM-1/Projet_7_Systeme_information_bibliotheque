@@ -102,7 +102,27 @@
                         </manifest>
                     </archive>
                 </configuration>
-            </plugin>		
+            </plugin>
+            
+         	<!-- Assemblage -->
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-assembly-plugin</artifactId>
+			    <configuration>
+			    	<descriptors>
+			    		<descriptor>src/assembly/archive-deploy.xml</descriptor>
+			    	</descriptors>
+			    </configuration>
+			    <executions>
+			    	<execution>
+			    		<id>assembly-archive-deploy</id>
+			    		<phase>package</phase>
+			    		<goals>
+			    			<goal>single</goal>
+			    		</goals>
+			    	</execution>
+			    </executions>
+			</plugin>		
 		
 			<!-- L'execution de la commande mvn clean package permet bien de télécharger les WSDL et le fichier beans.xsd, puis de générer les
 			classes Java via Apache-CXF. Le problème est que ces classes sont générées dans des packages de type org.example.beans, org.example.editionservice, 
