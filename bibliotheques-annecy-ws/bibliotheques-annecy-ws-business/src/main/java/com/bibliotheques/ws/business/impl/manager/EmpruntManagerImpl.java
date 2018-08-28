@@ -73,35 +73,8 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		//On vérifie que la date de début est correcte.
 		LOGGER.info("Date de début :"+dfTest.format(dateDeDebut));
 		
-		//La durée de l'emprunt peut être égale à 1, 2, 3 ou 4 semaines. On convertit cette durée en jours.
-		int dureeMaxEmpruntJours=0;
-		switch(getDureeMaxEmprunt()){
-			case "1 semaine":
-				dureeMaxEmpruntJours=7;
-				break;
-			case "1semaine":
-				dureeMaxEmpruntJours=7;
-				break;	
-			case "2 semaines":
-				dureeMaxEmpruntJours=14;
-				break;
-			case "2semaines":
-				dureeMaxEmpruntJours=14;
-				break;	
-			case "3 semaines":
-				dureeMaxEmpruntJours=21;
-				break;
-			case "3semaines":
-				dureeMaxEmpruntJours=21;
-				break;
-			case "4 semaines":
-				dureeMaxEmpruntJours=28;
-				break;
-			case "4semaines":
-				dureeMaxEmpruntJours=28;
-				break;
-			default:LOGGER.info("Erreur lors de la conversion de la durée de l'emprunt en jours.");	
-		}
+		//On récupère la durée max de l'emprunt convertit en jours.
+		int dureeMaxEmpruntJours=this.getConversionJourDureeMaxEmprunt();
 		LOGGER.info("Durée max de l'emprunt convertit en jours : "+dureeMaxEmpruntJours);
 		
 		//On ajoute la durée de l'emprunt à la date de début.
@@ -152,8 +125,125 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		//On convertit l'objet XMLGregorianCalendar en GregorianCalendar qui hérite de la classe Calendar.
 		Calendar calendar=emprunt.getDateDeFin().toGregorianCalendar();
 		
-		//La durée de l'emprunt peut être égale à 1, 2, 3 ou 4 semaines. On convertit cette durée en jours.
+		//On récupère la durée max de l'emprunt convertit en jours.
+		int dureeMaxEmpruntJours=this.getConversionJourDureeMaxEmprunt();
+		LOGGER.info("Durée max de l'emprunt convertit en jours : "+dureeMaxEmpruntJours);
+		
+		//La date de fin après prolongation sera égale à la date de fin initiale + la durée de la prolongation.
+		calendar.add(Calendar.DATE, dureeMaxEmpruntJours);
+		
+		//On vérifie que la date de fin est correcte.
+		dateDeFin=calendar.getTime();
+		LOGGER.info("Date de fin recalculé :"+dfTest.format(dateDeFin));
+		
+		//Par défaut, lors de la prolongation de l'emprunt d'une édition, on a les valeurs ci-dessous :
+		boolean prolongation=false;
+		Date dateDeProlongation=new Date();
+		String dureeProlongation=getDureeMaxEmprunt();
+		int statutEmpruntId=1;
+		
+		try {
+			getDaoFactory().getEmpruntDao().updateEmprunt(dateDeFin,prolongation,dateDeProlongation,dureeProlongation,utilisateurId, statutEmpruntId,bibliothequeId, editionId);
+			getPlatformTransactionManager().commit(vTransactionStatus);
+		} catch (TechnicalException e) {
+			LOGGER.info(e.getMessage());
+			getPlatformTransactionManager().rollback(vTransactionStatus);
+			throw new TechnicalException(e.getMessage());
+		}	
+	}
+	
+	@Override
+	public List<Emprunt> getListEmpruntEnRetard() throws NotFoundException, TechnicalException{
+		LOGGER.info("Web Service : EditionService - Couche Business - Méthode getListEmpruntEnRetard()");
+		
+		//Utilisation d'un TransactionStatus. On a besoin de lever une TechnicalException, ce qui
+		//n'est pas possible avec l'utilisation d'une classe anonyme du transaction template.
+		TransactionStatus vTransactionStatus= getPlatformTransactionManager().getTransaction(new DefaultTransactionDefinition());
+
+		try {
+			listEmprunt=getDaoFactory().getEmpruntDao(). getListEmpruntAvtUpd();
+		} catch (NotFoundException e1) {
+			LOGGER.info(e1.getMessage());
+			getPlatformTransactionManager().rollback(vTransactionStatus);
+			throw new NotFoundException(e1.getMessage());
+		}
+		
+		//Avant de renvoyer la liste des emprunts en retard, on va d'abord mettre à jour le champs statut_emprunt_id et également 
+		//le champs prolongation dans le cas où on dépasse la date de fin de prêt de plus de la durée max du prêt.
+		Calendar calDateDuJour=Calendar.getInstance();
+		Date dateDuJour=new Date();
+		//On définit un SimpleDateFormat.
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		
+		//On récupère la durée max de l'emprunt convertit en jours.
+		int dureeMaxEmpruntJours=this.getConversionJourDureeMaxEmprunt();
+		LOGGER.info("Durée max de l'emprunt convertit en jours : "+dureeMaxEmpruntJours);
+		
+		//On ajoute 1 jour à la durée max de l'emprunt pour se faciliter la vie lors de la comparaison.
+		dureeMaxEmpruntJours+=1;
+		
+		LOGGER.info("Taille de la liste d'emprunt avant update : "+listEmprunt.size());
+		LOGGER.info("Date du jour : "+df.format(dateDuJour));
+		int statutEmpruntId=2;
+		boolean prolongation=false;
+		for(Emprunt emprunt:listEmprunt) {
+			LOGGER.info("Date de fin : "+df.format(emprunt.getDateDeFin().toGregorianCalendar().getTime()));
+			LOGGER.info("Résultat de la comparaison de dates : "+dateDuJour.compareTo(emprunt.getDateDeFin().toGregorianCalendar().getTime()));
+
+			//Si la date du jour dépasse STRICTEMENT la date de fin de prêt, alors une mise à jour du champ statut_emprunt_id est nécessaire.
+			//La fonction compareTo ne suffisait pas à elle seule, on a donc du ajouter une comparaison entre les DateFormat en String, tout
+			//cela pour exclure le cas où la date du jour est égale la date de fin.
+			if(dateDuJour.compareTo(emprunt.getDateDeFin().toGregorianCalendar().getTime())>0&&
+					!df.format(dateDuJour).equals(df.format(emprunt.getDateDeFin().toGregorianCalendar().getTime()))) {
+				LOGGER.info("Mise à jour du champ statut_emprunt_id requis pour Emprunt id = "+emprunt.getId());
+				
+				try {
+					getDaoFactory().getEmpruntDao().updateEmprunt(statutEmpruntId,emprunt.getUtilisateur().getId(),emprunt.getExemplaire().getBibliotheque().getId(), 
+							emprunt.getExemplaire().getEdition().getId());
+				} catch (TechnicalException e) {
+					LOGGER.info(e.getMessage());
+					getPlatformTransactionManager().rollback(vTransactionStatus);
+					throw new TechnicalException(e.getMessage());
+				}
+				
+				//La fonction compareTo peut être utilisée pour comparer les objets Date mais aussi Calendar.
+				//Cela peut même s'avérer plus simple en ajoutant juste 1 jour à la durée max de l'emprunt.
+				Calendar calDateFin=emprunt.getDateDeFin().toGregorianCalendar();
+				calDateFin.add(Calendar.DATE, dureeMaxEmpruntJours);
+				LOGGER.info("Date de fin + durée max prêt + 1 : "+df.format(calDateFin.getTime()));
+				if(calDateDuJour.compareTo(calDateFin)>0) {
+					LOGGER.info("Mise à jour du champ prolongation à false requis pour Emprunt id = "+emprunt.getId());
+					try {
+						getDaoFactory().getEmpruntDao().updateEmprunt(prolongation,emprunt.getUtilisateur().getId(),emprunt.getExemplaire().getBibliotheque().getId(),
+								emprunt.getExemplaire().getEdition().getId());
+					} catch (TechnicalException e) {
+						LOGGER.info(e.getMessage());
+						getPlatformTransactionManager().rollback(vTransactionStatus);
+						throw new TechnicalException(e.getMessage());
+					}
+				}
+			}
+		}
+		
+		//Maintenant que l'on a réactualisé les champs statut_emprunt_id et prolongation, on peut renvoyer la liste des emprunts en retard.
+		try {
+			listEmprunt=getDaoFactory().getEmpruntDao().getListEmpruntEnRetard();
+			getPlatformTransactionManager().commit(vTransactionStatus);
+		} catch (NotFoundException e) {
+			LOGGER.info(e.getMessage());
+			getPlatformTransactionManager().rollback(vTransactionStatus);
+			throw new NotFoundException(e.getMessage());
+		}
+		return listEmprunt;
+	}
+	
+	/**
+	 * Méthode qui permet de convertir la durée de l'emprunt en jours.
+	 * @return La durée de l'emprunt en jours
+	 */
+	private int getConversionJourDureeMaxEmprunt(){
 		int dureeMaxEmpruntJours=0;
+		//La durée de l'emprunt peut être égale à 1, 2, 3 ou 4 semaines. On convertit cette durée en jours.
 		switch(getDureeMaxEmprunt()){
 			case "1 semaine":
 				dureeMaxEmpruntJours=7;
@@ -181,40 +271,6 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 				break;
 			default:LOGGER.info("Erreur lors de la conversion de la durée de l'emprunt en jours.");	
 		}
-		LOGGER.info("Durée max de l'emprunt convertit en jours : "+dureeMaxEmpruntJours);
-		
-		//La date de fin après prolongation sera égale à la date de fin initiale + la durée de la prolongation.
-		calendar.add(Calendar.DATE, dureeMaxEmpruntJours);
-		
-		//On vérifie que la date de fin est correcte.
-		dateDeFin=calendar.getTime();
-		LOGGER.info("Date de fin recalculé :"+dfTest.format(dateDeFin));
-		
-		//Par défaut, lors de la prolongation de l'emprunt d'une édition, on a les valeurs ci-dessous :
-		boolean prolongation=false;
-		Date dateDeProlongation=new Date();
-		String dureeProlongation=getDureeMaxEmprunt();
-		int statutEmpruntId=1;
-		
-		try {
-			getDaoFactory().getEmpruntDao().updateEmprunt(dateDeFin,prolongation,dateDeProlongation,dureeProlongation,utilisateurId, statutEmpruntId,bibliothequeId, editionId);
-			getPlatformTransactionManager().commit(vTransactionStatus);
-		} catch (TechnicalException e) {
-			LOGGER.info(e.getMessage());
-			getPlatformTransactionManager().rollback(vTransactionStatus);
-			throw new TechnicalException(e.getMessage());
-		}	
-	}
-	
-	@Override
-	public List<Emprunt> getListEmpruntEnRetard() throws NotFoundException{
-		LOGGER.info("Web Service : EditionService - Couche Business - Méthode getListEmpruntEnRetard()");
-		try {
-			listEmprunt=getDaoFactory().getEmpruntDao().getListEmpruntEnRetard();
-		} catch (NotFoundException e) {
-			LOGGER.info(e.getMessage());
-			throw new NotFoundException(e.getMessage());
-		}
-		return listEmprunt;
+		return dureeMaxEmpruntJours;
 	}
 }

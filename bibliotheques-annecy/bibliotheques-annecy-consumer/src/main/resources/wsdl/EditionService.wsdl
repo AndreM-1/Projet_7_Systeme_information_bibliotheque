@@ -320,6 +320,45 @@
     </xsd:complexType>
       
   </xsd:element>
+      
+  <xsd:element name="getListEmpruntEnRetard">
+      	
+    <xsd:complexType>
+
+      	</xsd:complexType>
+      
+  </xsd:element>
+      
+  <xsd:element name="getListEmpruntEnRetardResponse">
+      	
+    <xsd:complexType>
+      		
+      <xsd:sequence>
+
+      			
+        <xsd:element maxOccurs="unbounded" minOccurs="1" name="emprunt" type="Q1:Emprunt"/>
+      		
+      </xsd:sequence>
+      	
+    </xsd:complexType>
+      
+  </xsd:element>
+      
+  <xsd:element name="getListEmpruntEnRetardFault">
+      	
+    <xsd:complexType>
+      		
+      <xsd:sequence>
+
+      			
+        <xsd:element maxOccurs="1" minOccurs="1" name="faultMessageErreur" type="xsd:string">
+      			</xsd:element>
+      		
+      </xsd:sequence>
+      	
+    </xsd:complexType>
+      
+  </xsd:element>
     
 </xsd:schema>
   </wsdl:types>
@@ -363,6 +402,10 @@
     <wsdl:part element="tns:getListExemplaire" name="parameters">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="getListEmpruntEnRetardRequest">
+    <wsdl:part element="tns:getListEmpruntEnRetard" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getListEditionRequest">
     <wsdl:part element="tns:getListEdition" name="parameters">
     </wsdl:part>
@@ -387,12 +430,20 @@
     <wsdl:part element="tns:gestionPretFault" name="parameters">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="getListEmpruntEnRetardResponse">
+    <wsdl:part element="tns:getListEmpruntEnRetardResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="rechercheAvanceeEditionResponse">
     <wsdl:part element="tns:rechercheAvanceeEditionResponse" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="emprunterEditionRequest">
     <wsdl:part element="tns:emprunterEdition" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListEmpruntEnRetardFault">
+    <wsdl:part element="tns:getListEmpruntEnRetardFault" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="rechercheAvanceeEditionRequest">
@@ -456,6 +507,14 @@
       <wsdl:output message="tns:prolongerEmpruntResponse">
     </wsdl:output>
       <wsdl:fault message="tns:prolongerEmpruntFault" name="fault">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListEmpruntEnRetard">
+      <wsdl:input message="tns:getListEmpruntEnRetardRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getListEmpruntEnRetardResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:getListEmpruntEnRetardFault" name="fault">
     </wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
@@ -542,6 +601,18 @@
         <soap:fault name="fault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="getListEmpruntEnRetard">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EditionServiceSOAP" type="tns:EditionService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -615,6 +686,18 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="prolongerEmprunt">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListEmpruntEnRetard">
       <soap:operation soapAction=""/>
       <wsdl:input>
         <soap:body use="literal"/>

@@ -73,97 +73,113 @@
 	        <artifactId>cxf-rt-transports-http</artifactId>
   			</dependency> 		
 	</dependencies>
+	
+	<!-- =============================================================== -->
+    <!-- Build -->
+    <!-- =============================================================== -->
 	<build>
 		<plugins>
-			<!-- L'execution de la commande mvn clean package permet bien de télécharger les WSDL et le fichier beans.xsd, puis de générer les
-			classes Java via Apache-CXF. Le problème est que ces classes sont générées dans des packages de type org.example.beans, org.example.editionservice, 
-			org.example.utilisateurservice qui sont présents dans le .jar du module consumer, ce qui peut engendrer des erreurs car je copie-colle ces classes ailleurs.
-			L'idéal aurait été de créer un PROFIL pour télécharger les WSDL et le fichier beans.xsd ainsi que pour générer les classes Java via Apache-CXF. 
-			****************************A FAIRE POUR LE P10****************************. Dans l'immédiat, je vais mettre ces actions en commentaires dans le POM.-->
-			
-			<!-- Download WSDL from server 
-			
-			<plugin> 
-				<groupId>com.googlecode.maven-download-plugin</groupId> 
-				<artifactId>download-maven-plugin</artifactId> 
-				<executions> 
-					<execution> 
-						<id>Download_WSDL_Edition</id> 
-						<goals> 
-							<goal>wget</goal> 
-						</goals> 
-						<phase>validate</phase> 
-						<configuration> 
-							<url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl</url> 
-							<outputDirectory>${basedir}/src/main/resources/wsdl</outputDirectory> 
-							<outputFileName>EditionService.wsdl</outputFileName> 
-						</configuration> 
-					</execution> 
-					<execution> 
-						<id>Download_WSDL_Utilisateur</id> 
-						<goals> 
-							<goal>wget</goal> 
-						</goals> 
-						<phase>validate</phase> 
-						<configuration> 
-							<url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl</url> 
-							<outputDirectory>${basedir}/src/main/resources/wsdl</outputDirectory> 
-							<outputFileName>UtilisateurService.wsdl</outputFileName> 
-						</configuration> 
-					</execution> 
-					<execution> 
-						<id>Download_Beans.xsd</id> 
-						<goals> 
-							<goal>wget</goal> 
-						</goals> 
-						<phase>validate</phase> 
-						<configuration> 
-							<url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?xsd=../beans.xsd</url> 
-							<outputDirectory>${basedir}/src/main/resources</outputDirectory> 
-							<outputFileName>beans.xsd</outputFileName> 
-						</configuration> 
-					</execution> 
-				</executions> 
-			</plugin> -->
-			
-			<!-- Generate source with Apache-CXF plugin from wsdl file  
-			
-			<plugin> 
-				<groupId>org.apache.cxf</groupId> 
-				<artifactId>cxf-codegen-plugin</artifactId> 
-				<executions> 
-					<execution> 
-						<id>generate-sources_EditionService</id> 
-						<goals> 
-							<goal>wsdl2java</goal> 
-						</goals> 
-						<phase>generate-sources</phase> 
-						<configuration> 
-							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot> 
-							<wsdlOptions> 
-								<wsdlOption> 
-									<wsdl>${basedir}/src/main/resources/wsdl/EditionService.wsdl</wsdl> 
-								</wsdlOption> 
- 							</wsdlOptions> 
-						</configuration> 
-					</execution> 
-					<execution> 
-						<id>generate-sources_UtilisateurService</id> 
-						<goals> 
-							<goal>wsdl2java</goal> 
-						</goals> 
-						<phase>generate-sources</phase> 
-						<configuration> 
-							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot> 
-							<wsdlOptions> 
-								<wsdlOption> 
-									<wsdl>${basedir}/src/main/resources/wsdl/UtilisateurService.wsdl</wsdl> 
-								</wsdlOption> 
-							</wsdlOptions> 
-						</configuration> 
-					</execution> 
-				</executions> 
-			</plugin> -->
 		</plugins>
 	</build>
+
+    <!-- =============================================================================================================================================================== -->
+    
+    <!-- Profils : Le but de ce profil est de télécharger les WSDL à partir de leur URL et ensuite de générer les classes Java via le plugin Apache-CXF.
+    Pour cela, il faut exécuter la commande mvn clean compile -Pdownload-wsdl-generate-sources-web-services. A noter que la même commande avec la phase generate-sources
+    échoue à cause des dépendances du module. Il faut bien utiliser la phase compile. Par défaut, ces classes sont générés dans le répertoire target/generated-sources/cxf 
+    qui n'est pas inclu dans le build path (i.e. qui n'est pas un source folder), donc pas d'erreurs supplémentaires. Il suffit ensuite de recopier ces classes dans le(s) 
+    package(s) voulu(s). L'avantage d'utiliser un profil est que lorsque l'on va packager le projet avec la commande mvn clean package, les opérations de ce profil ne 
+    seront pas traitées. -->
+
+    <!-- =============================================================================================================================================================== -->
+    <profiles>
+    	<profile>
+            <id>download-wsdl-generate-sources-web-services</id>
+            <build>
+                <plugins>
+		            <!-- Download WSDL from server -->    
+		   			<plugin> 
+						<groupId>com.googlecode.maven-download-plugin</groupId> 
+						<artifactId>download-maven-plugin</artifactId> 
+						<executions> 
+							<execution> 
+								<id>Download_WSDL_Edition</id> 
+								<goals> 
+									<goal>wget</goal> 
+								</goals> 
+								<phase>validate</phase> 
+								<configuration> 
+									<url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?wsdl</url> 
+									<outputDirectory>${basedir}/src/main/resources/wsdl</outputDirectory> 
+									<outputFileName>EditionService.wsdl</outputFileName> 
+								</configuration> 
+							</execution> 
+							<execution> 
+								<id>Download_WSDL_Utilisateur</id> 
+								<goals> 
+									<goal>wget</goal> 
+								</goals> 
+								<phase>validate</phase> 
+								<configuration> 
+									<url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/utilisateur?wsdl</url> 
+									<outputDirectory>${basedir}/src/main/resources/wsdl</outputDirectory> 
+									<outputFileName>UtilisateurService.wsdl</outputFileName> 
+								</configuration> 
+							</execution> 
+							<execution> 
+								<id>Download_Beans.xsd</id> 
+								<goals> 
+									<goal>wget</goal> 
+								</goals> 
+								<phase>validate</phase> 
+								<configuration> 
+									<url>http://localhost:8080/bibliotheques-annecy-ws-webapp/ws/edition?xsd=../beans.xsd</url> 
+									<outputDirectory>${basedir}/src/main/resources</outputDirectory> 
+									<outputFileName>beans.xsd</outputFileName> 
+								</configuration> 
+							</execution> 
+						</executions> 
+					</plugin>              
+		                
+                	<!-- Generate sources with Apache-CXF plugin from wsdl file -->
+                    <plugin>
+						<groupId>org.apache.cxf</groupId> 
+						<artifactId>cxf-codegen-plugin</artifactId> 
+                        <executions>
+                            <execution>
+                                <id>generate-sources_EditionService</id>
+                                <goals>
+                                    <goal>wsdl2java</goal>
+                                </goals>
+                                <phase>generate-sources</phase>
+                                <configuration>
+									<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot> 
+									<wsdlOptions> 
+										<wsdlOption> 
+											<wsdl>${basedir}/src/main/resources/wsdl/EditionService.wsdl</wsdl> 
+										</wsdlOption> 
+		 							</wsdlOptions>
+                                </configuration>
+                            </execution>
+		 					<execution> 
+								<id>generate-sources_UtilisateurService</id> 
+								<goals> 
+									<goal>wsdl2java</goal> 
+								</goals> 
+								<phase>generate-sources</phase> 
+								<configuration> 
+									<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot> 
+									<wsdlOptions> 
+										<wsdlOption> 
+											<wsdl>${basedir}/src/main/resources/wsdl/UtilisateurService.wsdl</wsdl> 
+										</wsdlOption> 
+									</wsdlOptions> 
+								</configuration> 
+							</execution>                           
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

@@ -45,7 +45,7 @@ public interface EmpruntManager {
 	 * Méthode permettant de renvoyer la liste de l'ensemble des emprunts en retard.
 	 * @return List
 	 * @throws NotFoundException
+	 * @throws TechnicalException
 	 */
-	List<Emprunt> getListEmpruntEnRetard() throws NotFoundException;
-
+	List<Emprunt> getListEmpruntEnRetard() throws NotFoundException,TechnicalException;
 }

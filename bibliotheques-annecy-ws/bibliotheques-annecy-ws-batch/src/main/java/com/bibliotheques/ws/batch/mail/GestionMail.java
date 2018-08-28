@@ -3,6 +3,7 @@ package com.bibliotheques.ws.batch.mail;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -56,11 +57,13 @@ public class GestionMail {
 	/**
 	 * Méthode permettant d'envoyer des mails quotidiennement aux utilisateurs n'ayant pas rendus leurs livres à temps.
 	 */
-	@Scheduled(fixedRate = 5000)
+	//@Scheduled(fixedRate = 5000)
+	@Scheduled(cron = "${mail.cron}")
 	public void sendMail() {
+		//Définition du DateFormat pour l'affichage de la date d'envoie du mail.
+		DateFormat dfEnvoiMail = new SimpleDateFormat("dd/MM/yyyy HH mm ss SSS");
 		LOGGER.info("--------------------------------------------");	
-		LOGGER.info("Entrée dans la méthode d'envoi des mails.");
-		
+		LOGGER.info("Entrée dans la méthode d'envoi des mails le "+dfEnvoiMail.format(new Date()));
 		//On vérifie bien que l'on arrive à récupérer toutes les informations du fichier properties.
 		LOGGER.info("Adresse Web Service Edition : "+configuration.getAdresseEditionService());
 		LOGGER.info("Adresse Web Service Utilisateur : "+configuration.getAdresseUtilisateurService());
@@ -160,11 +163,11 @@ public class GestionMail {
 			}
 
 		}catch (GetListEmpruntEnRetardFault_Exception e) {
-			//Dans ce cas là, qui est très improbable, il n'y a aucun emprunt en retard dans l'ensemble du réseau de bibliothèques!!!
-			//Dans ce cas, on n'envoie pas de mails.
+			//Soit il n'y a aucun emprunt en retard dans l'ensemble du réseau de bibliothèques!!!
+			//Ou une erreur technique lors de l'accès en base de données.
+			//Dans ces cas là, on n'envoie pas de mails.
 			LOGGER.info(e.getMessage());
 		}
-		
 	}
 	
 	/**

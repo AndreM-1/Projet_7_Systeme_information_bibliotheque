@@ -68,4 +68,31 @@ public interface EmpruntDao {
 	 */
 	List<Emprunt> getListEmpruntEnRetard() throws NotFoundException;
 
+	/**
+	 * Méthode permettant de renvoyer la liste de l'ensemble des emprunts en cours ou non rendu à temps avant update quotidien.
+	 * @return List
+	 * @throws NotFoundException
+	 */
+	List<Emprunt>  getListEmpruntAvtUpd() throws NotFoundException;
+
+	/**
+	 * Méthode permettant de mettre à jour le champ prolongation de la table Emprunt.
+	 * @param prolongation : Un booléen indiquant si l'emprunt peut être prolongé
+	 * @param utilisateurId : L'identifiant de l'utilisateur
+	 * @param bibliothequeId : L'identifiant de la bibliothèque
+	 * @param editionId : L'identifiant de l'édition
+	 * @throws TechnicalException
+	 */
+	void updateEmprunt(boolean prolongation, int utilisateurId, int bibliothequeId, int editionId) throws TechnicalException;
+
+	/**
+	 * Méthode permettant de mettre à jour le champ statutEmpruntId de la table Emprunt.
+	 * @param statutEmpruntId : L'identifiant du statut de l'emprunt
+	 * @param utilisateurId : L'identifiant de l'utilisateur
+	 * @param bibliothequeId : L'identifiant de la bibliothèque
+	 * @param editionId : L'identifiant de l'édition
+	 * @throws TechnicalException
+	 */
+	void updateEmprunt(int statutEmpruntId, int utilisateurId, int bibliothequeId, int editionId) throws TechnicalException;
+
 }

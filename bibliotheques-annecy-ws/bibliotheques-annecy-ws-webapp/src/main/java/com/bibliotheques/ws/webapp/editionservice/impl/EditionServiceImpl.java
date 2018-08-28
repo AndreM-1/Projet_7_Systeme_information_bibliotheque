@@ -164,6 +164,11 @@ public class EditionServiceImpl implements EditionService{
 			GetListEmpruntEnRetardFault getListEmpruntEnRetardFault= new GetListEmpruntEnRetardFault();
 			getListEmpruntEnRetardFault.setFaultMessageErreur(e.getMessage());
 			throw new GetListEmpruntEnRetardFault_Exception(e.getMessage(),getListEmpruntEnRetardFault);
+		} catch (TechnicalException e) {
+			LOGGER.info(e.getMessage());
+			GetListEmpruntEnRetardFault getListEmpruntEnRetardFault= new GetListEmpruntEnRetardFault();
+			getListEmpruntEnRetardFault.setFaultMessageErreur(e.getMessage());
+			throw new GetListEmpruntEnRetardFault_Exception(e.getMessage(),getListEmpruntEnRetardFault);
 		}
 		return listEmprunt;
 	}
