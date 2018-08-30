@@ -7,36 +7,54 @@ body{
 	background-color:#FFF;
 }
 
-.barreNavigation{
+#barre-navigation{
+	margin-right:0px;
 	border-bottom :1px solid grey;
-	display:flex;
-	justify-content: space-between;
-	align-items: center;
 	margin-bottom:5px;
 }
 
-.barreNavigation .ville{
-	font-size: 1.5em;
+/***************************************************************************************
+ * Attention à ne pas oublier le deuxième container contenu dans la barre de navigation.
+ * Il faut bien lui mettre une largeur auto sinon il dépassera du premier container.
+ * *************************************************************************************/
+#container-barre-navigation{
+	width:auto;
 }
 
-.barreNavigation a:hover{
-	text-decoration:none;
-		
-}
-
-.barreNavigation li a:hover {
-	background-color:transparent;
-}
-
-.barreNavigation .boutonConnexion:hover{
-	background-color:#286090;
+.navbar-toggle {
+  padding: 10px;
+  margin: 30px 0 25px 0;
 }
 
 .icon-bar{
-	 background-color:black;
+	 background-color:#4C76FF;
 }
 
-#banniereImage{
+.navbar-brand {
+  padding: 0px;
+  height: 100px;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 10px 0 10px 0; /*Haut-Droite-Bas-Gauche*/
+  width: auto;
+}
+
+.nav >li >a {
+  margin-top: 23px;
+  
+}
+
+#barre-navigation li ul li a:hover {
+	background-color:transparent;
+}
+
+#barre-navigation .bouton-connexion:hover{
+	background-color:#286090;
+}
+
+#banniere-image{
 	background: url('../jsp/assets/images/fondEcranBibliotheque1.jpg') no-repeat;
 	border-radius :5px;
 	height:500px;
@@ -45,16 +63,32 @@ body{
 	box-shadow: 0px 4px 4px #1c1a19;
 }
 
-#zoneRecherche{
+#zone-recherche{
 	position: absolute;
 	bottom:42%;
-	left : 37%;
-	right: 37%;
+	width: 40%;
+	left : 30%;
 }
 
-#zoneRecherche #rechercheAvancee a{
+#zone-recherche #recherche-avancee a{
 	color:inherit;
 }
+
+/********************************Media query********************************/
+@media all and (min-width: 992px) and (max-width: 1200px){
+	#zone-recherche{
+		width: 44%;
+		left : 28%;
+	}
+}
+
+@media all and (max-width: 992px){
+	#zone-recherche{
+		width: 58%;
+		left : 21%;
+	}
+}
+/***************************************************************************/
 
 section{
 	border-bottom :1px solid grey;
@@ -153,3 +187,5 @@ section{
 footer{
 	margin-bottom:5px;
 }
+
+
