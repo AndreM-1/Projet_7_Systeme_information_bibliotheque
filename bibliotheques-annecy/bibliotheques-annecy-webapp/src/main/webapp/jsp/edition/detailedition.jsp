@@ -10,20 +10,26 @@
 			<!-- Header -->
 			<%@ include file="../_include/header.jsp"%>
 		
-			<section id="editionDetailee">
-				<div class="row">
+			<section id="edition-detaillee">
+				<div class="row" id="row-edition-detaillee">
 					<s:iterator value="listExemplaire" begin ="1" end ="1">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 editionAccueil">	
-							<!-- Il faut appliquer les classes Bootstrap à l'image et non à un bloc contenant l'image !!! -->
-							<img class="col-xs-5 col-sm-4 col-md-3 col-lg-3" src="<s:property value="edition.photo.nomPhoto"/>" alt="Photo Couverture livre" height=401px width=268px/>
-							<div class="col-xs-7 col-sm-8 col-md-9 col-lg-9">
-								<h4><s:property value="edition.ouvrage.titre"/></h4>				
-								<p><em>Auteur : </em><s:property value="edition.ouvrage.auteur.prenom"/> <s:property value="edition.ouvrage.auteur.nom"/></p>
-								<p><em>Edité par</em> <s:property value="edition.editeur.nomEditeur"/> le <s:property value="edition.dateParution"/></p>
-								<p><em>Genre :</em> <s:property value="edition.genre.genre"/></p>
-								<p><em>ISBN :</em> <s:property value="edition.isbn"/></p>
-								<p><em>Nombre de pages :</em> <s:property value="edition.nbPages"/> pages</p>
-								<p class="text-justify"><em>Resumé : </em><s:property value="edition.ouvrage.resume"/></p>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="detail-edition">	
+							<!-- Les images doivent être responsives. Pour cela : 
+					     	- Il ne faut surtout pas leur imposer une taille.
+					     	- Les images doivent avoir les mêmes dimensions. C'est un pré-requis indispensable.
+					     	- Il faut par contre bien mettre l'image dans une balise div qui applique les classes de type col-*-*
+				     		- Il faut appliquer la classe img-responsive directement au niveau de l'image. -->
+							<div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+								<img class="img-responsive" src="<s:property value="edition.photo.nomPhoto"/>" alt="Photo Couverture livre"/>
+							</div>
+							<div class="col-xs-8 col-sm-8 col-md-9 col-lg-9">
+								<p id="edition-detaillee-titre"><s:property value="edition.ouvrage.titre"/></p>				
+								<p id="edition-detaillee-auteur"><em>Auteur : </em><s:property value="edition.ouvrage.auteur.prenom"/> <s:property value="edition.ouvrage.auteur.nom"/></p>
+								<p id="edition-detaillee-editeur"><em>Edité par</em> <s:property value="edition.editeur.nomEditeur"/> le <s:property value="edition.dateParution"/></p>
+								<p id="edition-detaillee-genre"><em>Genre :</em> <s:property value="edition.genre.genre"/></p>
+								<p id="edition-detaillee-isbn"><em>ISBN :</em> <s:property value="edition.isbn"/></p>
+								<p id="edition-detaillee-nb-pages"><em>Nombre de pages :</em> <s:property value="edition.nbPages"/> pages</p>
+								<p id="edition-detaillee-resume" class="text-justify"><em>Resumé : </em><s:property value="edition.ouvrage.resume"/></p>
 							</div>
 						</div>
 					</s:iterator>
