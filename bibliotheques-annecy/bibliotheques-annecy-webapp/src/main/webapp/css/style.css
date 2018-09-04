@@ -95,7 +95,7 @@ section{
 	margin-bottom: 5px;
 }
 
-#edition-accueil,#detail-edition,#resultat-recherche-edition{
+#edition-accueil,#detail-edition,#resultat-recherche-edition,#gdp-edition-nr,#gdp-edition-ec,#gdp-edition-r{
 	padding-top:2px;
 	padding-bottom:2px;
 	padding-left:0px;
@@ -213,32 +213,7 @@ section{
 	}
 }
 /*****************************************************************************************/
-
-#sectionQsn{
-	display:flex;
-	justify-content: space-between;
-	align-items: flex-end;
-}
-
-#sousSectionQsn{
-	display:flex;
-	align-items: flex-end;
-}
-
-#sousSectionQsn p{
-	font-size: 1.5em;
-}
-
-.localHoraires{
-	display:flex;
-	margin-bottom :10px;
-}
-
-.localHoraires .imgBibliotheque{
-	margin-right:15px;
-}
-
-#divConnexion{
+#div-connexion,#div-recherche-avancee{
 	border:1px solid grey;
 	margin-top:25px;
 	margin-bottom:10px;
@@ -246,7 +221,12 @@ section{
 	box-shadow: 0px 4px 4px #1c1a19;
 }
 
-#navProfilUtilisateur ul{
+#row-connexion,#row-creation-compte{
+	margin-left:0px;
+	margin-right:0px;
+}
+
+#nav-profil-utilisateur ul{
 	margin-top:25px;
 	list-style-type:none;
 	display:flex;
@@ -255,40 +235,145 @@ section{
 }
 
 
-#navProfilUtilisateur li{
+#nav-profil-utilisateur li{
 	margin-right:30px;
 }
 
 
-#navProfilUtilisateur a{
+#nav-profil-utilisateur a{
 	font-size: 1.5em;
     color: #181818;
     padding-bottom: 3px;
     text-decoration: none;
 }
 
-#navProfilUtilisateur a:hover{
+#nav-profil-utilisateur a:hover{
 	color: #181818;
     border-bottom: 4px solid #181818;
 }
 
-#formUtilisateurCoord,#formUtilisateurMdp{
+#form-utilisateur-coord,#form-utilisateur-mdp{
 	margin-bottom:10px;
 }
 
 
-#mescoordonnees, #monmotdepasse, #gestionprets{
+#mes-coordonnees, #mon-mot-de-passe, #gestion-prets{
 	border-bottom: 4px solid #181818;	
 }
 
-.statutPret{
+.statut-pret{
 	border-bottom: 3px solid grey;
 	padding-top :5px;
 	padding-bottom :5px;
 }
 
+#row-gdp-edition-nr,#row-gdp-edition-ec,#row-gdp-edition-r{
+	margin-left:0px;
+	margin-right:0px;
+}
+
+#gdp-edition-nr-titre,#gdp-edition-ec-titre,#gdp-edition-r-titre{
+	font-weight:bold;
+}
+
+/********************************Media query pour pages profil utilisateur****************/
+@media all and (min-width: 610px) and (max-width: 725px){
+	#nav-profil-utilisateur a{
+		font-size: 1.2em;
+	}
+	#nav-profil-utilisateur a:hover{
+		 border-bottom: 3px solid #181818;
+	}
+	#mes-coordonnees, #mon-mot-de-passe, #gestion-prets{
+	border-bottom: 3px solid #181818;	
+	}
+}
+
+@media all and (max-width: 610px){
+	#nav-profil-utilisateur a{
+		font-size: 1em;
+	}
+	#nav-profil-utilisateur a:hover{
+		 border-bottom: 2px solid #181818;
+	}
+	#mes-coordonnees, #mon-mot-de-passe, #gestion-prets{
+	border-bottom: 2px solid #181818;	
+	}
+}
+
+@media all and (max-width: 768px){
+	#gdp-edition-nr-editeur,#gdp-edition-nr-genre,#gdp-edition-nr-isbn,#gdp-edition-nr-nb-pages,#gdp-edition-ec-editeur,#gdp-edition-ec-genre,#gdp-edition-ec-isbn,#gdp-edition-ec-nb-pages,
+	#gdp-edition-r-editeur,#gdp-edition-r-genre,#gdp-edition-r-isbn,#gdp-edition-r-nb-pages{
+		display:none;
+	}
+}
+
+@media all and (max-width: 610px){
+	#gdp-edition-nr-auteur,#gdp-edition-nr-statut-pret,#gdp-edition-ec-auteur,#gdp-edition-ec-statut-pret{
+		display:none;
+	}
+}
+
+@media all and (max-width: 520px){
+	#gdp-edition-nr-prolong-pret-2,#gdp-edition-ec-prolong-pret-2{
+		display:none;
+	}
+}
+@media all and (min-width: 520px){
+	#gdp-edition-nr-prolong-pret-2-reduit,#gdp-edition-ec-prolong-pret-2-reduit{
+		display:none;
+	}
+}
+
+@media all and (max-width: 520px){
+	#gdp-edition-nr-titre,#gdp-edition-ec-titre,#gdp-edition-r-titre{
+		font-size:1em;
+	}
+	#gdp-edition-nr-periode-emprunt,#gdp-edition-ec-periode-emprunt,#gdp-edition-r-periode-emprunt,#gdp-edition-r-auteur{
+		display:none;
+	}
+}
+/*****************************************************************************************/
+
+#row-recherche-avancee{
+	margin-left:0px;
+	margin-right:0px;
+}
+
+#section-qsn{
+	display:flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+#sous-section-qsn{
+	display:flex;
+	align-items: flex-end;
+}
+
+#sous-section-qsn p{
+	font-size: 1.5em;
+}
+
+.local-horaires{
+	margin-bottom :10px;
+}
+
+/********************************Media query pour pages génériques ****************/
+@media all and (max-width: 992px){
+	#sous-section-qsn{
+		display:none;
+	}
+}
+
+@media all and (max-width: 570px){
+	.adresse-bibliotheque,.horaire-bibliotheque{
+		display:none;
+	}
+}
+
+/*****************************************************************************************/
+
 footer{
 	margin-bottom:5px;
 }
-
-

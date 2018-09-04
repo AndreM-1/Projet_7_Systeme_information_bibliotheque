@@ -14,8 +14,8 @@
 			
 			<section>
 				<!-- Formulaire de connexion -->
-				<div class="row">
-					<div class="col-lg-offset-4 col-lg-4" id="divConnexion">
+				<div class="row" id="row-connexion">
+					<div class="col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4" id="div-connexion">
 						<h1 class="text-center">Se connecter</h1>
 						<s:form action="connexion" method="POST">
 							<s:actionerror />

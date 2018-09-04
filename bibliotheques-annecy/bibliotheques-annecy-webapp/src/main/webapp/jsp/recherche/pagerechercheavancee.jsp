@@ -13,8 +13,8 @@
 			
 			<section>
 				<!-- Formulaire recherche avancée -->
-				<div class="row">
-					<div class="col-lg-offset-4 col-lg-4" id="divConnexion">
+				<div class="row" id="row-recherche-avancee">
+					<div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4" id="div-recherche-avancee">
 						<h1 class="text-center">Recherche avancée</h1>
 						<s:form action="recherche_edition_avancee" method="POST">
 							<s:actionerror/>

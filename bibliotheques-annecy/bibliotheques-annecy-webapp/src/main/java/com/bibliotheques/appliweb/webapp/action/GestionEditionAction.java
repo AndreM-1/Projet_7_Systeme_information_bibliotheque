@@ -131,7 +131,7 @@ public class GestionEditionAction extends ActionSupport implements SessionAware 
 	public String doList() {
 		LOGGER.info("GestionEditionAction - Méthode doList()");
 		Date date =new Date();
-		DateFormat dfMois = new SimpleDateFormat("MMM");
+		DateFormat dfMois = new SimpleDateFormat("MMMMMMMMM");
 		DateFormat dfAnnee = new SimpleDateFormat("yyyy");
 		moisCourant=dfMois.format(date);
 		anneeCourante=dfAnnee.format(date);

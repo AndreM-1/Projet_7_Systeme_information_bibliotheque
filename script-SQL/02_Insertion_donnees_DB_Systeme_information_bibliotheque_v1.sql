@@ -211,19 +211,19 @@ d’exterminer l’humanité tout entière !! Pour ne rien arranger, il s’est 
 définitivement. Puis il retourne dans le futur de Trunks avec Vegeta. Vont-ils réussir à vaincre ces redoutables adversaires ?!',10),
 
 -- Le Seigneur des anneaux - Tome 01 : La communauté de l'anneau de John Ronald Reuel Tolkien
-('Le Seigneur des anneaux - Tome 01 : La communauté de l''anneau','Dans les vertes prairies de la Comté, les Hobbits, ou Semi-hommes, vivaient en paix... Jusqu''au jour fatal où l''un 
+('La communauté de l''anneau','Dans les vertes prairies de la Comté, les Hobbits, ou Semi-hommes, vivaient en paix... Jusqu''au jour fatal où l''un 
 d''entre eux, au cours de ses voyages, entra en possession de l''Anneau Unique aux immenses pouvoirs. Pour le reconquérir, Sauron, le seigneur ténébreux, va déchaîner toutes les forces 
 du Mal... Frodon, le Porteur de l''Anneau, Gandalf, le magicien, et leurs intrépides compagnons réussiront-t-ils à écarter la menace qui pèse sur la Terre du Milieu ?',11),
 
 -- Le Seigneur des anneaux - Tome 02 : Les deux tours de John Ronald Reuel Tolkien
-('Le Seigneur des anneaux - Tome 02 : Les deux tours','Dispersée dans les terres de l''Ouest, la Communauté de l''Anneau affronte les périls de la guerre, tandis que Frodon, accompagné du 
+('Les deux tours','Dispersée dans les terres de l''Ouest, la Communauté de l''Anneau affronte les périls de la guerre, tandis que Frodon, accompagné du 
 fidèle Samsagace, poursuit une quête presque désespérée : détruire l''Anneau unique en le jetant dans les crevasses d''Oradruir, la Montagne du destin. Mais aux frontières du royaume de Mordor, 
 une mystérieuse créature les épie... pour les perdre ou pour les sauver ? Le royaume du Gondor s''arme contre Sauron, le seigneur des ténèbres, qui veut asservir tous les peuples libres, 
 hommes et elfes, nains et hobbits. Mais la vaillance des soldats de Minas Tirith ne peut rien désormais contre la puissance maléfique de Mordor. Un fragile espoir, toutefois, demeure : 
 le Porteur de l''Anneau, jour après jour, s''approche de la montagne où brûle le feu du destin, seul capable de détruire l''Anneau Unique et de provoquer la chute de Sauron...',11),
 
 -- Le Seigneur des anneaux - Tome 03 : Le retour du roi de John Ronald Reuel Tolkien
-('Le Seigneur des anneaux - Tome 03 : Le retour du roi','Le royaume de Gondor s''arme contre Sauron, le seigneur des ténèbres, qui veut asservir tous les peuples libres, hommes et elfes, 
+('Le retour du roi','Le royaume de Gondor s''arme contre Sauron, le seigneur des ténèbres, qui veut asservir tous les peuples libres, hommes et elfes, 
 nains et hobbits. Mais la vaillance des soldats de Minas Tirith ne peut rien désormais contre la puissance maléfique de Mordor. Un fragile espoir, toutefois, demeure : le Porteur de l''Anneau, 
 jour après jour, s''approche de la montagne où brûle le feu du destin, seul capable de détruire l''Anneau Unique et de provoquer la chute de Sauron…',11),
 
@@ -237,14 +237,14 @@ laisser reprendre souffle, dans un univers de délices et de feu. L’épique et
 et à la fourberie. Mais dans ce tourbillon d’aventures cruelles, ce sont finalement l’amour, la tendresse, l’indestructible force de l’amitié qui rayonnent au-dessus des ténèbres.',12),
 
 -- Harry Potter - Tome 01 : Harry Potter à l'école des sorciers de Joanne Kathleen Rowling
-('Harry Potter - Tome 01 : Harry Potter à l''école des sorciers','Peu avant son onzième anniversaire, Harry reçoit une lettre l''invitant à se présenter lors de la rentrée des classes à 
+('Harry Potter à l''école des sorciers','Peu avant son onzième anniversaire, Harry reçoit une lettre l''invitant à se présenter lors de la rentrée des classes à 
 l''école de sorcellerie de Poudlard. Malgré les tentatives de son oncle et de sa tante pour l''empêcher de s''y rendre, Rubeus Hagrid, un « demi-géant » envoyé par le directeur de Poudlard, 
 Albus Dumbledore, va faire découvrir à Harry le monde des sorciers et l''amener à se rendre à la gare de King''s Cross de Londres, où il prendra le Poudlard Express qui le conduira jusqu''à 
 sa nouvelle école. Une fois à Poudlard, Harry apprend à maîtriser et utiliser les pouvoirs magiques qu''il possède et se fait deux amis inséparables : Ronald Weasley et Hermione Granger. 
 Le trio tente d''empêcher Voldemort de s''emparer de la pierre philosophale de Nicolas Flamel, conservée sous bonne garde à Poudlard.',13),
 
 -- Harry Potter - Tome 02 : Harry Potter et la chambre des secrets de Joanne Kathleen Rowling
-('Harry Potter - Tome 02 : Harry Potter et la chambre des secrets','L''année suivante, Harry et ses amis doivent faire face à une nouvelle menace à Poudlard. La fameuse Chambre des secrets, 
+('Harry Potter et la chambre des secrets','L''année suivante, Harry et ses amis doivent faire face à une nouvelle menace à Poudlard. La fameuse Chambre des secrets, 
 bâtie plusieurs siècles plus tôt par l''un des fondateurs de l''école, Salazar Serpentard, aurait été rouverte par son « héritier ». Cette Chambre, selon la légende, contiendrait un 
 gigantesque monstre destiné à tuer les enfants moldus acceptés à l''école contre le souhait de Serpentard. Hermione, née de parents moldus, se retrouve elle aussi menacée. Harry, sachant 
 parler le fourchelang, est accusé en premier lieu d''être l''héritier de Serpentard par la plupart des élèves, tandis que Ginny Weasley, la sœur de Ron, est curieusement manipulée par un 
@@ -252,7 +252,7 @@ journal intime ayant appartenu à un certain Tom Jedusor. Harry apprend par la s
 Serpentard, agissant sur l''école par le biais de ses souvenirs conservés dans son journal.',13),
 
 -- Harry Potter - Tome 03 : Harry Potter et le prisonnier d'Azkaban de Joanne Kathleen Rowling
-('Harry Potter - Tome 03 : Harry Potter et le prisonnier d''Azkaban','À l''été 1993, les sorciers, ainsi que les Moldus, sont informés de l''évasion de prison d''un dangereux criminel 
+('Harry Potter et le prisonnier d''Azkaban','À l''été 1993, les sorciers, ainsi que les Moldus, sont informés de l''évasion de prison d''un dangereux criminel 
 nommé Sirius Black. Un peu plus tard, Harry apprend que la motivation de Black est de le tuer afin de permettre à Voldemort, son maître, de retrouver l''étendue de son pouvoir. Un important 
 dispositif de sécurité est donc mis en place à Poudlard pour assurer la protection de Harry durant l''année. En parallèle, celui-ci fait la connaissance de son nouveau professeur de défense 
 contre les forces du mal, le professeur Lupin, un ancien ami de ses parents et dont il devient très proche. Harry utilise régulièrement la cape d''invisibilité de son père ainsi que la carte 
@@ -285,7 +285,7 @@ systématiquement brûlés. Il finit pourtant par en voler un et sa vie en sera 
 critique n''existerait plus? Telles sont les questions qu''aborde ce grand roman d''anticipation.',15),
 
 -- Une brève histoire du temps : Du big bang aux trous noirs de Stephen Hawking
-('Une brève histoire du temps : Du big bang aux trous noirs','Stephen Hawking est universellement reconnu comme un des plus grands cosmologistes de notre époque et l''un des plus brillants 
+('Une brève histoire du temps','Stephen Hawking est universellement reconnu comme un des plus grands cosmologistes de notre époque et l''un des plus brillants 
 physiciens depuis Einstein. Successeur de Newton, il occupe à l''Université de Cambridge la chaire de Mathématiques, et s''est rendu célèbre pour ses travaux sur les origines de l''Univers. 
 Une brève histoire du temps est le premier livre qu''il ait décidé d''écrire pour le non-spécialiste. Il y expose, dans un langage simple et accessible, les plus récents développements de 
 l''astrophysique concernant la nature du temps et du monde. Retraçant les grandes théories du cosmos, de Galilée et Newton à Einstein et Poincaré, racontant les ultimes découvertes de 

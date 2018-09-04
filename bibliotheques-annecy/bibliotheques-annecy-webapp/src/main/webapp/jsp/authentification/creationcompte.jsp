@@ -13,8 +13,8 @@
 			
 			<section>
 				<!-- Formulaire de création de compte -->
-				<div class="row">
-					<div class="col-lg-offset-4 col-lg-4" id="divConnexion">
+				<div class="row" id="row-creation-compte">
+					<div class="col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4" id="div-connexion">
 						<h1 class="text-center">S'inscrire</h1>
 						<s:form action="page_creation_compte" method="POST">
 							<s:actionerror/>

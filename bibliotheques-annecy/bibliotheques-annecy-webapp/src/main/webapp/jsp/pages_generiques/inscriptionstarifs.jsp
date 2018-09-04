@@ -15,16 +15,16 @@
 				<h1 class="text-center">Inscriptions et tarifs</h1>
 				
 				<p class="text-justify">Pour vous inscrire, vous devez présenter à la bibliothèque : </p>
-				<ul>
+				<ul class="text-justify">
 					<li>Une pièce d'identité</li>
 					<li>Un justificatif de domicile de moins de 3 mois</li>
 				</ul>
 				<p class="text-justify">Abonnement plein tarif : </p>
-				<ul>
+				<ul class="text-justify">
 					<li>Adultes à partir de 25 ans : 22 euros</li>
 				</ul>				
 				<p class="text-justify">Abonnement gratuit :</p>
-				<ul>
+				<ul class="text-justify">
 					<li>Jeunes de moins de 25 ans</li>
 					<li>Etudiants (sur présentation de la carte d'étudiant)</li>
 					<li>Adultes non imposables (sur présentation de votre dernier avis de non-imposition)</li>
